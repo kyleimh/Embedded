@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/main.c</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/app_public.h</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/control.h</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/control.c</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/motor.h</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/motor.c</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/sensor.h</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/sensor.c</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/debug.h</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/debug.c</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/usart.h</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/usart.c</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/timer1Callback.c</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/system_config/default/system_tasks.c</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/system_config/default/system_interrupt.c</file>
+        </group>
+    </open-files>
+</project-private>
