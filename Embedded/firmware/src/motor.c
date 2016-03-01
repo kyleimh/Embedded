@@ -38,6 +38,12 @@ void MOTOR_Tasks ( void )
             } 
             else 
             {
+                /* Send response "MOTR" */
+                message.id    = 'M';
+                message.msg   = 'O';
+                message.data1 = 'T';
+                message.data2 = 'R';
+                USART_send(message);
                 outputEvent(MOTOR_QUEUE_RECEIVED);
             }
             break;

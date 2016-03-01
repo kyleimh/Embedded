@@ -21,5 +21,5 @@ void vTimerCallback( TimerHandle_t pxTimer )
         msg.id = 0x30;
         change = 0;
     }
-    USART_send(msg);
+    //USART_send(msg);
 }

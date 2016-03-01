@@ -13,6 +13,9 @@
 #include "debug.h"
 #include "timers.h"
 
+#define MSG_START 0x02
+#define MSG_END   0x03
+
 QueueHandle_t transmitQueue;
 QueueHandle_t xQueueADC;
 QueueHandle_t controlQueue;

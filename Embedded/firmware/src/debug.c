@@ -1,6 +1,6 @@
 #include "debug.h"
 
-void outputEvent( uint32_t value  )
+void outputEvent( uint8_t value  )
 {    
     //Get current value from Port E
     uint32_t portE = SYS_PORTS_Read(PORTS_ID_0, PORT_CHANNEL_E);

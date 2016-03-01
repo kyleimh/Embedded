@@ -69,7 +69,7 @@ void DRV_USART0_Initialize(void)
     PLIB_USART_TransmitterEnable(USART_ID_1);
     PLIB_USART_TransmitterInterruptModeSelect(USART_ID_1, USART_TRANSMIT_FIFO_NOT_FULL);
     PLIB_USART_ReceiverEnable(USART_ID_1);
-    PLIB_USART_ReceiverInterruptModeSelect(USART_ID_1, USART_RECEIVE_FIFO_HALF_FULL);
+    PLIB_USART_ReceiverInterruptModeSelect(USART_ID_1, USART_RECEIVE_FIFO_ONE_CHAR);
     /* Initialize interrupts */
     /* Note: TX interrupt must be enabled when data is ready to be transmitted */
     /* The following code can be used to enable TX Interrupt */
