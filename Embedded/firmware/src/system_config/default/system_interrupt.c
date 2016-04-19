@@ -29,7 +29,7 @@ void IntHandlerDrvAdc(void)
     xToken = pdFALSE;
     
     MESSAGE adcValue;
-    adcValue.id = 0x73;
+    adcValue.id = 0x35;
     adcValue.msg = 0x11;
     adcValue.data1 = irValue >> 8;
     adcValue.data2 = irValue;    

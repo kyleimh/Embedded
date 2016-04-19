@@ -17,7 +17,7 @@
 #define MSG_END   0x03
 
 #define enableLineSensor 1
-#define enableADC        1
+#define enableADC        0
 
 #define true  1
 #define false 0

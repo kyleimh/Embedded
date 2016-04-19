@@ -275,7 +275,7 @@ void MOTOR_Tasks ( void )
 
 void sendDone(int disOrdeg){
     MESSAGE mssge;
-        mssge.id    = 0x32;
+        mssge.id    = 0x12;
         mssge.msg   = DONE;
         mssge.data1 = disOrdeg;
         mssge.data2 = 0x0;

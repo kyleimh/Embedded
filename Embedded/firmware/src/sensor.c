@@ -68,7 +68,7 @@ void SENSOR_Tasks ( void )
             else
             {
                 outputEvent(SENSOR_QUEUE_ITEM_READY);
-                if(sensorMsgRecv.id == 0x53){
+                if(sensorMsgRecv.id == 0x34){
                     if(sensorMsgRecv.msg == 0x15){
                         raw_cm = false;
                     }
@@ -85,24 +85,39 @@ void SENSOR_Tasks ( void )
                     else if(sensorMsgRecv.msg == 0x18){
                         wait = !wait;
                     }
-                }else if(sensorMsgRecv.id == 0x63){
-                    sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                }else if(sensorMsgRecv.id == 0x36){
+                    sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
                     sensorMsg.msg   = 0x22; // LineSensorData
                     sensorMsg.data1 = sensorMsgRecv.data1;
                     sensorMsg.data2 = 0x0;
                     xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
                     if(sensorMsgRecv.data1 == 0xFF && !intersect){
                         intersect = true;
-                        sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                        sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
                         sensorMsg.msg   = 0x24; // Line Intersection
                         sensorMsg.data1 = 0x0;
                         sensorMsg.data2 = 0x0;
                         xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
-                    }else if(sensorMsgRecv.data1 < 180 && intersect){
+                    }else if((sensorMsgRecv.data1 & 0xC0) == 0xC0){
+                        intersect = false;
+                        sensorMsg.id    = 0x23; //To motor thread(2), From sensor thread(3)
+                        sensorMsg.msg   = 11; // Forward
+                        sensorMsg.data1 = 12;
+                        sensorMsg.data2 = 11;
+                        xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
+                    }else if((sensorMsgRecv.data1 & 0x03) == 0x03){
+                        intersect = false;
+                        sensorMsg.id    = 0x23; //To motor thread(2), From sensor thread(3)
+                        sensorMsg.msg   = 11; // Forward
+                        sensorMsg.data1 = 11;
+                        sensorMsg.data2 = 12;
+                        xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
+                    }else if (sensorMsgRecv.data1 != 0xFF && intersect){
                         intersect = false;
                     }
+                    
                 }                
-                else if(sensorMsgRecv.id == 0x73){
+                else if(sensorMsgRecv.id == 0x35){
                     uint16_t dist = (sensorMsgRecv.data1 << 8) + sensorMsgRecv.data2;
                     if(dist < 100)
                         dist = 100;
@@ -114,7 +129,7 @@ void SENSOR_Tasks ( void )
                     
                     if(distCM == 4 && safe){
                         safe = false;
-                        sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                        sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
                         sensorMsg.msg   = 0x20; // Not Safe
                         sensorMsg.data1 = 0x0;
                         sensorMsg.data2 = 0x0;
@@ -122,20 +137,20 @@ void SENSOR_Tasks ( void )
                     }
                     else if(distCM > 4 && !safe){
                         safe = true;
-                        sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                        sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
                         sensorMsg.msg   = 0x21; // Safe
                         sensorMsg.data1 = 0x0;
                         sensorMsg.data2 = 0x0;
                         xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 ); 
                     }
                     if(raw_cm){
-                        sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                        sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
                         sensorMsg.msg   = 0x23; 
                         sensorMsg.data1 = distCM & 0xFF;          //Lower byte
                         sensorMsg.data2 = (distCM & 0xFF00) >> 8; //Upper byte
                         xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 ); 
                     }else{
-                        sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                        sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
                         sensorMsg.msg   = 0x23; 
                         sensorMsg.data1 = dist & 0xFF;          //Lower byte
                         sensorMsg.data2 = (dist & 0xFF00) >> 8; //Upper byte

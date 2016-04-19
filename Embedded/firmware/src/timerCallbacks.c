@@ -71,7 +71,7 @@ void readTimerCallback( TimerHandle_t pxTimer )
             line += 0x80;        
         
         MESSAGE lineMsg;
-        lineMsg.id = 0x63;
+        lineMsg.id = 0x36;
         lineMsg.msg = 0x12;
         lineMsg.data1 = line;
         lineMsg.data2 = 0x0;    

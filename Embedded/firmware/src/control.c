@@ -46,30 +46,26 @@ void CONTROL_Tasks ( void )
             {
                 outputEvent(CONTORL_QUEUE_RECEIVED);
                 uint8_t mask = 0x08;
-                if ( ctrlMsgRecv.id == 0x30 ) 
+                if ( ctrlMsgRecv.id == 0x00 ) 
                 {
                     if( ctrlMsgRecv.data1 == 0x0 )
                     {
                         SYS_PORTS_Clear(PORTS_ID_0, PORT_CHANNEL_A, mask);
                     }
-                    else if( ctrlMsgRecv.data1 == 0x31 )
+                    else if( ctrlMsgRecv.data1 == 0x1 )
                     {
                         SYS_PORTS_Set(PORTS_ID_0, PORT_CHANNEL_A, mask, mask);
                     }
                 } 
-                else if ( ctrlMsgRecv.id == 0x32 ) 
+                else if ( (ctrlMsgRecv.id & 0x40) == 0x40 ) 
                 {
-                    counter++;
-                    if(counter > 0)
-                    {
-                        ctrlMsgSend.id    = 0x31;
+                        ctrlMsgSend.id    = 0x41;
                         ctrlMsgSend.msg   = ctrlMsgRecv.msg;
                         ctrlMsgSend.data1 = ctrlMsgRecv.data1;
                         ctrlMsgSend.data2 = ctrlMsgRecv.data2;
                         USART_send(ctrlMsgSend);
-                        counter = 0;
-                    }
-                }else if ( ctrlMsgRecv.id == 0x58 ) 
+                        
+                }else if ( ctrlMsgRecv.id == 0x48 ) 
                 {
                     if(ctrlMsgRecv.msg == 0x40){ //Set debug scheme to ALL
                         debugScheme = 0;
@@ -81,7 +77,7 @@ void CONTROL_Tasks ( void )
                 }
                 else
                 {
-                    SYS_PORTS_Set(PORTS_ID_0, PORT_CHANNEL_A, mask, mask);
+                    SYS_PORTS_Toggle(PORTS_ID_0, PORT_CHANNEL_A, mask);
                 }
             }
             break;
