@@ -26,6 +26,15 @@
 volatile unsigned int R_encoder;
 volatile unsigned int L_encoder;
 
+typedef enum {
+    STOP = 0,
+            FORWARD = 11, //B
+            BACKWARD = 12, //C
+            TURN_RIGHT = 13, //D
+            TURN_LEFT  = 14, //E
+            DONE       = 100
+} MOTOR_MESSAGE;
+
 bool validData;
 uint8_t debugScheme;
 

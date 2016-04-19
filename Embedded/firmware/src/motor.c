@@ -1,7 +1,5 @@
 #include "motor.h"
 
-MOTOR_DATA motorData;
-
 void INIT_Rover_Motors() 
 {
     //Initialize Motors
@@ -289,4 +287,4 @@ void sendDone(int disOrdeg){
         {
 //            outputEvent(CONTROL_QUEUE_ITEM_SENT);
         }
-}}
+}

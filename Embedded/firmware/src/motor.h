@@ -1,22 +1,17 @@
 #ifndef _MOTOR_H
 #define _MOTOR_H
 
-//#include <stdint.h>
-//#include <stdbool.h>
-//#include <stddef.h>
-//#include <stdlib.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdlib.h>
 #include "system_config.h"
 #include "system_definitions.h"
 #include "app_public.h"
 
-typedef enum {
-    STOP = 0,
-            FORWARD = 11, //B
-            BACKWARD = 12, //C
-            TURN_RIGHT = 13, //D
-            TURN_LEFT  = 14, //E
-            DONE       = 100
-} MOTOR_MESSAGE;
+#include "peripheral/ports/plib_ports.h"
+#include "peripheral/tmr/plib_tmr.h"
+#include "peripheral/oc/plib_oc.h"
 
 typedef enum
 {
@@ -35,8 +30,11 @@ int Mv_speed;
 
 typedef struct
 {
-    MOTOR_STATE state;
+    MOTOR_STATES state;
 } MOTOR_DATA;
+
+MOTOR_DATA motor_data;
+
 //Set up pins and ports to talk to motors and rovers
 void INIT_Rover_Motors();
 
