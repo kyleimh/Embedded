@@ -30,22 +30,6 @@ void SYS_Tasks ( void )
     xTaskCreate((TaskFunction_t) _SENSOR_Tasks,
                 "SENSOR Tasks",
                 1024, NULL, 1, NULL);
-    
-    /* Create timer for 50ms driving */
-    xTimer1 = xTimerCreate("Timer1", 500/portTICK_PERIOD_MS, pdTRUE, (void *)0, vTimerCallback);
-    if( xTimer1 == NULL )
-    {
-        /* TODO: Debug... The timer was not created. */
-        outputEvent(TIMER1_NOT_CREATED);
-    }
-    else
-    {
-        if( xTimerStart( xTimer1, 0 ) != pdPASS )
-        {
-            /* TODO: Debug... The timer could not be set into the Active state. */
-            outputEvent(TIMER1_NOT_STARTED);
-        }
-    }
 
     /**************
      * Start RTOS * 

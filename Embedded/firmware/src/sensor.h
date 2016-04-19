@@ -15,6 +15,12 @@ typedef enum
     SENSOR_STATE_RUN
 } SENSOR_STATES;
 
+bool raw_cm;
+bool push;
+bool wait;
+bool safe;
+bool intersect;
+
 typedef struct
 {
     SENSOR_STATES state;

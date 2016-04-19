@@ -13,11 +13,11 @@
 /* Success debug codes */
 #define INITIALIZE                              200
 
-#define ADC_QUEUE_CREATED                       0
-#define ADC_INTERRUPT_OCCURRED                  1
-#define SENT_TO_ADC_QUEUE                       2
-#define RECEIVED_FROM_ADC_QUEUE                 3
-#define ADC_QUEUE_EMPTY                         4
+#define SENSOR_QUEUE_CREATED                     0
+#define SENSOR_QUEUE_FULL                        1
+#define SENT_TO_SENSOR_QUEUE                     2
+#define SENSOR_QUEUE_ITEM_READY                  3
+#define SENSOR_QUEUE_EMPTY                       4
 
 #define TRANSMIT_QUEUE_CREATED                  10
 #define TRANSMIT_QUEUE_FULL                     11
@@ -43,25 +43,34 @@
 #define USART_ALL_BYTES_RECVD_IN_ISR            43
 #define USART_START_BYTE_RECVD_IN_ISR           44
 
+#define ADC_INTERRUPT_OCCURRED                  51
+
+#define LINE_READING_START                      61
+#define LINE_CAP_CHARGED                        62
+#define LINE_VALID_DATA                         63
+
 /* Error debug codes */
-#define TIMER1_NOT_CREATED                      120
-#define TIMER1_NOT_STARTED                      121
+#define LINETIMER_NOT_CREATED                  120
+#define LINETIMER_NOT_STARTED                  121
+#define READTIMER_NOT_CREATED                  122
+#define READTIMER_NOT_STARTED                  123
+#define READTIMER_NOT_RESET                    124
 
-#define ADC_QUEUE_NOT_CREATED                   130
-#define ADC_QUEUE_FULL                          131
+#define SENSOR_QUEUE_NOT_CREATED               130
 
-#define MOTOR_QUEUE_NOT_CREATED                 140
+#define MOTOR_QUEUE_NOT_CREATED                140
 
-#define CONTROL_QUEUE_NOT_CREATED               150
+#define CONTROL_QUEUE_NOT_CREATED              150
 
-#define TRANSMIT_QUEUE_NOT_CREATED              160
+#define TRANSMIT_QUEUE_NOT_CREATED             160
 
-#define USART_RECV_BUFFER_EMPTY                 170
-#define USART_END_BYTE_NOT_RECVD                171
-#define USART_BAD_MESSAGE                       172
-#define USART_DEFAULT_EXCEPTION                 173
+#define USART_RECV_BUFFER_EMPTY                170
+#define USART_END_BYTE_NOT_RECVD               171
+#define USART_BAD_MESSAGE                      172
+#define USART_DEFAULT_EXCEPTION                173
 
 void outputEvent( uint8_t value  );
+void writeDebug( uint8_t value  );
 
 #endif	/* DEBUG_H */
 

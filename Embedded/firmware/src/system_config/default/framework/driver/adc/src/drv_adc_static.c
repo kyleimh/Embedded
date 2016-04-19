@@ -55,7 +55,7 @@ void DRV_ADC_Initialize(void)
     /* Select Clock Source */
     PLIB_ADC_ConversionClockSourceSelect(DRV_ADC_ID_1, ADC_CLOCK_SOURCE_SYSTEM_CLOCK);
     /* Select Clock Prescaler */
-    PLIB_ADC_ConversionClockSet(DRV_ADC_ID_1, SYS_CLK_FREQ, 320000000);
+    PLIB_ADC_ConversionClockSet(DRV_ADC_ID_1, SYS_CLK_FREQ, 40000);
 
     /* Select Power Mode */
     PLIB_ADC_StopInIdleDisable(DRV_ADC_ID_1);

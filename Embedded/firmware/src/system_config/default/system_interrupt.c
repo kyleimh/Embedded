@@ -12,7 +12,7 @@ MESSAGE received;
 
 void IntHandlerDrvAdc(void)
 {
-    //outputEvent(ADC_INTERRUPT_OCCURRED);
+    outputEvent(ADC_INTERRUPT_OCCURRED);
     
     int i;
     uint16_t irValue = 0;
@@ -23,26 +23,71 @@ void IntHandlerDrvAdc(void)
     for(i=0;i<16;i++)
         irValue += PLIB_ADC_ResultGetByIndex(ADC_ID_1, i);
 
-    
-    irValue = (5461 / (irValue/16)) - 1;
-            
-            
-//    DRV_USART0_WriteByte(irValue >> 8);
-//    DRV_USART0_WriteByte(irValue);
+    irValue = irValue/16;
     
     BaseType_t xToken; 
     xToken = pdFALSE;
     
-    if( xQueueOverwriteFromISR(xQueueADC, (void *)&irValue, &xToken ) != pdPASS )
+    MESSAGE adcValue;
+    adcValue.id = 0x73;
+    adcValue.msg = 0x11;
+    adcValue.data1 = irValue >> 8;
+    adcValue.data2 = irValue;    
+    
+    if( xQueueSendToBackFromISR(sensorQueue, (void *)&adcValue, &xToken ) != pdPASS )
     {
-        outputEvent(ADC_QUEUE_FULL);
+        outputEvent(SENSOR_QUEUE_FULL);
     }
     else
     {
-        outputEvent(SENT_TO_ADC_QUEUE);
+        outputEvent(SENT_TO_SENSOR_QUEUE);
     }
     /* Clear ADC Interrupt Flag */
     PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_ADC_1);
+}
+
+void IntHandlerDrvTmrInstance0(void) 
+{   
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_TIMER_2);
+    
+    //Don't care about the timer 2 interrupts! :D 
+    //Clear flag and keep moving! 
+}
+
+//check that I used the right timers
+void IntHandlerDrvTmrInstance1(void) 
+{
+    R_encoder++;
+    //Toggle the Bit when timer callback is called
+    int curr = SYS_PORTS_PinRead(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3);
+    
+//    MESSAGE ctrlMsgSend;
+//        ctrlMsgSend.id    = 0x32;
+//        ctrlMsgSend.msg   = 0x41;
+//        ctrlMsgSend.data1 = L_encoder;
+//        ctrlMsgSend.data2 = R_encoder;
+//        USART_send(ctrlMsgSend);
+        
+//    if (curr == 0) {
+//        SYS_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3);
+//    } else {
+//        SYS_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3);
+//    }
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_TIMER_3);
+}
+
+void IntHandlerDrvTmrInstance2(void)
+{
+    
+    L_encoder++;
+//    MESSAGE ctrlMsgSend;
+//        ctrlMsgSend.id    = 0x32;
+//        ctrlMsgSend.msg   = 0x40;
+//        ctrlMsgSend.data1 = L_encoder;
+//        ctrlMsgSend.data2 = R_encoder;
+//        USART_send(ctrlMsgSend);
+
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_TIMER_4);
 }
 
 void IntHandlerDrvUsartInstance0(void)
@@ -121,13 +166,24 @@ void IntHandlerDrvUsartInstance0(void)
         }
         else if( bytesRecvd == 5 && (DRV_USART0_ReceiverBufferIsEmpty()) )
         {
-            if (xQueueSendFromISR(controlQueue, &received, &xHigherPriorityTaskWoken) == pdFALSE) 
-            {
-                outputEvent(CONTROL_QUEUE_FULL);
-            } 
-            else 
-            {
-                outputEvent(CONTROL_QUEUE_ITEM_SENT_FROM_USART_INT);
+            if(received.id == 0x53){
+                if (xQueueSendToFrontFromISR(sensorQueue, &received, &xHigherPriorityTaskWoken) == pdFALSE) 
+                {
+                    outputEvent(SENSOR_QUEUE_FULL);
+                } 
+                else 
+                {
+                    outputEvent(SENT_TO_SENSOR_QUEUE);
+                }
+            }else{
+                if (xQueueSendFromISR(controlQueue, &received, &xHigherPriorityTaskWoken) == pdFALSE) 
+                {
+                    outputEvent(CONTROL_QUEUE_FULL);
+                } 
+                else 
+                {
+                    outputEvent(CONTROL_QUEUE_ITEM_SENT_FROM_USART_INT);
+                }
             }
             bytesRecvd = 0;
         }

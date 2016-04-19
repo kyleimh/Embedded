@@ -7,15 +7,44 @@ void SENSOR_Initialize ( void )
 {
     sensorData.state = SENSOR_STATE_INIT;
     
-    xQueueADC = xQueueCreate( 1, sizeof(uint16_t) );
-    if( xQueueADC == 0 )
+    sensorQueue = xQueueCreate( 16, sizeof(MESSAGE) );
+    if( sensorQueue == 0 )
     {
-        outputEvent(ADC_QUEUE_NOT_CREATED);
+        outputEvent(SENSOR_QUEUE_NOT_CREATED);
     }
     else
     {
-        outputEvent(ADC_QUEUE_CREATED);
+        outputEvent(SENSOR_QUEUE_CREATED);
     }
+    
+    raw_cm = true;
+    push = false;
+    safe = true;
+    wait = false;
+    intersect = false;
+    if(enableADC){
+        DRV_ADC_Open();
+    }else{
+        DRV_ADC_Close();
+    }            
+
+    if(enableLineSensor){
+        /* Create timer for line sensor */
+        lineTimer = xTimerCreate("lineTimer", 8/portTICK_PERIOD_MS, pdFALSE, (void *)0, lineTimerCallback);
+        if( lineTimer == NULL ){
+            outputEvent(LINETIMER_NOT_CREATED);
+        }else{
+            if( xTimerStart( lineTimer, 0 ) != pdPASS ){
+                outputEvent(LINETIMER_NOT_STARTED);
+            }
+        }
+        readTimer = xTimerCreate("readTimer", 2/portTICK_PERIOD_MS, pdFALSE, (void *)0, readTimerCallback);        
+        if( lineTimer == NULL ){
+            outputEvent(READTIMER_NOT_CREATED);
+        }
+    }
+    
+    
 }
 
 void SENSOR_Tasks ( void )
@@ -26,25 +55,94 @@ void SENSOR_Tasks ( void )
         /* Application's initial state. */
         case SENSOR_STATE_INIT:
         {
-            DRV_ADC_Open();
             sensorData.state = SENSOR_STATE_RUN;
             break;
         }
         case SENSOR_STATE_RUN:
         {
-            uint16_t queueByte;
-            if( xQueueReceive( xQueueADC, &queueByte, portMAX_DELAY ) != pdTRUE )
+            MESSAGE sensorMsgRecv;
+            if( xQueueReceive( sensorQueue, &sensorMsgRecv, portMAX_DELAY ) != pdTRUE )
             {
-                outputEvent(ADC_QUEUE_EMPTY);
+                outputEvent(SENSOR_QUEUE_EMPTY);
             }
             else
             {
-                sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
-                sensorMsg.msg   = 0x0;
-                sensorMsg.data1 = queueByte & 0xFF;          //Lower byte
-                sensorMsg.data2 = (queueByte & 0xFF00) >> 8; //Upper byte
-                xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
-                //outputEvent(RECEIVED_FROM_ADC_QUEUE);     
+                outputEvent(SENSOR_QUEUE_ITEM_READY);
+                if(sensorMsgRecv.id == 0x53){
+                    if(sensorMsgRecv.msg == 0x15){
+                        raw_cm = false;
+                    }
+                    else if(sensorMsgRecv.msg == 0x16){
+                        raw_cm = true;
+                    }
+                    else if(sensorMsgRecv.msg == 0x17){
+                        push = !push;
+                        if(push)
+                            DRV_ADC_Close();
+                        else
+                            DRV_ADC_Open();
+                    }
+                    else if(sensorMsgRecv.msg == 0x18){
+                        wait = !wait;
+                    }
+                }else if(sensorMsgRecv.id == 0x63){
+                    sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                    sensorMsg.msg   = 0x22; // LineSensorData
+                    sensorMsg.data1 = sensorMsgRecv.data1;
+                    sensorMsg.data2 = 0x0;
+                    xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
+                    if(sensorMsgRecv.data1 == 0xFF && !intersect){
+                        intersect = true;
+                        sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                        sensorMsg.msg   = 0x24; // Line Intersection
+                        sensorMsg.data1 = 0x0;
+                        sensorMsg.data2 = 0x0;
+                        xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
+                    }else if(sensorMsgRecv.data1 < 180 && intersect){
+                        intersect = false;
+                    }
+                }                
+                else if(sensorMsgRecv.id == 0x73){
+                    uint16_t dist = (sensorMsgRecv.data1 << 8) + sensorMsgRecv.data2;
+                    if(dist < 100)
+                        dist = 100;
+                    else if(dist > 830)
+                        dist = 830;
+                    
+                    uint16_t distCM = (4096 / (dist - 10));
+                    
+                    
+                    if(distCM == 4 && safe){
+                        safe = false;
+                        sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                        sensorMsg.msg   = 0x20; // Not Safe
+                        sensorMsg.data1 = 0x0;
+                        sensorMsg.data2 = 0x0;
+                        xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 ); 
+                    }
+                    else if(distCM > 4 && !safe){
+                        safe = true;
+                        sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                        sensorMsg.msg   = 0x21; // Safe
+                        sensorMsg.data1 = 0x0;
+                        sensorMsg.data2 = 0x0;
+                        xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 ); 
+                    }
+                    if(raw_cm){
+                        sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                        sensorMsg.msg   = 0x23; 
+                        sensorMsg.data1 = distCM & 0xFF;          //Lower byte
+                        sensorMsg.data2 = (distCM & 0xFF00) >> 8; //Upper byte
+                        xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 ); 
+                    }else{
+                        sensorMsg.id    = 0x32; //From sensor thread(3), To control thread(2)
+                        sensorMsg.msg   = 0x23; 
+                        sensorMsg.data1 = dist & 0xFF;          //Lower byte
+                        sensorMsg.data2 = (dist & 0xFF00) >> 8; //Upper byte
+                        xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 ); 
+                    }
+                    
+                }
             }
             break;
         }

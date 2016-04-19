@@ -135,16 +135,35 @@ void SYS_Initialize ( void* data )
     /* Initialize Drivers */
     /* Initialize ADC */
     DRV_ADC_Initialize();
+    /*Initialize TMR0 */
+    DRV_TMR0_Initialize();
+    /*Initialize TMR1 */
+    DRV_TMR1_Initialize();
+    /*Initialize TMR2 */
+    DRV_TMR2_Initialize();
+ 
     DRV_USART0_Initialize();
+    
+     /*Initialize OC0 */
+    DRV_OC0_Initialize();
+
+    /*Initialize OC1 */
+    DRV_OC1_Initialize();
 
     /* Initialize System Services */
     SYS_INT_Initialize();  
 
+    
+    SYS_PORTS_PinModeSelect(PORTS_ID_0, PORTS_ANALOG_PIN_11, PORTS_PIN_MODE_DIGITAL);
+    SYS_PORTS_PinModeSelect(PORTS_ID_0, PORTS_ANALOG_PIN_12, PORTS_PIN_MODE_DIGITAL);
+    SYS_PORTS_PinModeSelect(PORTS_ID_0, PORTS_ANALOG_PIN_13, PORTS_PIN_MODE_DIGITAL);
+    
     SYS_PORTS_DirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_A, 0x8);
     SYS_PORTS_Set(PORTS_ID_0, PORT_CHANNEL_A, 0x8, 0x8);
     SYS_PORTS_DirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_E, 0xFF);
     SYS_PORTS_Clear(PORTS_ID_0, PORT_CHANNEL_E, 0xFF);
     
+    debugScheme = 0;
     outputEvent(INITIALIZE);
     /* Initialize Middleware */
 

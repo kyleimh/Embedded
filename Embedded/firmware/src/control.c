@@ -56,39 +56,27 @@ void CONTROL_Tasks ( void )
                     {
                         SYS_PORTS_Set(PORTS_ID_0, PORT_CHANNEL_A, mask, mask);
                     }
-                    else
-                    {
-                        
-                    }
-                    /* Send response "KYLE" */
-                    ctrlMsgSend.id    = 'K';
-                    ctrlMsgSend.msg   = 'Y';
-                    ctrlMsgSend.data1 = 'L';
-                    ctrlMsgSend.data2 = 'E';
-                    USART_send(ctrlMsgSend);
                 } 
-                else if ( ctrlMsgRecv.id == 0x31 ) 
-                {
-                    if (xQueueSendToBack(motorQueue, (void *)&ctrlMsgRecv, (TickType_t)10) == pdFALSE) 
-                    {
-                        outputEvent(MOTOR_QUEUE_FULL);
-                    } 
-                    else
-                    {
-                        outputEvent(MOTOR_QUEUE_ITEM_SENT);
-                    }
-                }
                 else if ( ctrlMsgRecv.id == 0x32 ) 
                 {
                     counter++;
                     if(counter > 0)
                     {
                         ctrlMsgSend.id    = 0x31;
-                        ctrlMsgSend.msg   = 0x0;
+                        ctrlMsgSend.msg   = ctrlMsgRecv.msg;
                         ctrlMsgSend.data1 = ctrlMsgRecv.data1;
                         ctrlMsgSend.data2 = ctrlMsgRecv.data2;
                         USART_send(ctrlMsgSend);
                         counter = 0;
+                    }
+                }else if ( ctrlMsgRecv.id == 0x58 ) 
+                {
+                    if(ctrlMsgRecv.msg == 0x40){ //Set debug scheme to ALL
+                        debugScheme = 0;
+                    }else if(ctrlMsgRecv.msg == 0x41){ //Set debug scheme to only ADC
+                        debugScheme = 1;
+                    }else if(ctrlMsgRecv.msg == 0x42){ //Set debug scheme to only LINE
+                        debugScheme = 2;
                     }
                 }
                 else
