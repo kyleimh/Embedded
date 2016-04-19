@@ -56,6 +56,16 @@ void CONTROL_Tasks ( void )
                     {
                         SYS_PORTS_Set(PORTS_ID_0, PORT_CHANNEL_A, mask, mask);
                     }
+                } else if ( ctrlMsgRecv.id == 0x31 ) 
+                {
+                    if (xQueueSendToBack(motorQueue, (void *)&ctrlMsgRecv, (TickType_t)10) == pdFALSE) 
+                    {
+                        outputEvent(MOTOR_QUEUE_FULL);
+                    } 
+                    else
+                    {
+                        outputEvent(MOTOR_QUEUE_ITEM_SENT);
+                    }
                 } 
                 else if ( (ctrlMsgRecv.id & 0x40) == 0x40 ) 
                 {
