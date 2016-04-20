@@ -110,16 +110,16 @@ void SENSOR_Tasks ( void )
                         adjusting = true;
                         sensorMsg.id    = 0x23; //To motor thread(2), From sensor thread(3)
                         sensorMsg.msg   = 11; // Forward
-                        sensorMsg.data1 = 12;
-                        sensorMsg.data2 = 11;
+                        sensorMsg.data1 = 10;
+                        sensorMsg.data2 = 12;
                         //xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
                     }else if(sensorMsgRecv.data1 == 0x03&& !adjusting){
                         intersect = false;
                         adjusting = true;
                         sensorMsg.id    = 0x23; //To motor thread(2), From sensor thread(3)
                         sensorMsg.msg   = 11; // Forward
-                        sensorMsg.data1 = 11;
-                        sensorMsg.data2 = 12;
+                        sensorMsg.data1 = 12;
+                        sensorMsg.data2 = 10;
                         //xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
                     }else if (sensorMsgRecv.data1 != 0xFF && intersect){
                         intersect = false;
