@@ -176,163 +176,158 @@ kseg0 Program-Memory Usage
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
 .text                   0x9d000000          0xd40        3392  App's exec code 
-.text.SENSOR_Tasks      0x9d000d40          0x3a0         928   
-.text.xTaskGenericCreat 0x9d0010e0          0x2e0         736   
-.text.IntHandlerDrvUsar 0x9d0013c0          0x2ac         684   
-.text.readTimerCallback 0x9d00166c          0x2a4         676   
-.text.xQueueGenericRece 0x9d001910          0x258         600   
-.text.prvTimerTask      0x9d001b68          0x248         584   
-.text.xQueueGenericSend 0x9d001db0          0x20c         524   
-.text.lineTimerCallback 0x9d001fbc          0x1bc         444   
-.DrvAdc_vector_text     0x9d002178          0x1b4         436   
-.DrvTmrInstance0_vector 0x9d00232c          0x1b4         436   
-.DrvTmrInstance1_vector 0x9d0024e0          0x1b4         436   
-.DrvTmrInstance2_vector 0x9d002694          0x1b4         436   
-.DrvUsartInstance0_vect 0x9d002848          0x1b4         436   
-.text.MOTOR_Tasks       0x9d0029fc          0x1a4         420   
-.text.xTaskIncrementTic 0x9d002ba0          0x168         360   
-.text                   0x9d002d08          0x168         360  App's exec code 
-.text.CONTROL_Tasks     0x9d002e70          0x160         352   
-.text.xTaskResumeAll    0x9d002fd0          0x15c         348   
-.text.SYS_Initialize    0x9d00312c          0x130         304   
-.text.vTaskPriorityInhe 0x9d00325c          0x12c         300   
-.text.DRV_ADC_Initializ 0x9d003388          0x12c         300   
-.rodata                 0x9d0034b4          0x128         296  Read-only const 
-.text.SENSOR_Initialize 0x9d0035dc          0x11c         284   
-.text.prvSampleTimeNow  0x9d0036f8          0x10c         268   
-.text.DRV_USART0_Initia 0x9d003804          0x108         264   
-.text.prvUnlockQueue    0x9d00390c          0x104         260   
-.text.prvCopyDataToQueu 0x9d003a10           0xfc         252   
-.text.vTaskSwitchContex 0x9d003b0c           0xf8         248   
-.text.xTaskPriorityDisi 0x9d003c04           0xf4         244   
-.text.xQueueGenericSend 0x9d003cf8           0xe0         224   
-.text.general_exception 0x9d003dd8           0xdc         220   
-.text.SYS_Tasks         0x9d003eb4           0xd8         216   
-.text.SYS_DEVCON_Perfor 0x9d003f8c           0xd0         208   
-.text.xQueueReceiveFrom 0x9d00405c           0xcc         204   
-.text.xQueueGenericRese 0x9d004128           0xc8         200   
-.dinit                  0x9d0041f0           0xc0         192   
-.text.xTaskRemoveFromEv 0x9d0042b0           0xbc         188   
-.text.IntHandlerDrvAdc  0x9d00436c           0xbc         188   
-.text.pvPortMalloc      0x9d004428           0xb8         184   
-.text.prvIdleTask       0x9d0044e0           0xb4         180   
-.text                   0x9d004594           0xa8         168  App's exec code 
-.text.xTaskCheckForTime 0x9d00463c           0xa0         160   
-.text                   0x9d0046dc           0x98         152  App's exec code 
-.text.MOTOR_Initialize  0x9d004774           0x94         148   
-.text.vTaskPlaceOnEvent 0x9d004808           0x94         148   
-.text.vTaskStartSchedul 0x9d00489c           0x90         144   
-.text.xTimerCreate      0x9d00492c           0x90         144   
-.text.xTimerGenericComm 0x9d0049bc           0x8c         140   
-.text.move_Backward     0x9d004a48           0x88         136   
-.text.move_Forward      0x9d004ad0           0x88         136   
-.text.xQueueGenericCrea 0x9d004b58           0x84         132   
-.text.DRV_TMR2_Initiali 0x9d004bdc           0x84         132   
-.text.INIT_Rover_Motors 0x9d004c60           0x80         128   
-.text.outputEvent       0x9d004ce0           0x80         128   
-.text.DRV_TMR1_Initiali 0x9d004d60           0x7c         124   
-.text.SYS_PORTS_PinDire 0x9d004ddc           0x78         120   
-.text.DRV_TMR0_Initiali 0x9d004e54           0x78         120   
-.text.move_Turn_Left    0x9d004ecc           0x74         116   
-.text.move_Turn_Right   0x9d004f40           0x74         116   
-.text.vQueueWaitForMess 0x9d004fb4           0x74         116   
-.text.prvCheckForValidL 0x9d005028           0x74         116   
-.text.prvInsertTimerInA 0x9d00509c           0x74         116   
-.text.prvAddCurrentTask 0x9d005110           0x70         112   
-.text.SYS_PORTS_Directi 0x9d005180           0x6c         108   
-.text.vTaskPlaceOnEvent 0x9d0051ec           0x6c         108   
-.text.vApplicationSetup 0x9d005258           0x6c         108   
-.text.xPortStartSchedul 0x9d0052c4           0x6c         108   
-.text.DRV_OC0_Initializ 0x9d005330           0x64         100   
-.text.DRV_OC1_Initializ 0x9d005394           0x64         100   
-.text.vTaskExitCritical 0x9d0053f8           0x5c          92   
-.text.USART_send        0x9d005454           0x58          88   
-.text.xTimerCreateTimer 0x9d0054ac           0x58          88   
-.text.SYS_CLK_Initializ 0x9d005504           0x58          88   
-.text.vListInsert       0x9d00555c           0x54          84   
-.text.vPortIncrementTic 0x9d0055b0           0x54          84   
-.text.CONTROL_Initializ 0x9d005604           0x50          80   
-.text.main_entry        0x9d005654           0x4c          76   
-.text.SYS_DEVCON_System 0x9d0056a0           0x4c          76   
-.text.prvCopyDataFromQu 0x9d0056ec           0x4c          76   
-.text.setDegree         0x9d005738           0x48          72   
-.text.USART_init        0x9d005780           0x44          68   
-.text.SYS_PORTS_PinRead 0x9d0057c4           0x44          68   
-.text.uxListRemove      0x9d005808           0x44          68   
-.text.vTaskEnterCritica 0x9d00584c           0x44          68   
-.text.pxPortInitialiseS 0x9d005890           0x44          68   
-.text                   0x9d0058d4           0x44          68  App's exec code 
-.text.sendDone          0x9d005918           0x40          64   
-.text.setDistance       0x9d005958           0x3c          60   
-.text.writeDebug        0x9d005994           0x3c          60   
-.text.SYS_DEVCON_System 0x9d0059d0           0x3c          60   
-.text.IntHandlerDrvTmrI 0x9d005a0c           0x3c          60   
-.text.SYS_PORTS_Set     0x9d005a48           0x38          56   
-.text.SYS_PORTS_PinSet  0x9d005a80           0x38          56   
-.text.SYS_PORTS_PinClea 0x9d005ab8           0x38          56   
-.text.prvResetNextTaskU 0x9d005af0           0x38          56   
-.rodata                 0x9d005b28           0x38          56  Read-only const 
-.text._bootstrap_except 0x9d005b60           0x38          56   
-.text.SYS_PORTS_Clear   0x9d005b98           0x34          52   
-.text.SYS_PORTS_Toggle  0x9d005bcc           0x34          52   
-.text._general_exceptio 0x9d005c00           0x34          52   
-.text.SYS_PORTS_Read    0x9d005c34           0x30          48   
-.text.SYS_PORTS_PinMode 0x9d005c64           0x30          48   
-.text.vListInsertEnd    0x9d005c94           0x30          48   
-.text.uxPortSetInterrup 0x9d005cc4           0x30          48   
-.text.SYS_PORTS_Initial 0x9d005cf4           0x30          48   
-.vector_default         0x9d005d24           0x30          48   
-.text.SYS_PORTS_Write   0x9d005d54           0x2c          44   
-.text.DRV_USART0_ReadBy 0x9d005d80           0x2c          44   
-.text.DRV_USART0_WriteB 0x9d005dac           0x2c          44   
-.text.pvTaskIncrementMu 0x9d005dd8           0x28          40   
-.text.prvTaskExitError  0x9d005e00           0x24          36   
-.text.vApplicationStack 0x9d005e24           0x24          36   
-.text.vApplicationMallo 0x9d005e48           0x24          36   
-.text.main              0x9d005e6c           0x20          32   
-.text.vListInitialise   0x9d005e8c           0x20          32   
-.text.xTaskGetScheduler 0x9d005eac           0x20          32   
-.text.IntHandlerDrvTmrI 0x9d005ecc           0x20          32   
-.text._SYS_Tasks        0x9d005eec           0x20          32   
-.text.SYS_DEVCON_JTAGDi 0x9d005f0c           0x1c          28   
-.rodata                 0x9d005f28           0x1c          28  Read-only const 
-.text.move_Stop         0x9d005f44           0x18          24   
-.rodata                 0x9d005f5c           0x18          24  Read-only const 
-.text._SENSOR_Tasks     0x9d005f74           0x18          24   
-.text._MOTOR_Tasks      0x9d005f8c           0x18          24   
-.text._CONTROL_Tasks    0x9d005fa4           0x18          24   
-.text                   0x9d005fbc           0x18          24  App's exec code 
-.text.SYS_DEVCON_Initia 0x9d005fd4           0x14          20   
-.text.SYS_INT_Initializ 0x9d005fe8           0x14          20   
-.text.vTaskSuspendAll   0x9d005ffc           0x14          20   
-.text.vTaskSetTimeOutSt 0x9d006010           0x14          20   
-.text.DRV_ADC_Open      0x9d006024           0x14          20   
-.text.DRV_ADC_Close     0x9d006038           0x14          20   
-.text.DRV_OC0_Enable    0x9d00604c           0x14          20   
-.text.DRV_OC0_Start     0x9d006060           0x14          20   
-.text.DRV_OC1_Enable    0x9d006074           0x14          20   
-.text.DRV_OC1_Start     0x9d006088           0x14          20   
-.text.DRV_TMR0_Start    0x9d00609c           0x14          20   
-.text.DRV_TMR1_Start    0x9d0060b0           0x14          20   
-.text.DRV_TMR2_Start    0x9d0060c4           0x14          20   
-.text.DRV_USART0_Receiv 0x9d0060d8           0x14          20   
-.text.IntHandlerDrvTmrI 0x9d0060ec           0x14          20   
-.text.vTaskMissedYield  0x9d006100           0x10          16   
-.text.vPortClearInterru 0x9d006110           0x10          16   
-.text.setSpeed          0x9d006120            0xc          12   
-.text.xQueueIsQueueEmpt 0x9d00612c            0xc          12   
-.text.xTaskGetTickCount 0x9d006138            0xc          12   
-.text.SYS_CLK_SystemFre 0x9d006144            0xc          12   
-.text.SYS_CLK_Periphera 0x9d006150            0xc          12   
-.rodata                 0x9d00615c            0x8           8  Read-only const 
-.text.SYS_DEVCON_Tasks  0x9d006164            0x8           8   
-.text.vListInitialiseIt 0x9d00616c            0x8           8   
-.rodata                 0x9d006174            0x8           8  Read-only const 
-.text.vPortFree         0x9d00617c            0x8           8   
-.text._on_reset         0x9d006184            0x8           8   
-.text._on_bootstrap     0x9d00618c            0x8           8   
-.rodata                 0x9d006194            0x8           8  Read-only const 
-      Total kseg0_program_mem used  :      0x619c       24988  4.8% of 0x80000
+.text.SENSOR_Tasks      0x9d000d40          0x3d4         980   
+.text.IntHandlerDrvUsar 0x9d001114          0x2f4         756   
+.text.xTaskGenericCreat 0x9d001408          0x2e0         736   
+.text.xQueueGenericRece 0x9d0016e8          0x258         600   
+.text.prvTimerTask      0x9d001940          0x248         584   
+.text.xQueueGenericSend 0x9d001b88          0x20c         524   
+.DrvAdc_vector_text     0x9d001d94          0x1b4         436   
+.DrvTmrInstance0_vector 0x9d001f48          0x1b4         436   
+.DrvTmrInstance1_vector 0x9d0020fc          0x1b4         436   
+.DrvTmrInstance2_vector 0x9d0022b0          0x1b4         436   
+.DrvUsartInstance0_vect 0x9d002464          0x1b4         436   
+.text.MOTOR_Tasks       0x9d002618          0x1a0         416   
+.text.xTaskIncrementTic 0x9d0027b8          0x168         360   
+.text                   0x9d002920          0x168         360  App's exec code 
+.text.xTaskResumeAll    0x9d002a88          0x15c         348   
+.text.CONTROL_Tasks     0x9d002be4          0x14c         332   
+.text.SYS_Initialize    0x9d002d30          0x130         304   
+.text.vTaskPriorityInhe 0x9d002e60          0x12c         300   
+.text.DRV_ADC_Initializ 0x9d002f8c          0x12c         300   
+.rodata                 0x9d0030b8          0x128         296  Read-only const 
+.text.prvSampleTimeNow  0x9d0031e0          0x10c         268   
+.text.DRV_USART0_Initia 0x9d0032ec          0x108         264   
+.text.prvUnlockQueue    0x9d0033f4          0x104         260   
+.text.prvCopyDataToQueu 0x9d0034f8           0xfc         252   
+.text.vTaskSwitchContex 0x9d0035f4           0xf8         248   
+.text.xTaskPriorityDisi 0x9d0036ec           0xf4         244   
+.text.xQueueGenericSend 0x9d0037e0           0xe0         224   
+.text.general_exception 0x9d0038c0           0xdc         220   
+.text.SYS_Tasks         0x9d00399c           0xd8         216   
+.text.SYS_DEVCON_Perfor 0x9d003a74           0xd0         208   
+.text.xQueueReceiveFrom 0x9d003b44           0xcc         204   
+.text.xQueueGenericRese 0x9d003c10           0xc8         200   
+.dinit                  0x9d003cd8           0xc0         192   
+.text.xTaskRemoveFromEv 0x9d003d98           0xbc         188   
+.text.IntHandlerDrvAdc  0x9d003e54           0xbc         188   
+.text.pvPortMalloc      0x9d003f10           0xb8         184   
+.text.prvIdleTask       0x9d003fc8           0xb4         180   
+.text                   0x9d00407c           0xa8         168  App's exec code 
+.text.xTaskCheckForTime 0x9d004124           0xa0         160   
+.text                   0x9d0041c4           0x98         152  App's exec code 
+.text.MOTOR_Initialize  0x9d00425c           0x94         148   
+.text.vTaskPlaceOnEvent 0x9d0042f0           0x94         148   
+.text.vTaskStartSchedul 0x9d004384           0x90         144   
+.text.xTimerGenericComm 0x9d004414           0x8c         140   
+.text.move_Backward     0x9d0044a0           0x88         136   
+.text.move_Forward      0x9d004528           0x88         136   
+.text.xQueueGenericCrea 0x9d0045b0           0x84         132   
+.text.DRV_TMR2_Initiali 0x9d004634           0x84         132   
+.text.INIT_Rover_Motors 0x9d0046b8           0x80         128   
+.text.outputEvent       0x9d004738           0x80         128   
+.text.DRV_TMR1_Initiali 0x9d0047b8           0x7c         124   
+.text.SYS_PORTS_PinDire 0x9d004834           0x78         120   
+.text.DRV_TMR0_Initiali 0x9d0048ac           0x78         120   
+.text.move_Turn_Left    0x9d004924           0x74         116   
+.text.move_Turn_Right   0x9d004998           0x74         116   
+.text.vQueueWaitForMess 0x9d004a0c           0x74         116   
+.text.prvCheckForValidL 0x9d004a80           0x74         116   
+.text.prvInsertTimerInA 0x9d004af4           0x74         116   
+.text.prvAddCurrentTask 0x9d004b68           0x70         112   
+.text.SYS_PORTS_Directi 0x9d004bd8           0x6c         108   
+.text.vTaskPlaceOnEvent 0x9d004c44           0x6c         108   
+.text.vApplicationSetup 0x9d004cb0           0x6c         108   
+.text.xPortStartSchedul 0x9d004d1c           0x6c         108   
+.text.SENSOR_Initialize 0x9d004d88           0x64         100   
+.text.DRV_OC0_Initializ 0x9d004dec           0x64         100   
+.text.DRV_OC1_Initializ 0x9d004e50           0x64         100   
+.text.vTaskExitCritical 0x9d004eb4           0x5c          92   
+.text.USART_send        0x9d004f10           0x58          88   
+.text.xTimerCreateTimer 0x9d004f68           0x58          88   
+.text.SYS_CLK_Initializ 0x9d004fc0           0x58          88   
+.text.vListInsert       0x9d005018           0x54          84   
+.text.vPortIncrementTic 0x9d00506c           0x54          84   
+.text.CONTROL_Initializ 0x9d0050c0           0x50          80   
+.text.main_entry        0x9d005110           0x4c          76   
+.text.SYS_DEVCON_System 0x9d00515c           0x4c          76   
+.text.prvCopyDataFromQu 0x9d0051a8           0x4c          76   
+.text.setDegree         0x9d0051f4           0x48          72   
+.text.USART_init        0x9d00523c           0x44          68   
+.text.writeDebug        0x9d005280           0x44          68   
+.text.SYS_PORTS_PinRead 0x9d0052c4           0x44          68   
+.text.uxListRemove      0x9d005308           0x44          68   
+.text.vTaskEnterCritica 0x9d00534c           0x44          68   
+.text.pxPortInitialiseS 0x9d005390           0x44          68   
+.text                   0x9d0053d4           0x44          68  App's exec code 
+.text.sendDone          0x9d005418           0x40          64   
+.text.setDistance       0x9d005458           0x3c          60   
+.text.SYS_DEVCON_System 0x9d005494           0x3c          60   
+.text.IntHandlerDrvTmrI 0x9d0054d0           0x3c          60   
+.text.SYS_PORTS_Set     0x9d00550c           0x38          56   
+.text.SYS_PORTS_PinClea 0x9d005544           0x38          56   
+.text.prvResetNextTaskU 0x9d00557c           0x38          56   
+.rodata                 0x9d0055b4           0x38          56  Read-only const 
+.text._bootstrap_except 0x9d0055ec           0x38          56   
+.text.SYS_PORTS_Clear   0x9d005624           0x34          52   
+.text.SYS_PORTS_Toggle  0x9d005658           0x34          52   
+.text._general_exceptio 0x9d00568c           0x34          52   
+.text.SYS_PORTS_Read    0x9d0056c0           0x30          48   
+.text.SYS_PORTS_PinMode 0x9d0056f0           0x30          48   
+.text.vListInsertEnd    0x9d005720           0x30          48   
+.text.uxPortSetInterrup 0x9d005750           0x30          48   
+.text.SYS_PORTS_Initial 0x9d005780           0x30          48   
+.vector_default         0x9d0057b0           0x30          48   
+.text.SYS_PORTS_Write   0x9d0057e0           0x2c          44   
+.text.DRV_USART0_ReadBy 0x9d00580c           0x2c          44   
+.text.DRV_USART0_WriteB 0x9d005838           0x2c          44   
+.text.pvTaskIncrementMu 0x9d005864           0x28          40   
+.text.prvTaskExitError  0x9d00588c           0x24          36   
+.text.vApplicationStack 0x9d0058b0           0x24          36   
+.text.vApplicationMallo 0x9d0058d4           0x24          36   
+.text.main              0x9d0058f8           0x20          32   
+.text.vListInitialise   0x9d005918           0x20          32   
+.text.xTaskGetScheduler 0x9d005938           0x20          32   
+.text.IntHandlerDrvTmrI 0x9d005958           0x20          32   
+.text._SYS_Tasks        0x9d005978           0x20          32   
+.text.SYS_DEVCON_JTAGDi 0x9d005998           0x1c          28   
+.rodata                 0x9d0059b4           0x1c          28  Read-only const 
+.text.move_Stop         0x9d0059d0           0x18          24   
+.text._SENSOR_Tasks     0x9d0059e8           0x18          24   
+.text._MOTOR_Tasks      0x9d005a00           0x18          24   
+.text._CONTROL_Tasks    0x9d005a18           0x18          24   
+.text                   0x9d005a30           0x18          24  App's exec code 
+.text.SYS_DEVCON_Initia 0x9d005a48           0x14          20   
+.text.SYS_INT_Initializ 0x9d005a5c           0x14          20   
+.text.vTaskSuspendAll   0x9d005a70           0x14          20   
+.text.vTaskSetTimeOutSt 0x9d005a84           0x14          20   
+.text.DRV_ADC_Open      0x9d005a98           0x14          20   
+.text.DRV_ADC_Close     0x9d005aac           0x14          20   
+.text.DRV_OC0_Enable    0x9d005ac0           0x14          20   
+.text.DRV_OC0_Start     0x9d005ad4           0x14          20   
+.text.DRV_OC1_Enable    0x9d005ae8           0x14          20   
+.text.DRV_OC1_Start     0x9d005afc           0x14          20   
+.text.DRV_TMR0_Start    0x9d005b10           0x14          20   
+.text.DRV_TMR1_Start    0x9d005b24           0x14          20   
+.text.DRV_TMR2_Start    0x9d005b38           0x14          20   
+.text.DRV_USART0_Receiv 0x9d005b4c           0x14          20   
+.text.IntHandlerDrvTmrI 0x9d005b60           0x14          20   
+.text.vTaskMissedYield  0x9d005b74           0x10          16   
+.text.vPortClearInterru 0x9d005b84           0x10          16   
+.text.setSpeed          0x9d005b94            0xc          12   
+.text.xQueueIsQueueEmpt 0x9d005ba0            0xc          12   
+.text.xTaskGetTickCount 0x9d005bac            0xc          12   
+.text.SYS_CLK_SystemFre 0x9d005bb8            0xc          12   
+.text.SYS_CLK_Periphera 0x9d005bc4            0xc          12   
+.rodata                 0x9d005bd0            0x8           8  Read-only const 
+.text.SYS_DEVCON_Tasks  0x9d005bd8            0x8           8   
+.text.vListInitialiseIt 0x9d005be0            0x8           8   
+.rodata                 0x9d005be8            0x8           8  Read-only const 
+.text.vPortFree         0x9d005bf0            0x8           8   
+.text._on_reset         0x9d005bf8            0x8           8   
+.text._on_bootstrap     0x9d005c00            0x8           8   
+.rodata                 0x9d005c08            0x8           8  Read-only const 
+      Total kseg0_program_mem used  :      0x5c10       23568  4.5% of 0x80000
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -416,7 +411,7 @@ section                    address  length [bytes]      (dec)  Description
 .bev_excpt              0xbfc00380           0x10          16  BEV-Exception 
          Total kseg1_boot_mem used  :       0x1f8         504  43.2% of 0x490
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x65cc       26060  4.9% of 0x81e00
+         Total Program Memory used  :      0x6040       24640  4.6% of 0x81e00
         --------------------------------------------------------------------------
 
 
@@ -475,6 +470,10 @@ Discarded input sections
  .data          0x00000000        0x0 build/default/production/_ext/1360937237/timerCallbacks.o
  .bss           0x00000000        0x0 build/default/production/_ext/1360937237/timerCallbacks.o
  .reginfo       0x00000000       0x18 build/default/production/_ext/1360937237/timerCallbacks.o
+ .text.lineTimerCallback
+                0x00000000      0x1bc build/default/production/_ext/1360937237/timerCallbacks.o
+ .text.readTimerCallback
+                0x00000000      0x2a4 build/default/production/_ext/1360937237/timerCallbacks.o
  .text          0x00000000        0x0 build/default/production/_ext/1737654518/osal_freertos.o
  .data          0x00000000        0x0 build/default/production/_ext/1737654518/osal_freertos.o
  .bss           0x00000000        0x0 build/default/production/_ext/1737654518/osal_freertos.o
@@ -574,6 +573,8 @@ Discarded input sections
                 0x00000000       0x50 build/default/production/_ext/2111169689/sys_ports.o
  .text.SYS_PORTS_PinToggle
                 0x00000000       0x38 build/default/production/_ext/2111169689/sys_ports.o
+ .text.SYS_PORTS_PinSet
+                0x00000000       0x38 build/default/production/_ext/2111169689/sys_ports.o
  .text.SYS_PORTS_PinOpenDrainEnable
                 0x00000000       0x38 build/default/production/_ext/2111169689/sys_ports.o
  .text.SYS_PORTS_PinOpenDrainDisable
@@ -662,6 +663,8 @@ Discarded input sections
  .text          0x00000000        0x0 build/default/production/_ext/8958737/timers.o
  .data          0x00000000        0x0 build/default/production/_ext/8958737/timers.o
  .reginfo       0x00000000       0x18 build/default/production/_ext/8958737/timers.o
+ .text.xTimerCreate
+                0x00000000       0x90 build/default/production/_ext/8958737/timers.o
  .text.pcTimerGetTimerName
                 0x00000000        0x8 build/default/production/_ext/8958737/timers.o
  .text.xTimerIsTimerActive
@@ -2106,125 +2109,125 @@ END GROUP
  .debug_pubnames
                 0x0000269f       0x28 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_info     0x00000000    0x31ab9
+.debug_info     0x00000000    0x31aca
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000     0x1d63 build/default/production/_ext/1360937237/control.o
- .debug_info    0x00001d63     0x2a5e build/default/production/_ext/1360937237/motor.o
- .debug_info    0x000047c1     0x1cd5 build/default/production/_ext/1360937237/sensor.o
- .debug_info    0x00006496      0x13d build/default/production/_ext/1360937237/main.o
- .debug_info    0x000065d3     0x266c build/default/production/_ext/1360937237/usart.o
- .debug_info    0x00008c3f     0x1bd7 build/default/production/_ext/1360937237/debug.o
- .debug_info    0x0000a816     0x1e9b build/default/production/_ext/1360937237/timerCallbacks.o
- .debug_info    0x0000c6b1      0x721 build/default/production/_ext/1737654518/osal_freertos.o
- .debug_info    0x0000cdd2     0x10f1 build/default/production/_ext/394875440/sys_devcon.o
- .debug_info    0x0000dec3      0xef3 build/default/production/_ext/394875440/sys_devcon_pic32mx.o
- .debug_info    0x0000edb6     0x160a build/default/production/_ext/312783478/sys_int_pic32.o
- .debug_info    0x000103c0     0x332c build/default/production/_ext/2111169689/sys_ports.o
- .debug_info    0x000136ec      0x175 build/default/production/_ext/8958737/croutine.o
- .debug_info    0x00013861      0x469 build/default/production/_ext/8958737/list.o
- .debug_info    0x00013cca      0xf7a build/default/production/_ext/8958737/queue.o
- .debug_info    0x00014c44     0x1e56 build/default/production/_ext/8958737/tasks.o
- .debug_info    0x00016a9a      0xd6f build/default/production/_ext/8958737/timers.o
- .debug_info    0x00017809      0x962 build/default/production/_ext/8958737/event_groups.o
- .debug_info    0x0001816b      0x30d build/default/production/_ext/1920397356/heap_1.o
- .debug_info    0x00018478     0x11cb build/default/production/_ext/630015897/port.o
- .debug_info    0x00019643       0xc7 build/default/production/_ext/630015897/port_asm.o
- .debug_info    0x0001970a     0x41b9 build/default/production/_ext/1361460060/drv_adc_static.o
- .debug_info    0x0001d8c3     0x12f5 build/default/production/_ext/1047219354/drv_oc_static.o
- .debug_info    0x0001ebb8     0x2a41 build/default/production/_ext/1407244131/drv_tmr_static.o
- .debug_info    0x000215f9     0x4699 build/default/production/_ext/1345626252/drv_usart_static.o
- .debug_info    0x00025c92     0x23e9 build/default/production/_ext/639803181/sys_clk_static.o
- .debug_info    0x0002807b      0xf14 build/default/production/_ext/822048611/sys_ports_static.o
- .debug_info    0x00028f8f     0x1f07 build/default/production/_ext/1688732426/system_init.o
- .debug_info    0x0002ae96     0x2eca build/default/production/_ext/1688732426/system_interrupt.o
- .debug_info    0x0002dd60     0x1b66 build/default/production/_ext/1688732426/system_exceptions.o
- .debug_info    0x0002f8c6     0x1c1f build/default/production/_ext/1688732426/system_tasks.o
- .debug_info    0x000314e5       0x88 build/default/production/_ext/1688732426/system_interrupt_a.o
- .debug_info    0x0003156d      0x224 build/default/production/_ext/1688732426/rtos_hooks.o
- .debug_info    0x00031791       0xde c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_info    0x0003186f       0xb8 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_info    0x00031927       0xc0 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_info    0x000319e7       0xd2 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_info    0x00000000     0x1d64 build/default/production/_ext/1360937237/control.o
+ .debug_info    0x00001d64     0x2a5e build/default/production/_ext/1360937237/motor.o
+ .debug_info    0x000047c2     0x1cdb build/default/production/_ext/1360937237/sensor.o
+ .debug_info    0x0000649d      0x13d build/default/production/_ext/1360937237/main.o
+ .debug_info    0x000065da     0x266c build/default/production/_ext/1360937237/usart.o
+ .debug_info    0x00008c46     0x1bdb build/default/production/_ext/1360937237/debug.o
+ .debug_info    0x0000a821     0x1e9b build/default/production/_ext/1360937237/timerCallbacks.o
+ .debug_info    0x0000c6bc      0x721 build/default/production/_ext/1737654518/osal_freertos.o
+ .debug_info    0x0000cddd     0x10f1 build/default/production/_ext/394875440/sys_devcon.o
+ .debug_info    0x0000dece      0xef3 build/default/production/_ext/394875440/sys_devcon_pic32mx.o
+ .debug_info    0x0000edc1     0x160a build/default/production/_ext/312783478/sys_int_pic32.o
+ .debug_info    0x000103cb     0x332c build/default/production/_ext/2111169689/sys_ports.o
+ .debug_info    0x000136f7      0x175 build/default/production/_ext/8958737/croutine.o
+ .debug_info    0x0001386c      0x469 build/default/production/_ext/8958737/list.o
+ .debug_info    0x00013cd5      0xf7a build/default/production/_ext/8958737/queue.o
+ .debug_info    0x00014c4f     0x1e56 build/default/production/_ext/8958737/tasks.o
+ .debug_info    0x00016aa5      0xd6f build/default/production/_ext/8958737/timers.o
+ .debug_info    0x00017814      0x962 build/default/production/_ext/8958737/event_groups.o
+ .debug_info    0x00018176      0x30d build/default/production/_ext/1920397356/heap_1.o
+ .debug_info    0x00018483     0x11cb build/default/production/_ext/630015897/port.o
+ .debug_info    0x0001964e       0xc7 build/default/production/_ext/630015897/port_asm.o
+ .debug_info    0x00019715     0x41ba build/default/production/_ext/1361460060/drv_adc_static.o
+ .debug_info    0x0001d8cf     0x12f5 build/default/production/_ext/1047219354/drv_oc_static.o
+ .debug_info    0x0001ebc4     0x2a41 build/default/production/_ext/1407244131/drv_tmr_static.o
+ .debug_info    0x00021605     0x4699 build/default/production/_ext/1345626252/drv_usart_static.o
+ .debug_info    0x00025c9e     0x23e9 build/default/production/_ext/639803181/sys_clk_static.o
+ .debug_info    0x00028087      0xf14 build/default/production/_ext/822048611/sys_ports_static.o
+ .debug_info    0x00028f9b     0x1f07 build/default/production/_ext/1688732426/system_init.o
+ .debug_info    0x0002aea2     0x2ecf build/default/production/_ext/1688732426/system_interrupt.o
+ .debug_info    0x0002dd71     0x1b66 build/default/production/_ext/1688732426/system_exceptions.o
+ .debug_info    0x0002f8d7     0x1c1f build/default/production/_ext/1688732426/system_tasks.o
+ .debug_info    0x000314f6       0x88 build/default/production/_ext/1688732426/system_interrupt_a.o
+ .debug_info    0x0003157e      0x224 build/default/production/_ext/1688732426/rtos_hooks.o
+ .debug_info    0x000317a2       0xde c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_info    0x00031880       0xb8 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_info    0x00031938       0xc0 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_info    0x000319f8       0xd2 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_abbrev   0x00000000     0x2e14
+.debug_abbrev   0x00000000     0x2e16
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x115 build/default/production/_ext/1360937237/control.o
  .debug_abbrev  0x00000115      0x253 build/default/production/_ext/1360937237/motor.o
  .debug_abbrev  0x00000368      0x125 build/default/production/_ext/1360937237/sensor.o
  .debug_abbrev  0x0000048d       0x36 build/default/production/_ext/1360937237/main.o
  .debug_abbrev  0x000004c3      0x17d build/default/production/_ext/1360937237/usart.o
- .debug_abbrev  0x00000640      0x105 build/default/production/_ext/1360937237/debug.o
- .debug_abbrev  0x00000745      0x11f build/default/production/_ext/1360937237/timerCallbacks.o
- .debug_abbrev  0x00000864      0x14d build/default/production/_ext/1737654518/osal_freertos.o
- .debug_abbrev  0x000009b1      0x243 build/default/production/_ext/394875440/sys_devcon.o
- .debug_abbrev  0x00000bf4      0x176 build/default/production/_ext/394875440/sys_devcon_pic32mx.o
- .debug_abbrev  0x00000d6a      0x19a build/default/production/_ext/312783478/sys_int_pic32.o
- .debug_abbrev  0x00000f04      0x1ea build/default/production/_ext/2111169689/sys_ports.o
- .debug_abbrev  0x000010ee       0x1f build/default/production/_ext/8958737/croutine.o
- .debug_abbrev  0x0000110d       0xe9 build/default/production/_ext/8958737/list.o
- .debug_abbrev  0x000011f6      0x1ce build/default/production/_ext/8958737/queue.o
- .debug_abbrev  0x000013c4      0x2a1 build/default/production/_ext/8958737/tasks.o
- .debug_abbrev  0x00001665      0x268 build/default/production/_ext/8958737/timers.o
- .debug_abbrev  0x000018cd      0x19a build/default/production/_ext/8958737/event_groups.o
- .debug_abbrev  0x00001a67      0x100 build/default/production/_ext/1920397356/heap_1.o
- .debug_abbrev  0x00001b67      0x277 build/default/production/_ext/630015897/port.o
- .debug_abbrev  0x00001dde       0x14 build/default/production/_ext/630015897/port_asm.o
- .debug_abbrev  0x00001df2      0x1df build/default/production/_ext/1361460060/drv_adc_static.o
- .debug_abbrev  0x00001fd1      0x141 build/default/production/_ext/1047219354/drv_oc_static.o
- .debug_abbrev  0x00002112      0x19d build/default/production/_ext/1407244131/drv_tmr_static.o
- .debug_abbrev  0x000022af      0x1f9 build/default/production/_ext/1345626252/drv_usart_static.o
- .debug_abbrev  0x000024a8      0x226 build/default/production/_ext/639803181/sys_clk_static.o
- .debug_abbrev  0x000026ce      0x113 build/default/production/_ext/822048611/sys_ports_static.o
- .debug_abbrev  0x000027e1      0x148 build/default/production/_ext/1688732426/system_init.o
- .debug_abbrev  0x00002929      0x1d9 build/default/production/_ext/1688732426/system_interrupt.o
- .debug_abbrev  0x00002b02       0xf6 build/default/production/_ext/1688732426/system_exceptions.o
- .debug_abbrev  0x00002bf8       0xf1 build/default/production/_ext/1688732426/system_tasks.o
- .debug_abbrev  0x00002ce9       0x12 build/default/production/_ext/1688732426/system_interrupt_a.o
- .debug_abbrev  0x00002cfb       0x8d build/default/production/_ext/1688732426/rtos_hooks.o
- .debug_abbrev  0x00002d88       0x23 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_abbrev  0x00002dab       0x23 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_abbrev  0x00002dce       0x23 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_abbrev  0x00002df1       0x23 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_abbrev  0x00000640      0x107 build/default/production/_ext/1360937237/debug.o
+ .debug_abbrev  0x00000747      0x11f build/default/production/_ext/1360937237/timerCallbacks.o
+ .debug_abbrev  0x00000866      0x14d build/default/production/_ext/1737654518/osal_freertos.o
+ .debug_abbrev  0x000009b3      0x243 build/default/production/_ext/394875440/sys_devcon.o
+ .debug_abbrev  0x00000bf6      0x176 build/default/production/_ext/394875440/sys_devcon_pic32mx.o
+ .debug_abbrev  0x00000d6c      0x19a build/default/production/_ext/312783478/sys_int_pic32.o
+ .debug_abbrev  0x00000f06      0x1ea build/default/production/_ext/2111169689/sys_ports.o
+ .debug_abbrev  0x000010f0       0x1f build/default/production/_ext/8958737/croutine.o
+ .debug_abbrev  0x0000110f       0xe9 build/default/production/_ext/8958737/list.o
+ .debug_abbrev  0x000011f8      0x1ce build/default/production/_ext/8958737/queue.o
+ .debug_abbrev  0x000013c6      0x2a1 build/default/production/_ext/8958737/tasks.o
+ .debug_abbrev  0x00001667      0x268 build/default/production/_ext/8958737/timers.o
+ .debug_abbrev  0x000018cf      0x19a build/default/production/_ext/8958737/event_groups.o
+ .debug_abbrev  0x00001a69      0x100 build/default/production/_ext/1920397356/heap_1.o
+ .debug_abbrev  0x00001b69      0x277 build/default/production/_ext/630015897/port.o
+ .debug_abbrev  0x00001de0       0x14 build/default/production/_ext/630015897/port_asm.o
+ .debug_abbrev  0x00001df4      0x1df build/default/production/_ext/1361460060/drv_adc_static.o
+ .debug_abbrev  0x00001fd3      0x141 build/default/production/_ext/1047219354/drv_oc_static.o
+ .debug_abbrev  0x00002114      0x19d build/default/production/_ext/1407244131/drv_tmr_static.o
+ .debug_abbrev  0x000022b1      0x1f9 build/default/production/_ext/1345626252/drv_usart_static.o
+ .debug_abbrev  0x000024aa      0x226 build/default/production/_ext/639803181/sys_clk_static.o
+ .debug_abbrev  0x000026d0      0x113 build/default/production/_ext/822048611/sys_ports_static.o
+ .debug_abbrev  0x000027e3      0x148 build/default/production/_ext/1688732426/system_init.o
+ .debug_abbrev  0x0000292b      0x1d9 build/default/production/_ext/1688732426/system_interrupt.o
+ .debug_abbrev  0x00002b04       0xf6 build/default/production/_ext/1688732426/system_exceptions.o
+ .debug_abbrev  0x00002bfa       0xf1 build/default/production/_ext/1688732426/system_tasks.o
+ .debug_abbrev  0x00002ceb       0x12 build/default/production/_ext/1688732426/system_interrupt_a.o
+ .debug_abbrev  0x00002cfd       0x8d build/default/production/_ext/1688732426/rtos_hooks.o
+ .debug_abbrev  0x00002d8a       0x23 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_abbrev  0x00002dad       0x23 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_abbrev  0x00002dd0       0x23 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_abbrev  0x00002df3       0x23 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_line     0x00000000     0x7c27
+.debug_line     0x00000000     0x7c2e
  *(.debug_line)
- .debug_line    0x00000000      0x302 build/default/production/_ext/1360937237/control.o
- .debug_line    0x00000302      0x63a build/default/production/_ext/1360937237/motor.o
- .debug_line    0x0000093c      0x303 build/default/production/_ext/1360937237/sensor.o
- .debug_line    0x00000c3f       0x60 build/default/production/_ext/1360937237/main.o
- .debug_line    0x00000c9f      0x376 build/default/production/_ext/1360937237/usart.o
- .debug_line    0x00001015      0x269 build/default/production/_ext/1360937237/debug.o
- .debug_line    0x0000127e      0x366 build/default/production/_ext/1360937237/timerCallbacks.o
- .debug_line    0x000015e4      0x2b2 build/default/production/_ext/1737654518/osal_freertos.o
- .debug_line    0x00001896      0x5f6 build/default/production/_ext/394875440/sys_devcon.o
- .debug_line    0x00001e8c      0x48a build/default/production/_ext/394875440/sys_devcon_pic32mx.o
- .debug_line    0x00002316      0x3a3 build/default/production/_ext/312783478/sys_int_pic32.o
- .debug_line    0x000026b9      0x880 build/default/production/_ext/2111169689/sys_ports.o
- .debug_line    0x00002f39       0x1d build/default/production/_ext/8958737/croutine.o
- .debug_line    0x00002f56      0x1e7 build/default/production/_ext/8958737/list.o
- .debug_line    0x0000313d      0x4a8 build/default/production/_ext/8958737/queue.o
- .debug_line    0x000035e5      0x817 build/default/production/_ext/8958737/tasks.o
- .debug_line    0x00003dfc      0x329 build/default/production/_ext/8958737/timers.o
- .debug_line    0x00004125      0x2c2 build/default/production/_ext/8958737/event_groups.o
- .debug_line    0x000043e7      0x168 build/default/production/_ext/1920397356/heap_1.o
- .debug_line    0x0000454f      0x234 build/default/production/_ext/630015897/port.o
- .debug_line    0x00004783      0x120 build/default/production/_ext/630015897/port_asm.o
- .debug_line    0x000048a3      0x7bb build/default/production/_ext/1361460060/drv_adc_static.o
- .debug_line    0x0000505e      0x458 build/default/production/_ext/1047219354/drv_oc_static.o
- .debug_line    0x000054b6      0x60a build/default/production/_ext/1407244131/drv_tmr_static.o
- .debug_line    0x00005ac0      0x752 build/default/production/_ext/1345626252/drv_usart_static.o
- .debug_line    0x00006212      0x439 build/default/production/_ext/639803181/sys_clk_static.o
- .debug_line    0x0000664b      0x2d1 build/default/production/_ext/822048611/sys_ports_static.o
- .debug_line    0x0000691c      0x38e build/default/production/_ext/1688732426/system_init.o
- .debug_line    0x00006caa      0x5cf build/default/production/_ext/1688732426/system_interrupt.o
- .debug_line    0x00007279      0x235 build/default/production/_ext/1688732426/system_exceptions.o
- .debug_line    0x000074ae      0x2e9 build/default/production/_ext/1688732426/system_tasks.o
- .debug_line    0x00007797      0x123 build/default/production/_ext/1688732426/system_interrupt_a.o
- .debug_line    0x000078ba      0x134 build/default/production/_ext/1688732426/rtos_hooks.o
- .debug_line    0x000079ee       0x97 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_line    0x00007a85       0x84 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_line    0x00007b09       0x88 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_line    0x00007b91       0x96 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_line    0x00000000      0x304 build/default/production/_ext/1360937237/control.o
+ .debug_line    0x00000304      0x639 build/default/production/_ext/1360937237/motor.o
+ .debug_line    0x0000093d      0x304 build/default/production/_ext/1360937237/sensor.o
+ .debug_line    0x00000c41       0x60 build/default/production/_ext/1360937237/main.o
+ .debug_line    0x00000ca1      0x376 build/default/production/_ext/1360937237/usart.o
+ .debug_line    0x00001017      0x266 build/default/production/_ext/1360937237/debug.o
+ .debug_line    0x0000127d      0x366 build/default/production/_ext/1360937237/timerCallbacks.o
+ .debug_line    0x000015e3      0x2b2 build/default/production/_ext/1737654518/osal_freertos.o
+ .debug_line    0x00001895      0x5f6 build/default/production/_ext/394875440/sys_devcon.o
+ .debug_line    0x00001e8b      0x48a build/default/production/_ext/394875440/sys_devcon_pic32mx.o
+ .debug_line    0x00002315      0x3a3 build/default/production/_ext/312783478/sys_int_pic32.o
+ .debug_line    0x000026b8      0x880 build/default/production/_ext/2111169689/sys_ports.o
+ .debug_line    0x00002f38       0x1d build/default/production/_ext/8958737/croutine.o
+ .debug_line    0x00002f55      0x1e7 build/default/production/_ext/8958737/list.o
+ .debug_line    0x0000313c      0x4a8 build/default/production/_ext/8958737/queue.o
+ .debug_line    0x000035e4      0x817 build/default/production/_ext/8958737/tasks.o
+ .debug_line    0x00003dfb      0x329 build/default/production/_ext/8958737/timers.o
+ .debug_line    0x00004124      0x2c2 build/default/production/_ext/8958737/event_groups.o
+ .debug_line    0x000043e6      0x168 build/default/production/_ext/1920397356/heap_1.o
+ .debug_line    0x0000454e      0x234 build/default/production/_ext/630015897/port.o
+ .debug_line    0x00004782      0x120 build/default/production/_ext/630015897/port_asm.o
+ .debug_line    0x000048a2      0x7bb build/default/production/_ext/1361460060/drv_adc_static.o
+ .debug_line    0x0000505d      0x458 build/default/production/_ext/1047219354/drv_oc_static.o
+ .debug_line    0x000054b5      0x60a build/default/production/_ext/1407244131/drv_tmr_static.o
+ .debug_line    0x00005abf      0x752 build/default/production/_ext/1345626252/drv_usart_static.o
+ .debug_line    0x00006211      0x439 build/default/production/_ext/639803181/sys_clk_static.o
+ .debug_line    0x0000664a      0x2d1 build/default/production/_ext/822048611/sys_ports_static.o
+ .debug_line    0x0000691b      0x38e build/default/production/_ext/1688732426/system_init.o
+ .debug_line    0x00006ca9      0x5d7 build/default/production/_ext/1688732426/system_interrupt.o
+ .debug_line    0x00007280      0x235 build/default/production/_ext/1688732426/system_exceptions.o
+ .debug_line    0x000074b5      0x2e9 build/default/production/_ext/1688732426/system_tasks.o
+ .debug_line    0x0000779e      0x123 build/default/production/_ext/1688732426/system_interrupt_a.o
+ .debug_line    0x000078c1      0x134 build/default/production/_ext/1688732426/rtos_hooks.o
+ .debug_line    0x000079f5       0x97 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_line    0x00007a8c       0x84 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_line    0x00007b10       0x88 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_line    0x00007b98       0x96 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
 .debug_frame    0x00000000     0x16fc
  *(.debug_frame)
@@ -2263,68 +2266,68 @@ END GROUP
  .debug_frame   0x000016bc       0x20 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
  .debug_frame   0x000016dc       0x20 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_str      0x00000000     0x1107
+.debug_str      0x00000000     0x111d
  *(.debug_str)
- .debug_str     0x00000000       0xcd build/default/production/_ext/1360937237/control.o
- .debug_str     0x000000cd      0x10c build/default/production/_ext/1360937237/motor.o
- .debug_str     0x000001d9       0xdc build/default/production/_ext/1360937237/sensor.o
- .debug_str     0x000002b5        0x0 build/default/production/_ext/1360937237/main.o
- .debug_str     0x000002b5       0x9e build/default/production/_ext/1360937237/usart.o
- .debug_str     0x00000353       0x9c build/default/production/_ext/1360937237/debug.o
- .debug_str     0x000003ef       0xba build/default/production/_ext/1360937237/timerCallbacks.o
- .debug_str     0x000004a9       0x40 build/default/production/_ext/1737654518/osal_freertos.o
- .debug_str     0x000004e9       0x23 build/default/production/_ext/394875440/sys_devcon.o
- .debug_str     0x0000050c       0x4f build/default/production/_ext/394875440/sys_devcon_pic32mx.o
- .debug_str     0x0000055b       0x2d build/default/production/_ext/312783478/sys_int_pic32.o
- .debug_str     0x00000588       0x98 build/default/production/_ext/2111169689/sys_ports.o
- .debug_str     0x00000620        0x0 build/default/production/_ext/8958737/croutine.o
- .debug_str     0x00000620       0x2b build/default/production/_ext/8958737/list.o
- .debug_str     0x0000064b       0xf1 build/default/production/_ext/8958737/queue.o
- .debug_str     0x0000073c      0x181 build/default/production/_ext/8958737/tasks.o
- .debug_str     0x000008bd       0xbf build/default/production/_ext/8958737/timers.o
- .debug_str     0x0000097c       0xe6 build/default/production/_ext/8958737/event_groups.o
- .debug_str     0x00000a62        0x0 build/default/production/_ext/1920397356/heap_1.o
- .debug_str     0x00000a62       0x6a build/default/production/_ext/630015897/port.o
- .debug_str     0x00000acc      0x11e build/default/production/_ext/1361460060/drv_adc_static.o
- .debug_str     0x00000bea       0x1a build/default/production/_ext/1047219354/drv_oc_static.o
- .debug_str     0x00000c04       0x41 build/default/production/_ext/1407244131/drv_tmr_static.o
- .debug_str     0x00000c45      0x118 build/default/production/_ext/1345626252/drv_usart_static.o
- .debug_str     0x00000d5d       0xc9 build/default/production/_ext/639803181/sys_clk_static.o
- .debug_str     0x00000e26        0xd build/default/production/_ext/822048611/sys_ports_static.o
- .debug_str     0x00000e33       0xaa build/default/production/_ext/1688732426/system_init.o
- .debug_str     0x00000edd      0x101 build/default/production/_ext/1688732426/system_interrupt.o
- .debug_str     0x00000fde       0x90 build/default/production/_ext/1688732426/system_exceptions.o
- .debug_str     0x0000106e       0x90 build/default/production/_ext/1688732426/system_tasks.o
- .debug_str     0x000010fe        0x9 build/default/production/_ext/1688732426/rtos_hooks.o
- .debug_str     0x00001107        0x0 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_str     0x00001107        0x0 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_str     0x00001107        0x0 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_str     0x00001107        0x0 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_str     0x00000000       0xcc build/default/production/_ext/1360937237/control.o
+ .debug_str     0x000000cc      0x10c build/default/production/_ext/1360937237/motor.o
+ .debug_str     0x000001d8       0xe7 build/default/production/_ext/1360937237/sensor.o
+ .debug_str     0x000002bf        0x0 build/default/production/_ext/1360937237/main.o
+ .debug_str     0x000002bf       0x9e build/default/production/_ext/1360937237/usart.o
+ .debug_str     0x0000035d       0x9c build/default/production/_ext/1360937237/debug.o
+ .debug_str     0x000003f9       0xba build/default/production/_ext/1360937237/timerCallbacks.o
+ .debug_str     0x000004b3       0x40 build/default/production/_ext/1737654518/osal_freertos.o
+ .debug_str     0x000004f3       0x23 build/default/production/_ext/394875440/sys_devcon.o
+ .debug_str     0x00000516       0x4f build/default/production/_ext/394875440/sys_devcon_pic32mx.o
+ .debug_str     0x00000565       0x2d build/default/production/_ext/312783478/sys_int_pic32.o
+ .debug_str     0x00000592       0x98 build/default/production/_ext/2111169689/sys_ports.o
+ .debug_str     0x0000062a        0x0 build/default/production/_ext/8958737/croutine.o
+ .debug_str     0x0000062a       0x2b build/default/production/_ext/8958737/list.o
+ .debug_str     0x00000655       0xf1 build/default/production/_ext/8958737/queue.o
+ .debug_str     0x00000746      0x181 build/default/production/_ext/8958737/tasks.o
+ .debug_str     0x000008c7       0xbf build/default/production/_ext/8958737/timers.o
+ .debug_str     0x00000986       0xe6 build/default/production/_ext/8958737/event_groups.o
+ .debug_str     0x00000a6c        0x0 build/default/production/_ext/1920397356/heap_1.o
+ .debug_str     0x00000a6c       0x6a build/default/production/_ext/630015897/port.o
+ .debug_str     0x00000ad6      0x11e build/default/production/_ext/1361460060/drv_adc_static.o
+ .debug_str     0x00000bf4       0x1a build/default/production/_ext/1047219354/drv_oc_static.o
+ .debug_str     0x00000c0e       0x41 build/default/production/_ext/1407244131/drv_tmr_static.o
+ .debug_str     0x00000c4f      0x118 build/default/production/_ext/1345626252/drv_usart_static.o
+ .debug_str     0x00000d67       0xc9 build/default/production/_ext/639803181/sys_clk_static.o
+ .debug_str     0x00000e30        0xd build/default/production/_ext/822048611/sys_ports_static.o
+ .debug_str     0x00000e3d       0xaa build/default/production/_ext/1688732426/system_init.o
+ .debug_str     0x00000ee7      0x10d build/default/production/_ext/1688732426/system_interrupt.o
+ .debug_str     0x00000ff4       0x90 build/default/production/_ext/1688732426/system_exceptions.o
+ .debug_str     0x00001084       0x90 build/default/production/_ext/1688732426/system_tasks.o
+ .debug_str     0x00001114        0x9 build/default/production/_ext/1688732426/rtos_hooks.o
+ .debug_str     0x0000111d        0x0 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_str     0x0000111d        0x0 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_str     0x0000111d        0x0 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_str     0x0000111d        0x0 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_loc      0x00000000     0x370a
+.debug_loc      0x00000000     0x371d
  *(.debug_loc)
  .debug_loc     0x00000000      0x238 build/default/production/_ext/1360937237/motor.o
  .debug_loc     0x00000238       0x31 build/default/production/_ext/1360937237/sensor.o
- .debug_loc     0x00000269       0x47 build/default/production/_ext/1360937237/debug.o
- .debug_loc     0x000002b0      0x181 build/default/production/_ext/1360937237/timerCallbacks.o
- .debug_loc     0x00000431      0x203 build/default/production/_ext/1737654518/osal_freertos.o
- .debug_loc     0x00000634       0x4c build/default/production/_ext/394875440/sys_devcon.o
- .debug_loc     0x00000680       0x5f build/default/production/_ext/394875440/sys_devcon_pic32mx.o
- .debug_loc     0x000006df       0x6c build/default/production/_ext/312783478/sys_int_pic32.o
- .debug_loc     0x0000074b      0xb96 build/default/production/_ext/2111169689/sys_ports.o
- .debug_loc     0x000012e1       0x1f build/default/production/_ext/8958737/list.o
- .debug_loc     0x00001300      0x871 build/default/production/_ext/8958737/queue.o
- .debug_loc     0x00001b71      0xd52 build/default/production/_ext/8958737/tasks.o
- .debug_loc     0x000028c3      0x503 build/default/production/_ext/8958737/timers.o
- .debug_loc     0x00002dc6      0x5eb build/default/production/_ext/8958737/event_groups.o
- .debug_loc     0x000033b1       0x31 build/default/production/_ext/1920397356/heap_1.o
- .debug_loc     0x000033e2       0x26 build/default/production/_ext/630015897/port.o
- .debug_loc     0x00003408      0x180 build/default/production/_ext/1361460060/drv_adc_static.o
- .debug_loc     0x00003588       0xcc build/default/production/_ext/1407244131/drv_tmr_static.o
- .debug_loc     0x00003654       0x72 build/default/production/_ext/1345626252/drv_usart_static.o
- .debug_loc     0x000036c6       0x13 build/default/production/_ext/639803181/sys_clk_static.o
- .debug_loc     0x000036d9       0x13 build/default/production/_ext/1688732426/system_init.o
- .debug_loc     0x000036ec       0x1e build/default/production/_ext/1688732426/system_interrupt.o
+ .debug_loc     0x00000269       0x5a build/default/production/_ext/1360937237/debug.o
+ .debug_loc     0x000002c3      0x181 build/default/production/_ext/1360937237/timerCallbacks.o
+ .debug_loc     0x00000444      0x203 build/default/production/_ext/1737654518/osal_freertos.o
+ .debug_loc     0x00000647       0x4c build/default/production/_ext/394875440/sys_devcon.o
+ .debug_loc     0x00000693       0x5f build/default/production/_ext/394875440/sys_devcon_pic32mx.o
+ .debug_loc     0x000006f2       0x6c build/default/production/_ext/312783478/sys_int_pic32.o
+ .debug_loc     0x0000075e      0xb96 build/default/production/_ext/2111169689/sys_ports.o
+ .debug_loc     0x000012f4       0x1f build/default/production/_ext/8958737/list.o
+ .debug_loc     0x00001313      0x871 build/default/production/_ext/8958737/queue.o
+ .debug_loc     0x00001b84      0xd52 build/default/production/_ext/8958737/tasks.o
+ .debug_loc     0x000028d6      0x503 build/default/production/_ext/8958737/timers.o
+ .debug_loc     0x00002dd9      0x5eb build/default/production/_ext/8958737/event_groups.o
+ .debug_loc     0x000033c4       0x31 build/default/production/_ext/1920397356/heap_1.o
+ .debug_loc     0x000033f5       0x26 build/default/production/_ext/630015897/port.o
+ .debug_loc     0x0000341b      0x180 build/default/production/_ext/1361460060/drv_adc_static.o
+ .debug_loc     0x0000359b       0xcc build/default/production/_ext/1407244131/drv_tmr_static.o
+ .debug_loc     0x00003667       0x72 build/default/production/_ext/1345626252/drv_usart_static.o
+ .debug_loc     0x000036d9       0x13 build/default/production/_ext/639803181/sys_clk_static.o
+ .debug_loc     0x000036ec       0x13 build/default/production/_ext/1688732426/system_init.o
+ .debug_loc     0x000036ff       0x1e build/default/production/_ext/1688732426/system_interrupt.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -2560,882 +2563,855 @@ LOAD data_init
                 0x9d000b60                vPortYieldISR
 
 .text.SENSOR_Tasks
-                0x9d000d40      0x3a0
+                0x9d000d40      0x3d4
  .text.SENSOR_Tasks
-                0x9d000d40      0x3a0 build/default/production/_ext/1360937237/sensor.o
+                0x9d000d40      0x3d4 build/default/production/_ext/1360937237/sensor.o
                 0x9d000d40                SENSOR_Tasks
 
-.text.xTaskGenericCreate
-                0x9d0010e0      0x2e0
- .text.xTaskGenericCreate
-                0x9d0010e0      0x2e0 build/default/production/_ext/8958737/tasks.o
-                0x9d0010e0                xTaskGenericCreate
-
 .text.IntHandlerDrvUsartInstance0
-                0x9d0013c0      0x2ac
+                0x9d001114      0x2f4
  .text.IntHandlerDrvUsartInstance0
-                0x9d0013c0      0x2ac build/default/production/_ext/1688732426/system_interrupt.o
-                0x9d0013c0                IntHandlerDrvUsartInstance0
+                0x9d001114      0x2f4 build/default/production/_ext/1688732426/system_interrupt.o
+                0x9d001114                IntHandlerDrvUsartInstance0
 
-.text.readTimerCallback
-                0x9d00166c      0x2a4
- .text.readTimerCallback
-                0x9d00166c      0x2a4 build/default/production/_ext/1360937237/timerCallbacks.o
-                0x9d00166c                readTimerCallback
+.text.xTaskGenericCreate
+                0x9d001408      0x2e0
+ .text.xTaskGenericCreate
+                0x9d001408      0x2e0 build/default/production/_ext/8958737/tasks.o
+                0x9d001408                xTaskGenericCreate
 
 .text.xQueueGenericReceive
-                0x9d001910      0x258
+                0x9d0016e8      0x258
  .text.xQueueGenericReceive
-                0x9d001910      0x258 build/default/production/_ext/8958737/queue.o
-                0x9d001910                xQueueGenericReceive
+                0x9d0016e8      0x258 build/default/production/_ext/8958737/queue.o
+                0x9d0016e8                xQueueGenericReceive
 
 .text.prvTimerTask
-                0x9d001b68      0x248
+                0x9d001940      0x248
  .text.prvTimerTask
-                0x9d001b68      0x248 build/default/production/_ext/8958737/timers.o
+                0x9d001940      0x248 build/default/production/_ext/8958737/timers.o
 
 .text.xQueueGenericSend
-                0x9d001db0      0x20c
+                0x9d001b88      0x20c
  .text.xQueueGenericSend
-                0x9d001db0      0x20c build/default/production/_ext/8958737/queue.o
-                0x9d001db0                xQueueGenericSend
-
-.text.lineTimerCallback
-                0x9d001fbc      0x1bc
- .text.lineTimerCallback
-                0x9d001fbc      0x1bc build/default/production/_ext/1360937237/timerCallbacks.o
-                0x9d001fbc                lineTimerCallback
+                0x9d001b88      0x20c build/default/production/_ext/8958737/queue.o
+                0x9d001b88                xQueueGenericSend
 
 .DrvAdc_vector_text
-                0x9d002178      0x1b4
+                0x9d001d94      0x1b4
  .DrvAdc_vector_text
-                0x9d002178      0x1b4 build/default/production/_ext/1688732426/system_interrupt_a.o
+                0x9d001d94      0x1b4 build/default/production/_ext/1688732426/system_interrupt_a.o
 
 .DrvTmrInstance0_vector_text
-                0x9d00232c      0x1b4
+                0x9d001f48      0x1b4
  .DrvTmrInstance0_vector_text
-                0x9d00232c      0x1b4 build/default/production/_ext/1688732426/system_interrupt_a.o
+                0x9d001f48      0x1b4 build/default/production/_ext/1688732426/system_interrupt_a.o
 
 .DrvTmrInstance1_vector_text
-                0x9d0024e0      0x1b4
+                0x9d0020fc      0x1b4
  .DrvTmrInstance1_vector_text
-                0x9d0024e0      0x1b4 build/default/production/_ext/1688732426/system_interrupt_a.o
+                0x9d0020fc      0x1b4 build/default/production/_ext/1688732426/system_interrupt_a.o
 
 .DrvTmrInstance2_vector_text
-                0x9d002694      0x1b4
+                0x9d0022b0      0x1b4
  .DrvTmrInstance2_vector_text
-                0x9d002694      0x1b4 build/default/production/_ext/1688732426/system_interrupt_a.o
+                0x9d0022b0      0x1b4 build/default/production/_ext/1688732426/system_interrupt_a.o
 
 .DrvUsartInstance0_vector_text
-                0x9d002848      0x1b4
+                0x9d002464      0x1b4
  .DrvUsartInstance0_vector_text
-                0x9d002848      0x1b4 build/default/production/_ext/1688732426/system_interrupt_a.o
+                0x9d002464      0x1b4 build/default/production/_ext/1688732426/system_interrupt_a.o
 
 .text.MOTOR_Tasks
-                0x9d0029fc      0x1a4
+                0x9d002618      0x1a0
  .text.MOTOR_Tasks
-                0x9d0029fc      0x1a4 build/default/production/_ext/1360937237/motor.o
-                0x9d0029fc                MOTOR_Tasks
+                0x9d002618      0x1a0 build/default/production/_ext/1360937237/motor.o
+                0x9d002618                MOTOR_Tasks
 
 .text.xTaskIncrementTick
-                0x9d002ba0      0x168
+                0x9d0027b8      0x168
  .text.xTaskIncrementTick
-                0x9d002ba0      0x168 build/default/production/_ext/8958737/tasks.o
-                0x9d002ba0                xTaskIncrementTick
+                0x9d0027b8      0x168 build/default/production/_ext/8958737/tasks.o
+                0x9d0027b8                xTaskIncrementTick
 
-.text           0x9d002d08      0x168
- .text          0x9d002d08      0x168 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcpy.o)
-                0x9d002d08                memcpy
-
-.text.CONTROL_Tasks
-                0x9d002e70      0x160
- .text.CONTROL_Tasks
-                0x9d002e70      0x160 build/default/production/_ext/1360937237/control.o
-                0x9d002e70                CONTROL_Tasks
+.text           0x9d002920      0x168
+ .text          0x9d002920      0x168 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcpy.o)
+                0x9d002920                memcpy
 
 .text.xTaskResumeAll
-                0x9d002fd0      0x15c
+                0x9d002a88      0x15c
  .text.xTaskResumeAll
-                0x9d002fd0      0x15c build/default/production/_ext/8958737/tasks.o
-                0x9d002fd0                xTaskResumeAll
+                0x9d002a88      0x15c build/default/production/_ext/8958737/tasks.o
+                0x9d002a88                xTaskResumeAll
+
+.text.CONTROL_Tasks
+                0x9d002be4      0x14c
+ .text.CONTROL_Tasks
+                0x9d002be4      0x14c build/default/production/_ext/1360937237/control.o
+                0x9d002be4                CONTROL_Tasks
 
 .text.SYS_Initialize
-                0x9d00312c      0x130
+                0x9d002d30      0x130
  .text.SYS_Initialize
-                0x9d00312c      0x130 build/default/production/_ext/1688732426/system_init.o
-                0x9d00312c                SYS_Initialize
+                0x9d002d30      0x130 build/default/production/_ext/1688732426/system_init.o
+                0x9d002d30                SYS_Initialize
 
 .text.vTaskPriorityInherit
-                0x9d00325c      0x12c
+                0x9d002e60      0x12c
  .text.vTaskPriorityInherit
-                0x9d00325c      0x12c build/default/production/_ext/8958737/tasks.o
-                0x9d00325c                vTaskPriorityInherit
+                0x9d002e60      0x12c build/default/production/_ext/8958737/tasks.o
+                0x9d002e60                vTaskPriorityInherit
 
 .text.DRV_ADC_Initialize
-                0x9d003388      0x12c
+                0x9d002f8c      0x12c
  .text.DRV_ADC_Initialize
-                0x9d003388      0x12c build/default/production/_ext/1361460060/drv_adc_static.o
-                0x9d003388                DRV_ADC_Initialize
+                0x9d002f8c      0x12c build/default/production/_ext/1361460060/drv_adc_static.o
+                0x9d002f8c                DRV_ADC_Initialize
 
-.rodata         0x9d0034b4      0x128
- .rodata        0x9d0034b4      0x128 build/default/production/_ext/1688732426/system_exceptions.o
-
-.text.SENSOR_Initialize
-                0x9d0035dc      0x11c
- .text.SENSOR_Initialize
-                0x9d0035dc      0x11c build/default/production/_ext/1360937237/sensor.o
-                0x9d0035dc                SENSOR_Initialize
+.rodata         0x9d0030b8      0x128
+ .rodata        0x9d0030b8      0x128 build/default/production/_ext/1688732426/system_exceptions.o
 
 .text.prvSampleTimeNow
-                0x9d0036f8      0x10c
+                0x9d0031e0      0x10c
  .text.prvSampleTimeNow
-                0x9d0036f8      0x10c build/default/production/_ext/8958737/timers.o
+                0x9d0031e0      0x10c build/default/production/_ext/8958737/timers.o
 
 .text.DRV_USART0_Initialize
-                0x9d003804      0x108
+                0x9d0032ec      0x108
  .text.DRV_USART0_Initialize
-                0x9d003804      0x108 build/default/production/_ext/1345626252/drv_usart_static.o
-                0x9d003804                DRV_USART0_Initialize
+                0x9d0032ec      0x108 build/default/production/_ext/1345626252/drv_usart_static.o
+                0x9d0032ec                DRV_USART0_Initialize
 
 .text.prvUnlockQueue
-                0x9d00390c      0x104
+                0x9d0033f4      0x104
  .text.prvUnlockQueue
-                0x9d00390c      0x104 build/default/production/_ext/8958737/queue.o
+                0x9d0033f4      0x104 build/default/production/_ext/8958737/queue.o
 
 .text.prvCopyDataToQueue
-                0x9d003a10       0xfc
+                0x9d0034f8       0xfc
  .text.prvCopyDataToQueue
-                0x9d003a10       0xfc build/default/production/_ext/8958737/queue.o
+                0x9d0034f8       0xfc build/default/production/_ext/8958737/queue.o
 
 .text.vTaskSwitchContext
-                0x9d003b0c       0xf8
+                0x9d0035f4       0xf8
  .text.vTaskSwitchContext
-                0x9d003b0c       0xf8 build/default/production/_ext/8958737/tasks.o
-                0x9d003b0c                vTaskSwitchContext
+                0x9d0035f4       0xf8 build/default/production/_ext/8958737/tasks.o
+                0x9d0035f4                vTaskSwitchContext
 
 .text.xTaskPriorityDisinherit
-                0x9d003c04       0xf4
+                0x9d0036ec       0xf4
  .text.xTaskPriorityDisinherit
-                0x9d003c04       0xf4 build/default/production/_ext/8958737/tasks.o
-                0x9d003c04                xTaskPriorityDisinherit
+                0x9d0036ec       0xf4 build/default/production/_ext/8958737/tasks.o
+                0x9d0036ec                xTaskPriorityDisinherit
 
 .text.xQueueGenericSendFromISR
-                0x9d003cf8       0xe0
+                0x9d0037e0       0xe0
  .text.xQueueGenericSendFromISR
-                0x9d003cf8       0xe0 build/default/production/_ext/8958737/queue.o
-                0x9d003cf8                xQueueGenericSendFromISR
+                0x9d0037e0       0xe0 build/default/production/_ext/8958737/queue.o
+                0x9d0037e0                xQueueGenericSendFromISR
 
 .text.general_exception
-                0x9d003dd8       0xdc
+                0x9d0038c0       0xdc
  .text.general_exception
-                0x9d003dd8       0xdc c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(general-exception.o)
-                0x9d003dd8                _general_exception_context
+                0x9d0038c0       0xdc c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(general-exception.o)
+                0x9d0038c0                _general_exception_context
 
 .text.SYS_Tasks
-                0x9d003eb4       0xd8
+                0x9d00399c       0xd8
  .text.SYS_Tasks
-                0x9d003eb4       0xd8 build/default/production/_ext/1688732426/system_tasks.o
-                0x9d003eb4                SYS_Tasks
+                0x9d00399c       0xd8 build/default/production/_ext/1688732426/system_tasks.o
+                0x9d00399c                SYS_Tasks
 
 .text.SYS_DEVCON_PerformanceConfig
-                0x9d003f8c       0xd0
+                0x9d003a74       0xd0
  .text.SYS_DEVCON_PerformanceConfig
-                0x9d003f8c       0xd0 build/default/production/_ext/394875440/sys_devcon_pic32mx.o
-                0x9d003f8c                SYS_DEVCON_PerformanceConfig
+                0x9d003a74       0xd0 build/default/production/_ext/394875440/sys_devcon_pic32mx.o
+                0x9d003a74                SYS_DEVCON_PerformanceConfig
 
 .text.xQueueReceiveFromISR
-                0x9d00405c       0xcc
+                0x9d003b44       0xcc
  .text.xQueueReceiveFromISR
-                0x9d00405c       0xcc build/default/production/_ext/8958737/queue.o
-                0x9d00405c                xQueueReceiveFromISR
+                0x9d003b44       0xcc build/default/production/_ext/8958737/queue.o
+                0x9d003b44                xQueueReceiveFromISR
 
 .text.xQueueGenericReset
-                0x9d004128       0xc8
+                0x9d003c10       0xc8
  .text.xQueueGenericReset
-                0x9d004128       0xc8 build/default/production/_ext/8958737/queue.o
-                0x9d004128                xQueueGenericReset
+                0x9d003c10       0xc8 build/default/production/_ext/8958737/queue.o
+                0x9d003c10                xQueueGenericReset
 
-.dinit          0x9d0041f0       0xc0
- .dinit         0x9d0041f0       0xc0 data_init
+.dinit          0x9d003cd8       0xc0
+ .dinit         0x9d003cd8       0xc0 data_init
 
 .text.xTaskRemoveFromEventList
-                0x9d0042b0       0xbc
+                0x9d003d98       0xbc
  .text.xTaskRemoveFromEventList
-                0x9d0042b0       0xbc build/default/production/_ext/8958737/tasks.o
-                0x9d0042b0                xTaskRemoveFromEventList
+                0x9d003d98       0xbc build/default/production/_ext/8958737/tasks.o
+                0x9d003d98                xTaskRemoveFromEventList
 
 .text.IntHandlerDrvAdc
-                0x9d00436c       0xbc
+                0x9d003e54       0xbc
  .text.IntHandlerDrvAdc
-                0x9d00436c       0xbc build/default/production/_ext/1688732426/system_interrupt.o
-                0x9d00436c                IntHandlerDrvAdc
+                0x9d003e54       0xbc build/default/production/_ext/1688732426/system_interrupt.o
+                0x9d003e54                IntHandlerDrvAdc
 
 .text.pvPortMalloc
-                0x9d004428       0xb8
+                0x9d003f10       0xb8
  .text.pvPortMalloc
-                0x9d004428       0xb8 build/default/production/_ext/1920397356/heap_1.o
-                0x9d004428                pvPortMalloc
+                0x9d003f10       0xb8 build/default/production/_ext/1920397356/heap_1.o
+                0x9d003f10                pvPortMalloc
 
 .text.prvIdleTask
-                0x9d0044e0       0xb4
+                0x9d003fc8       0xb4
  .text.prvIdleTask
-                0x9d0044e0       0xb4 build/default/production/_ext/8958737/tasks.o
+                0x9d003fc8       0xb4 build/default/production/_ext/8958737/tasks.o
 
-.text           0x9d004594       0xa8
- .text          0x9d004594       0xa8 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memset.o)
-                0x9d004594                memset
+.text           0x9d00407c       0xa8
+ .text          0x9d00407c       0xa8 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memset.o)
+                0x9d00407c                memset
 
 .text.xTaskCheckForTimeOut
-                0x9d00463c       0xa0
+                0x9d004124       0xa0
  .text.xTaskCheckForTimeOut
-                0x9d00463c       0xa0 build/default/production/_ext/8958737/tasks.o
-                0x9d00463c                xTaskCheckForTimeOut
+                0x9d004124       0xa0 build/default/production/_ext/8958737/tasks.o
+                0x9d004124                xTaskCheckForTimeOut
 
-.text           0x9d0046dc       0x98
- .text          0x9d0046dc       0x98 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcmp.o)
-                0x9d0046dc                memcmp
+.text           0x9d0041c4       0x98
+ .text          0x9d0041c4       0x98 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcmp.o)
+                0x9d0041c4                memcmp
 
 .text.MOTOR_Initialize
-                0x9d004774       0x94
+                0x9d00425c       0x94
  .text.MOTOR_Initialize
-                0x9d004774       0x94 build/default/production/_ext/1360937237/motor.o
-                0x9d004774                MOTOR_Initialize
+                0x9d00425c       0x94 build/default/production/_ext/1360937237/motor.o
+                0x9d00425c                MOTOR_Initialize
 
 .text.vTaskPlaceOnEventList
-                0x9d004808       0x94
+                0x9d0042f0       0x94
  .text.vTaskPlaceOnEventList
-                0x9d004808       0x94 build/default/production/_ext/8958737/tasks.o
-                0x9d004808                vTaskPlaceOnEventList
+                0x9d0042f0       0x94 build/default/production/_ext/8958737/tasks.o
+                0x9d0042f0                vTaskPlaceOnEventList
 
 .text.vTaskStartScheduler
-                0x9d00489c       0x90
+                0x9d004384       0x90
  .text.vTaskStartScheduler
-                0x9d00489c       0x90 build/default/production/_ext/8958737/tasks.o
-                0x9d00489c                vTaskStartScheduler
-
-.text.xTimerCreate
-                0x9d00492c       0x90
- .text.xTimerCreate
-                0x9d00492c       0x90 build/default/production/_ext/8958737/timers.o
-                0x9d00492c                xTimerCreate
+                0x9d004384       0x90 build/default/production/_ext/8958737/tasks.o
+                0x9d004384                vTaskStartScheduler
 
 .text.xTimerGenericCommand
-                0x9d0049bc       0x8c
+                0x9d004414       0x8c
  .text.xTimerGenericCommand
-                0x9d0049bc       0x8c build/default/production/_ext/8958737/timers.o
-                0x9d0049bc                xTimerGenericCommand
+                0x9d004414       0x8c build/default/production/_ext/8958737/timers.o
+                0x9d004414                xTimerGenericCommand
 
 .text.move_Backward
-                0x9d004a48       0x88
+                0x9d0044a0       0x88
  .text.move_Backward
-                0x9d004a48       0x88 build/default/production/_ext/1360937237/motor.o
-                0x9d004a48                move_Backward
+                0x9d0044a0       0x88 build/default/production/_ext/1360937237/motor.o
+                0x9d0044a0                move_Backward
 
 .text.move_Forward
-                0x9d004ad0       0x88
+                0x9d004528       0x88
  .text.move_Forward
-                0x9d004ad0       0x88 build/default/production/_ext/1360937237/motor.o
-                0x9d004ad0                move_Forward
+                0x9d004528       0x88 build/default/production/_ext/1360937237/motor.o
+                0x9d004528                move_Forward
 
 .text.xQueueGenericCreate
-                0x9d004b58       0x84
+                0x9d0045b0       0x84
  .text.xQueueGenericCreate
-                0x9d004b58       0x84 build/default/production/_ext/8958737/queue.o
-                0x9d004b58                xQueueGenericCreate
+                0x9d0045b0       0x84 build/default/production/_ext/8958737/queue.o
+                0x9d0045b0                xQueueGenericCreate
 
 .text.DRV_TMR2_Initialize
-                0x9d004bdc       0x84
+                0x9d004634       0x84
  .text.DRV_TMR2_Initialize
-                0x9d004bdc       0x84 build/default/production/_ext/1407244131/drv_tmr_static.o
-                0x9d004bdc                DRV_TMR2_Initialize
+                0x9d004634       0x84 build/default/production/_ext/1407244131/drv_tmr_static.o
+                0x9d004634                DRV_TMR2_Initialize
 
 .text.INIT_Rover_Motors
-                0x9d004c60       0x80
+                0x9d0046b8       0x80
  .text.INIT_Rover_Motors
-                0x9d004c60       0x80 build/default/production/_ext/1360937237/motor.o
-                0x9d004c60                INIT_Rover_Motors
+                0x9d0046b8       0x80 build/default/production/_ext/1360937237/motor.o
+                0x9d0046b8                INIT_Rover_Motors
 
 .text.outputEvent
-                0x9d004ce0       0x80
+                0x9d004738       0x80
  .text.outputEvent
-                0x9d004ce0       0x80 build/default/production/_ext/1360937237/debug.o
-                0x9d004ce0                outputEvent
+                0x9d004738       0x80 build/default/production/_ext/1360937237/debug.o
+                0x9d004738                outputEvent
 
 .text.DRV_TMR1_Initialize
-                0x9d004d60       0x7c
+                0x9d0047b8       0x7c
  .text.DRV_TMR1_Initialize
-                0x9d004d60       0x7c build/default/production/_ext/1407244131/drv_tmr_static.o
-                0x9d004d60                DRV_TMR1_Initialize
+                0x9d0047b8       0x7c build/default/production/_ext/1407244131/drv_tmr_static.o
+                0x9d0047b8                DRV_TMR1_Initialize
 
 .text.SYS_PORTS_PinDirectionSelect
-                0x9d004ddc       0x78
+                0x9d004834       0x78
  .text.SYS_PORTS_PinDirectionSelect
-                0x9d004ddc       0x78 build/default/production/_ext/2111169689/sys_ports.o
-                0x9d004ddc                SYS_PORTS_PinDirectionSelect
+                0x9d004834       0x78 build/default/production/_ext/2111169689/sys_ports.o
+                0x9d004834                SYS_PORTS_PinDirectionSelect
 
 .text.DRV_TMR0_Initialize
-                0x9d004e54       0x78
+                0x9d0048ac       0x78
  .text.DRV_TMR0_Initialize
-                0x9d004e54       0x78 build/default/production/_ext/1407244131/drv_tmr_static.o
-                0x9d004e54                DRV_TMR0_Initialize
+                0x9d0048ac       0x78 build/default/production/_ext/1407244131/drv_tmr_static.o
+                0x9d0048ac                DRV_TMR0_Initialize
 
 .text.move_Turn_Left
-                0x9d004ecc       0x74
+                0x9d004924       0x74
  .text.move_Turn_Left
-                0x9d004ecc       0x74 build/default/production/_ext/1360937237/motor.o
-                0x9d004ecc                move_Turn_Left
+                0x9d004924       0x74 build/default/production/_ext/1360937237/motor.o
+                0x9d004924                move_Turn_Left
 
 .text.move_Turn_Right
-                0x9d004f40       0x74
+                0x9d004998       0x74
  .text.move_Turn_Right
-                0x9d004f40       0x74 build/default/production/_ext/1360937237/motor.o
-                0x9d004f40                move_Turn_Right
+                0x9d004998       0x74 build/default/production/_ext/1360937237/motor.o
+                0x9d004998                move_Turn_Right
 
 .text.vQueueWaitForMessageRestricted
-                0x9d004fb4       0x74
+                0x9d004a0c       0x74
  .text.vQueueWaitForMessageRestricted
-                0x9d004fb4       0x74 build/default/production/_ext/8958737/queue.o
-                0x9d004fb4                vQueueWaitForMessageRestricted
+                0x9d004a0c       0x74 build/default/production/_ext/8958737/queue.o
+                0x9d004a0c                vQueueWaitForMessageRestricted
 
 .text.prvCheckForValidListAndQueue
-                0x9d005028       0x74
+                0x9d004a80       0x74
  .text.prvCheckForValidListAndQueue
-                0x9d005028       0x74 build/default/production/_ext/8958737/timers.o
+                0x9d004a80       0x74 build/default/production/_ext/8958737/timers.o
 
 .text.prvInsertTimerInActiveList
-                0x9d00509c       0x74
+                0x9d004af4       0x74
  .text.prvInsertTimerInActiveList
-                0x9d00509c       0x74 build/default/production/_ext/8958737/timers.o
+                0x9d004af4       0x74 build/default/production/_ext/8958737/timers.o
 
 .text.prvAddCurrentTaskToDelayedList
-                0x9d005110       0x70
+                0x9d004b68       0x70
  .text.prvAddCurrentTaskToDelayedList
-                0x9d005110       0x70 build/default/production/_ext/8958737/tasks.o
+                0x9d004b68       0x70 build/default/production/_ext/8958737/tasks.o
 
 .text.SYS_PORTS_DirectionSelect
-                0x9d005180       0x6c
+                0x9d004bd8       0x6c
  .text.SYS_PORTS_DirectionSelect
-                0x9d005180       0x6c build/default/production/_ext/2111169689/sys_ports.o
-                0x9d005180                SYS_PORTS_DirectionSelect
+                0x9d004bd8       0x6c build/default/production/_ext/2111169689/sys_ports.o
+                0x9d004bd8                SYS_PORTS_DirectionSelect
 
 .text.vTaskPlaceOnEventListRestricted
-                0x9d0051ec       0x6c
+                0x9d004c44       0x6c
  .text.vTaskPlaceOnEventListRestricted
-                0x9d0051ec       0x6c build/default/production/_ext/8958737/tasks.o
-                0x9d0051ec                vTaskPlaceOnEventListRestricted
+                0x9d004c44       0x6c build/default/production/_ext/8958737/tasks.o
+                0x9d004c44                vTaskPlaceOnEventListRestricted
 
 .text.vApplicationSetupTickTimerInterrupt
-                0x9d005258       0x6c
+                0x9d004cb0       0x6c
  .text.vApplicationSetupTickTimerInterrupt
-                0x9d005258       0x6c build/default/production/_ext/630015897/port.o
-                0x9d005258                vApplicationSetupTickTimerInterrupt
+                0x9d004cb0       0x6c build/default/production/_ext/630015897/port.o
+                0x9d004cb0                vApplicationSetupTickTimerInterrupt
 
 .text.xPortStartScheduler
-                0x9d0052c4       0x6c
+                0x9d004d1c       0x6c
  .text.xPortStartScheduler
-                0x9d0052c4       0x6c build/default/production/_ext/630015897/port.o
-                0x9d0052c4                xPortStartScheduler
+                0x9d004d1c       0x6c build/default/production/_ext/630015897/port.o
+                0x9d004d1c                xPortStartScheduler
+
+.text.SENSOR_Initialize
+                0x9d004d88       0x64
+ .text.SENSOR_Initialize
+                0x9d004d88       0x64 build/default/production/_ext/1360937237/sensor.o
+                0x9d004d88                SENSOR_Initialize
 
 .text.DRV_OC0_Initialize
-                0x9d005330       0x64
+                0x9d004dec       0x64
  .text.DRV_OC0_Initialize
-                0x9d005330       0x64 build/default/production/_ext/1047219354/drv_oc_static.o
-                0x9d005330                DRV_OC0_Initialize
+                0x9d004dec       0x64 build/default/production/_ext/1047219354/drv_oc_static.o
+                0x9d004dec                DRV_OC0_Initialize
 
 .text.DRV_OC1_Initialize
-                0x9d005394       0x64
+                0x9d004e50       0x64
  .text.DRV_OC1_Initialize
-                0x9d005394       0x64 build/default/production/_ext/1047219354/drv_oc_static.o
-                0x9d005394                DRV_OC1_Initialize
+                0x9d004e50       0x64 build/default/production/_ext/1047219354/drv_oc_static.o
+                0x9d004e50                DRV_OC1_Initialize
 
 .text.vTaskExitCritical
-                0x9d0053f8       0x5c
+                0x9d004eb4       0x5c
  .text.vTaskExitCritical
-                0x9d0053f8       0x5c build/default/production/_ext/8958737/tasks.o
-                0x9d0053f8                vTaskExitCritical
+                0x9d004eb4       0x5c build/default/production/_ext/8958737/tasks.o
+                0x9d004eb4                vTaskExitCritical
 
 .text.USART_send
-                0x9d005454       0x58
+                0x9d004f10       0x58
  .text.USART_send
-                0x9d005454       0x58 build/default/production/_ext/1360937237/usart.o
-                0x9d005454                USART_send
+                0x9d004f10       0x58 build/default/production/_ext/1360937237/usart.o
+                0x9d004f10                USART_send
 
 .text.xTimerCreateTimerTask
-                0x9d0054ac       0x58
+                0x9d004f68       0x58
  .text.xTimerCreateTimerTask
-                0x9d0054ac       0x58 build/default/production/_ext/8958737/timers.o
-                0x9d0054ac                xTimerCreateTimerTask
+                0x9d004f68       0x58 build/default/production/_ext/8958737/timers.o
+                0x9d004f68                xTimerCreateTimerTask
 
 .text.SYS_CLK_Initialize
-                0x9d005504       0x58
+                0x9d004fc0       0x58
  .text.SYS_CLK_Initialize
-                0x9d005504       0x58 build/default/production/_ext/639803181/sys_clk_static.o
-                0x9d005504                SYS_CLK_Initialize
+                0x9d004fc0       0x58 build/default/production/_ext/639803181/sys_clk_static.o
+                0x9d004fc0                SYS_CLK_Initialize
 
 .text.vListInsert
-                0x9d00555c       0x54
+                0x9d005018       0x54
  .text.vListInsert
-                0x9d00555c       0x54 build/default/production/_ext/8958737/list.o
-                0x9d00555c                vListInsert
+                0x9d005018       0x54 build/default/production/_ext/8958737/list.o
+                0x9d005018                vListInsert
 
 .text.vPortIncrementTick
-                0x9d0055b0       0x54
+                0x9d00506c       0x54
  .text.vPortIncrementTick
-                0x9d0055b0       0x54 build/default/production/_ext/630015897/port.o
-                0x9d0055b0                vPortIncrementTick
+                0x9d00506c       0x54 build/default/production/_ext/630015897/port.o
+                0x9d00506c                vPortIncrementTick
 
 .text.CONTROL_Initialize
-                0x9d005604       0x50
+                0x9d0050c0       0x50
  .text.CONTROL_Initialize
-                0x9d005604       0x50 build/default/production/_ext/1360937237/control.o
-                0x9d005604                CONTROL_Initialize
+                0x9d0050c0       0x50 build/default/production/_ext/1360937237/control.o
+                0x9d0050c0                CONTROL_Initialize
 
 .text.main_entry
-                0x9d005654       0x4c
+                0x9d005110       0x4c
  .text.main_entry
-                0x9d005654       0x4c c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MX795F512L/crt0_mips32r2.o
-                0x9d005680                __crt0_exit
+                0x9d005110       0x4c c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MX795F512L/crt0_mips32r2.o
+                0x9d00513c                __crt0_exit
 
 .text.SYS_DEVCON_SystemUnlock
-                0x9d0056a0       0x4c
+                0x9d00515c       0x4c
  .text.SYS_DEVCON_SystemUnlock
-                0x9d0056a0       0x4c build/default/production/_ext/394875440/sys_devcon.o
-                0x9d0056a0                SYS_DEVCON_SystemUnlock
+                0x9d00515c       0x4c build/default/production/_ext/394875440/sys_devcon.o
+                0x9d00515c                SYS_DEVCON_SystemUnlock
 
 .text.prvCopyDataFromQueue
-                0x9d0056ec       0x4c
+                0x9d0051a8       0x4c
  .text.prvCopyDataFromQueue
-                0x9d0056ec       0x4c build/default/production/_ext/8958737/queue.o
+                0x9d0051a8       0x4c build/default/production/_ext/8958737/queue.o
 
 .text.setDegree
-                0x9d005738       0x48
+                0x9d0051f4       0x48
  .text.setDegree
-                0x9d005738       0x48 build/default/production/_ext/1360937237/motor.o
-                0x9d005738                setDegree
+                0x9d0051f4       0x48 build/default/production/_ext/1360937237/motor.o
+                0x9d0051f4                setDegree
 
 .text.USART_init
-                0x9d005780       0x44
+                0x9d00523c       0x44
  .text.USART_init
-                0x9d005780       0x44 build/default/production/_ext/1360937237/usart.o
-                0x9d005780                USART_init
-
-.text.SYS_PORTS_PinRead
-                0x9d0057c4       0x44
- .text.SYS_PORTS_PinRead
-                0x9d0057c4       0x44 build/default/production/_ext/2111169689/sys_ports.o
-                0x9d0057c4                SYS_PORTS_PinRead
-
-.text.uxListRemove
-                0x9d005808       0x44
- .text.uxListRemove
-                0x9d005808       0x44 build/default/production/_ext/8958737/list.o
-                0x9d005808                uxListRemove
-
-.text.vTaskEnterCritical
-                0x9d00584c       0x44
- .text.vTaskEnterCritical
-                0x9d00584c       0x44 build/default/production/_ext/8958737/tasks.o
-                0x9d00584c                vTaskEnterCritical
-
-.text.pxPortInitialiseStack
-                0x9d005890       0x44
- .text.pxPortInitialiseStack
-                0x9d005890       0x44 build/default/production/_ext/630015897/port.o
-                0x9d005890                pxPortInitialiseStack
-
-.text           0x9d0058d4       0x44
- .text          0x9d0058d4       0x44 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_software_reset.o)
-                0x9d0058d4                __pic32_software_reset
-
-.text.sendDone  0x9d005918       0x40
- .text.sendDone
-                0x9d005918       0x40 build/default/production/_ext/1360937237/motor.o
-                0x9d005918                sendDone
-
-.text.setDistance
-                0x9d005958       0x3c
- .text.setDistance
-                0x9d005958       0x3c build/default/production/_ext/1360937237/motor.o
-                0x9d005958                setDistance
+                0x9d00523c       0x44 build/default/production/_ext/1360937237/usart.o
+                0x9d00523c                USART_init
 
 .text.writeDebug
-                0x9d005994       0x3c
+                0x9d005280       0x44
  .text.writeDebug
-                0x9d005994       0x3c build/default/production/_ext/1360937237/debug.o
-                0x9d005994                writeDebug
+                0x9d005280       0x44 build/default/production/_ext/1360937237/debug.o
+                0x9d005280                writeDebug
+
+.text.SYS_PORTS_PinRead
+                0x9d0052c4       0x44
+ .text.SYS_PORTS_PinRead
+                0x9d0052c4       0x44 build/default/production/_ext/2111169689/sys_ports.o
+                0x9d0052c4                SYS_PORTS_PinRead
+
+.text.uxListRemove
+                0x9d005308       0x44
+ .text.uxListRemove
+                0x9d005308       0x44 build/default/production/_ext/8958737/list.o
+                0x9d005308                uxListRemove
+
+.text.vTaskEnterCritical
+                0x9d00534c       0x44
+ .text.vTaskEnterCritical
+                0x9d00534c       0x44 build/default/production/_ext/8958737/tasks.o
+                0x9d00534c                vTaskEnterCritical
+
+.text.pxPortInitialiseStack
+                0x9d005390       0x44
+ .text.pxPortInitialiseStack
+                0x9d005390       0x44 build/default/production/_ext/630015897/port.o
+                0x9d005390                pxPortInitialiseStack
+
+.text           0x9d0053d4       0x44
+ .text          0x9d0053d4       0x44 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_software_reset.o)
+                0x9d0053d4                __pic32_software_reset
+
+.text.sendDone  0x9d005418       0x40
+ .text.sendDone
+                0x9d005418       0x40 build/default/production/_ext/1360937237/motor.o
+                0x9d005418                sendDone
+
+.text.setDistance
+                0x9d005458       0x3c
+ .text.setDistance
+                0x9d005458       0x3c build/default/production/_ext/1360937237/motor.o
+                0x9d005458                setDistance
 
 .text.SYS_DEVCON_SystemLock
-                0x9d0059d0       0x3c
+                0x9d005494       0x3c
  .text.SYS_DEVCON_SystemLock
-                0x9d0059d0       0x3c build/default/production/_ext/394875440/sys_devcon.o
-                0x9d0059d0                SYS_DEVCON_SystemLock
+                0x9d005494       0x3c build/default/production/_ext/394875440/sys_devcon.o
+                0x9d005494                SYS_DEVCON_SystemLock
 
 .text.IntHandlerDrvTmrInstance1
-                0x9d005a0c       0x3c
+                0x9d0054d0       0x3c
  .text.IntHandlerDrvTmrInstance1
-                0x9d005a0c       0x3c build/default/production/_ext/1688732426/system_interrupt.o
-                0x9d005a0c                IntHandlerDrvTmrInstance1
+                0x9d0054d0       0x3c build/default/production/_ext/1688732426/system_interrupt.o
+                0x9d0054d0                IntHandlerDrvTmrInstance1
 
 .text.SYS_PORTS_Set
-                0x9d005a48       0x38
+                0x9d00550c       0x38
  .text.SYS_PORTS_Set
-                0x9d005a48       0x38 build/default/production/_ext/2111169689/sys_ports.o
-                0x9d005a48                SYS_PORTS_Set
-
-.text.SYS_PORTS_PinSet
-                0x9d005a80       0x38
- .text.SYS_PORTS_PinSet
-                0x9d005a80       0x38 build/default/production/_ext/2111169689/sys_ports.o
-                0x9d005a80                SYS_PORTS_PinSet
+                0x9d00550c       0x38 build/default/production/_ext/2111169689/sys_ports.o
+                0x9d00550c                SYS_PORTS_Set
 
 .text.SYS_PORTS_PinClear
-                0x9d005ab8       0x38
+                0x9d005544       0x38
  .text.SYS_PORTS_PinClear
-                0x9d005ab8       0x38 build/default/production/_ext/2111169689/sys_ports.o
-                0x9d005ab8                SYS_PORTS_PinClear
+                0x9d005544       0x38 build/default/production/_ext/2111169689/sys_ports.o
+                0x9d005544                SYS_PORTS_PinClear
 
 .text.prvResetNextTaskUnblockTime
-                0x9d005af0       0x38
+                0x9d00557c       0x38
  .text.prvResetNextTaskUnblockTime
-                0x9d005af0       0x38 build/default/production/_ext/8958737/tasks.o
+                0x9d00557c       0x38 build/default/production/_ext/8958737/tasks.o
 
-.rodata         0x9d005b28       0x38
- .rodata        0x9d005b28       0x38 build/default/production/_ext/1688732426/system_tasks.o
+.rodata         0x9d0055b4       0x38
+ .rodata        0x9d0055b4       0x38 build/default/production/_ext/1688732426/system_tasks.o
 
 .text._bootstrap_exception_handler
-                0x9d005b60       0x38
+                0x9d0055ec       0x38
  .text._bootstrap_exception_handler
-                0x9d005b60       0x38 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
-                0x9d005b60                _bootstrap_exception_handler
+                0x9d0055ec       0x38 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+                0x9d0055ec                _bootstrap_exception_handler
 
 .text.SYS_PORTS_Clear
-                0x9d005b98       0x34
+                0x9d005624       0x34
  .text.SYS_PORTS_Clear
-                0x9d005b98       0x34 build/default/production/_ext/2111169689/sys_ports.o
-                0x9d005b98                SYS_PORTS_Clear
+                0x9d005624       0x34 build/default/production/_ext/2111169689/sys_ports.o
+                0x9d005624                SYS_PORTS_Clear
 
 .text.SYS_PORTS_Toggle
-                0x9d005bcc       0x34
+                0x9d005658       0x34
  .text.SYS_PORTS_Toggle
-                0x9d005bcc       0x34 build/default/production/_ext/2111169689/sys_ports.o
-                0x9d005bcc                SYS_PORTS_Toggle
+                0x9d005658       0x34 build/default/production/_ext/2111169689/sys_ports.o
+                0x9d005658                SYS_PORTS_Toggle
 
 .text._general_exception_handler
-                0x9d005c00       0x34
+                0x9d00568c       0x34
  .text._general_exception_handler
-                0x9d005c00       0x34 build/default/production/_ext/1688732426/system_exceptions.o
-                0x9d005c00                _general_exception_handler
+                0x9d00568c       0x34 build/default/production/_ext/1688732426/system_exceptions.o
+                0x9d00568c                _general_exception_handler
 
 .text.SYS_PORTS_Read
-                0x9d005c34       0x30
+                0x9d0056c0       0x30
  .text.SYS_PORTS_Read
-                0x9d005c34       0x30 build/default/production/_ext/2111169689/sys_ports.o
-                0x9d005c34                SYS_PORTS_Read
+                0x9d0056c0       0x30 build/default/production/_ext/2111169689/sys_ports.o
+                0x9d0056c0                SYS_PORTS_Read
 
 .text.SYS_PORTS_PinModeSelect
-                0x9d005c64       0x30
+                0x9d0056f0       0x30
  .text.SYS_PORTS_PinModeSelect
-                0x9d005c64       0x30 build/default/production/_ext/2111169689/sys_ports.o
-                0x9d005c64                SYS_PORTS_PinModeSelect
+                0x9d0056f0       0x30 build/default/production/_ext/2111169689/sys_ports.o
+                0x9d0056f0                SYS_PORTS_PinModeSelect
 
 .text.vListInsertEnd
-                0x9d005c94       0x30
+                0x9d005720       0x30
  .text.vListInsertEnd
-                0x9d005c94       0x30 build/default/production/_ext/8958737/list.o
-                0x9d005c94                vListInsertEnd
+                0x9d005720       0x30 build/default/production/_ext/8958737/list.o
+                0x9d005720                vListInsertEnd
 
 .text.uxPortSetInterruptMaskFromISR
-                0x9d005cc4       0x30
+                0x9d005750       0x30
  .text.uxPortSetInterruptMaskFromISR
-                0x9d005cc4       0x30 build/default/production/_ext/630015897/port.o
-                0x9d005cc4                uxPortSetInterruptMaskFromISR
+                0x9d005750       0x30 build/default/production/_ext/630015897/port.o
+                0x9d005750                uxPortSetInterruptMaskFromISR
 
 .text.SYS_PORTS_Initialize
-                0x9d005cf4       0x30
+                0x9d005780       0x30
  .text.SYS_PORTS_Initialize
-                0x9d005cf4       0x30 build/default/production/_ext/822048611/sys_ports_static.o
-                0x9d005cf4                SYS_PORTS_Initialize
+                0x9d005780       0x30 build/default/production/_ext/822048611/sys_ports_static.o
+                0x9d005780                SYS_PORTS_Initialize
 
 .vector_default
-                0x9d005d24       0x30
+                0x9d0057b0       0x30
  .vector_default
-                0x9d005d24       0x30 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
-                0x9d005d24                _DefaultInterrupt
+                0x9d0057b0       0x30 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+                0x9d0057b0                _DefaultInterrupt
 
 .text.SYS_PORTS_Write
-                0x9d005d54       0x2c
+                0x9d0057e0       0x2c
  .text.SYS_PORTS_Write
-                0x9d005d54       0x2c build/default/production/_ext/2111169689/sys_ports.o
-                0x9d005d54                SYS_PORTS_Write
+                0x9d0057e0       0x2c build/default/production/_ext/2111169689/sys_ports.o
+                0x9d0057e0                SYS_PORTS_Write
 
 .text.DRV_USART0_ReadByte
-                0x9d005d80       0x2c
+                0x9d00580c       0x2c
  .text.DRV_USART0_ReadByte
-                0x9d005d80       0x2c build/default/production/_ext/1345626252/drv_usart_static.o
-                0x9d005d80                DRV_USART0_ReadByte
+                0x9d00580c       0x2c build/default/production/_ext/1345626252/drv_usart_static.o
+                0x9d00580c                DRV_USART0_ReadByte
 
 .text.DRV_USART0_WriteByte
-                0x9d005dac       0x2c
+                0x9d005838       0x2c
  .text.DRV_USART0_WriteByte
-                0x9d005dac       0x2c build/default/production/_ext/1345626252/drv_usart_static.o
-                0x9d005dac                DRV_USART0_WriteByte
+                0x9d005838       0x2c build/default/production/_ext/1345626252/drv_usart_static.o
+                0x9d005838                DRV_USART0_WriteByte
 
 .text.pvTaskIncrementMutexHeldCount
-                0x9d005dd8       0x28
+                0x9d005864       0x28
  .text.pvTaskIncrementMutexHeldCount
-                0x9d005dd8       0x28 build/default/production/_ext/8958737/tasks.o
-                0x9d005dd8                pvTaskIncrementMutexHeldCount
+                0x9d005864       0x28 build/default/production/_ext/8958737/tasks.o
+                0x9d005864                pvTaskIncrementMutexHeldCount
 
 .text.prvTaskExitError
-                0x9d005e00       0x24
+                0x9d00588c       0x24
  .text.prvTaskExitError
-                0x9d005e00       0x24 build/default/production/_ext/630015897/port.o
+                0x9d00588c       0x24 build/default/production/_ext/630015897/port.o
 
 .text.vApplicationStackOverflowHook
-                0x9d005e24       0x24
+                0x9d0058b0       0x24
  .text.vApplicationStackOverflowHook
-                0x9d005e24       0x24 build/default/production/_ext/1688732426/rtos_hooks.o
-                0x9d005e24                vApplicationStackOverflowHook
+                0x9d0058b0       0x24 build/default/production/_ext/1688732426/rtos_hooks.o
+                0x9d0058b0                vApplicationStackOverflowHook
 
 .text.vApplicationMallocFailedHook
-                0x9d005e48       0x24
+                0x9d0058d4       0x24
  .text.vApplicationMallocFailedHook
-                0x9d005e48       0x24 build/default/production/_ext/1688732426/rtos_hooks.o
-                0x9d005e48                vApplicationMallocFailedHook
+                0x9d0058d4       0x24 build/default/production/_ext/1688732426/rtos_hooks.o
+                0x9d0058d4                vApplicationMallocFailedHook
 
-.text.main      0x9d005e6c       0x20
- .text.main     0x9d005e6c       0x20 build/default/production/_ext/1360937237/main.o
-                0x9d005e6c                main
+.text.main      0x9d0058f8       0x20
+ .text.main     0x9d0058f8       0x20 build/default/production/_ext/1360937237/main.o
+                0x9d0058f8                main
 
 .text.vListInitialise
-                0x9d005e8c       0x20
+                0x9d005918       0x20
  .text.vListInitialise
-                0x9d005e8c       0x20 build/default/production/_ext/8958737/list.o
-                0x9d005e8c                vListInitialise
+                0x9d005918       0x20 build/default/production/_ext/8958737/list.o
+                0x9d005918                vListInitialise
 
 .text.xTaskGetSchedulerState
-                0x9d005eac       0x20
+                0x9d005938       0x20
  .text.xTaskGetSchedulerState
-                0x9d005eac       0x20 build/default/production/_ext/8958737/tasks.o
-                0x9d005eac                xTaskGetSchedulerState
+                0x9d005938       0x20 build/default/production/_ext/8958737/tasks.o
+                0x9d005938                xTaskGetSchedulerState
 
 .text.IntHandlerDrvTmrInstance2
-                0x9d005ecc       0x20
+                0x9d005958       0x20
  .text.IntHandlerDrvTmrInstance2
-                0x9d005ecc       0x20 build/default/production/_ext/1688732426/system_interrupt.o
-                0x9d005ecc                IntHandlerDrvTmrInstance2
+                0x9d005958       0x20 build/default/production/_ext/1688732426/system_interrupt.o
+                0x9d005958                IntHandlerDrvTmrInstance2
 
 .text._SYS_Tasks
-                0x9d005eec       0x20
+                0x9d005978       0x20
  .text._SYS_Tasks
-                0x9d005eec       0x20 build/default/production/_ext/1688732426/system_tasks.o
+                0x9d005978       0x20 build/default/production/_ext/1688732426/system_tasks.o
 
 .text.SYS_DEVCON_JTAGDisable
-                0x9d005f0c       0x1c
+                0x9d005998       0x1c
  .text.SYS_DEVCON_JTAGDisable
-                0x9d005f0c       0x1c build/default/production/_ext/394875440/sys_devcon.o
-                0x9d005f0c                SYS_DEVCON_JTAGDisable
+                0x9d005998       0x1c build/default/production/_ext/394875440/sys_devcon.o
+                0x9d005998                SYS_DEVCON_JTAGDisable
 
-.rodata         0x9d005f28       0x1c
- .rodata        0x9d005f28       0x1c build/default/production/_ext/8958737/tasks.o
+.rodata         0x9d0059b4       0x1c
+ .rodata        0x9d0059b4       0x1c build/default/production/_ext/8958737/tasks.o
 
 .text.move_Stop
-                0x9d005f44       0x18
+                0x9d0059d0       0x18
  .text.move_Stop
-                0x9d005f44       0x18 build/default/production/_ext/1360937237/motor.o
-                0x9d005f44                move_Stop
-
-.rodata         0x9d005f5c       0x18
- .rodata        0x9d005f5c       0x18 build/default/production/_ext/1360937237/sensor.o
+                0x9d0059d0       0x18 build/default/production/_ext/1360937237/motor.o
+                0x9d0059d0                move_Stop
 
 .text._SENSOR_Tasks
-                0x9d005f74       0x18
+                0x9d0059e8       0x18
  .text._SENSOR_Tasks
-                0x9d005f74       0x18 build/default/production/_ext/1688732426/system_tasks.o
+                0x9d0059e8       0x18 build/default/production/_ext/1688732426/system_tasks.o
 
 .text._MOTOR_Tasks
-                0x9d005f8c       0x18
+                0x9d005a00       0x18
  .text._MOTOR_Tasks
-                0x9d005f8c       0x18 build/default/production/_ext/1688732426/system_tasks.o
+                0x9d005a00       0x18 build/default/production/_ext/1688732426/system_tasks.o
 
 .text._CONTROL_Tasks
-                0x9d005fa4       0x18
+                0x9d005a18       0x18
  .text._CONTROL_Tasks
-                0x9d005fa4       0x18 build/default/production/_ext/1688732426/system_tasks.o
+                0x9d005a18       0x18 build/default/production/_ext/1688732426/system_tasks.o
 
-.text           0x9d005fbc       0x18
- .text          0x9d005fbc       0x18 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
-                0x9d005fbc                _nmi_handler
+.text           0x9d005a30       0x18
+ .text          0x9d005a30       0x18 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
+                0x9d005a30                _nmi_handler
 
 .text.SYS_DEVCON_Initialize
-                0x9d005fd4       0x14
+                0x9d005a48       0x14
  .text.SYS_DEVCON_Initialize
-                0x9d005fd4       0x14 build/default/production/_ext/394875440/sys_devcon.o
-                0x9d005fd4                SYS_DEVCON_Initialize
+                0x9d005a48       0x14 build/default/production/_ext/394875440/sys_devcon.o
+                0x9d005a48                SYS_DEVCON_Initialize
 
 .text.SYS_INT_Initialize
-                0x9d005fe8       0x14
+                0x9d005a5c       0x14
  .text.SYS_INT_Initialize
-                0x9d005fe8       0x14 build/default/production/_ext/312783478/sys_int_pic32.o
-                0x9d005fe8                SYS_INT_Initialize
+                0x9d005a5c       0x14 build/default/production/_ext/312783478/sys_int_pic32.o
+                0x9d005a5c                SYS_INT_Initialize
 
 .text.vTaskSuspendAll
-                0x9d005ffc       0x14
+                0x9d005a70       0x14
  .text.vTaskSuspendAll
-                0x9d005ffc       0x14 build/default/production/_ext/8958737/tasks.o
-                0x9d005ffc                vTaskSuspendAll
+                0x9d005a70       0x14 build/default/production/_ext/8958737/tasks.o
+                0x9d005a70                vTaskSuspendAll
 
 .text.vTaskSetTimeOutState
-                0x9d006010       0x14
+                0x9d005a84       0x14
  .text.vTaskSetTimeOutState
-                0x9d006010       0x14 build/default/production/_ext/8958737/tasks.o
-                0x9d006010                vTaskSetTimeOutState
+                0x9d005a84       0x14 build/default/production/_ext/8958737/tasks.o
+                0x9d005a84                vTaskSetTimeOutState
 
 .text.DRV_ADC_Open
-                0x9d006024       0x14
+                0x9d005a98       0x14
  .text.DRV_ADC_Open
-                0x9d006024       0x14 build/default/production/_ext/1361460060/drv_adc_static.o
-                0x9d006024                DRV_ADC_Open
+                0x9d005a98       0x14 build/default/production/_ext/1361460060/drv_adc_static.o
+                0x9d005a98                DRV_ADC_Open
 
 .text.DRV_ADC_Close
-                0x9d006038       0x14
+                0x9d005aac       0x14
  .text.DRV_ADC_Close
-                0x9d006038       0x14 build/default/production/_ext/1361460060/drv_adc_static.o
-                0x9d006038                DRV_ADC_Close
+                0x9d005aac       0x14 build/default/production/_ext/1361460060/drv_adc_static.o
+                0x9d005aac                DRV_ADC_Close
 
 .text.DRV_OC0_Enable
-                0x9d00604c       0x14
+                0x9d005ac0       0x14
  .text.DRV_OC0_Enable
-                0x9d00604c       0x14 build/default/production/_ext/1047219354/drv_oc_static.o
-                0x9d00604c                DRV_OC0_Enable
+                0x9d005ac0       0x14 build/default/production/_ext/1047219354/drv_oc_static.o
+                0x9d005ac0                DRV_OC0_Enable
 
 .text.DRV_OC0_Start
-                0x9d006060       0x14
+                0x9d005ad4       0x14
  .text.DRV_OC0_Start
-                0x9d006060       0x14 build/default/production/_ext/1047219354/drv_oc_static.o
-                0x9d006060                DRV_OC0_Start
+                0x9d005ad4       0x14 build/default/production/_ext/1047219354/drv_oc_static.o
+                0x9d005ad4                DRV_OC0_Start
 
 .text.DRV_OC1_Enable
-                0x9d006074       0x14
+                0x9d005ae8       0x14
  .text.DRV_OC1_Enable
-                0x9d006074       0x14 build/default/production/_ext/1047219354/drv_oc_static.o
-                0x9d006074                DRV_OC1_Enable
+                0x9d005ae8       0x14 build/default/production/_ext/1047219354/drv_oc_static.o
+                0x9d005ae8                DRV_OC1_Enable
 
 .text.DRV_OC1_Start
-                0x9d006088       0x14
+                0x9d005afc       0x14
  .text.DRV_OC1_Start
-                0x9d006088       0x14 build/default/production/_ext/1047219354/drv_oc_static.o
-                0x9d006088                DRV_OC1_Start
+                0x9d005afc       0x14 build/default/production/_ext/1047219354/drv_oc_static.o
+                0x9d005afc                DRV_OC1_Start
 
 .text.DRV_TMR0_Start
-                0x9d00609c       0x14
+                0x9d005b10       0x14
  .text.DRV_TMR0_Start
-                0x9d00609c       0x14 build/default/production/_ext/1407244131/drv_tmr_static.o
-                0x9d00609c                DRV_TMR0_Start
+                0x9d005b10       0x14 build/default/production/_ext/1407244131/drv_tmr_static.o
+                0x9d005b10                DRV_TMR0_Start
 
 .text.DRV_TMR1_Start
-                0x9d0060b0       0x14
+                0x9d005b24       0x14
  .text.DRV_TMR1_Start
-                0x9d0060b0       0x14 build/default/production/_ext/1407244131/drv_tmr_static.o
-                0x9d0060b0                DRV_TMR1_Start
+                0x9d005b24       0x14 build/default/production/_ext/1407244131/drv_tmr_static.o
+                0x9d005b24                DRV_TMR1_Start
 
 .text.DRV_TMR2_Start
-                0x9d0060c4       0x14
+                0x9d005b38       0x14
  .text.DRV_TMR2_Start
-                0x9d0060c4       0x14 build/default/production/_ext/1407244131/drv_tmr_static.o
-                0x9d0060c4                DRV_TMR2_Start
+                0x9d005b38       0x14 build/default/production/_ext/1407244131/drv_tmr_static.o
+                0x9d005b38                DRV_TMR2_Start
 
 .text.DRV_USART0_ReceiverBufferIsEmpty
-                0x9d0060d8       0x14
+                0x9d005b4c       0x14
  .text.DRV_USART0_ReceiverBufferIsEmpty
-                0x9d0060d8       0x14 build/default/production/_ext/1345626252/drv_usart_static.o
-                0x9d0060d8                DRV_USART0_ReceiverBufferIsEmpty
+                0x9d005b4c       0x14 build/default/production/_ext/1345626252/drv_usart_static.o
+                0x9d005b4c                DRV_USART0_ReceiverBufferIsEmpty
 
 .text.IntHandlerDrvTmrInstance0
-                0x9d0060ec       0x14
+                0x9d005b60       0x14
  .text.IntHandlerDrvTmrInstance0
-                0x9d0060ec       0x14 build/default/production/_ext/1688732426/system_interrupt.o
-                0x9d0060ec                IntHandlerDrvTmrInstance0
+                0x9d005b60       0x14 build/default/production/_ext/1688732426/system_interrupt.o
+                0x9d005b60                IntHandlerDrvTmrInstance0
 
 .text.vTaskMissedYield
-                0x9d006100       0x10
+                0x9d005b74       0x10
  .text.vTaskMissedYield
-                0x9d006100       0x10 build/default/production/_ext/8958737/tasks.o
-                0x9d006100                vTaskMissedYield
+                0x9d005b74       0x10 build/default/production/_ext/8958737/tasks.o
+                0x9d005b74                vTaskMissedYield
 
 .text.vPortClearInterruptMaskFromISR
-                0x9d006110       0x10
+                0x9d005b84       0x10
  .text.vPortClearInterruptMaskFromISR
-                0x9d006110       0x10 build/default/production/_ext/630015897/port.o
-                0x9d006110                vPortClearInterruptMaskFromISR
+                0x9d005b84       0x10 build/default/production/_ext/630015897/port.o
+                0x9d005b84                vPortClearInterruptMaskFromISR
 
-.text.setSpeed  0x9d006120        0xc
+.text.setSpeed  0x9d005b94        0xc
  .text.setSpeed
-                0x9d006120        0xc build/default/production/_ext/1360937237/motor.o
-                0x9d006120                setSpeed
+                0x9d005b94        0xc build/default/production/_ext/1360937237/motor.o
+                0x9d005b94                setSpeed
 
 .text.xQueueIsQueueEmptyFromISR
-                0x9d00612c        0xc
+                0x9d005ba0        0xc
  .text.xQueueIsQueueEmptyFromISR
-                0x9d00612c        0xc build/default/production/_ext/8958737/queue.o
-                0x9d00612c                xQueueIsQueueEmptyFromISR
+                0x9d005ba0        0xc build/default/production/_ext/8958737/queue.o
+                0x9d005ba0                xQueueIsQueueEmptyFromISR
 
 .text.xTaskGetTickCount
-                0x9d006138        0xc
+                0x9d005bac        0xc
  .text.xTaskGetTickCount
-                0x9d006138        0xc build/default/production/_ext/8958737/tasks.o
-                0x9d006138                xTaskGetTickCount
+                0x9d005bac        0xc build/default/production/_ext/8958737/tasks.o
+                0x9d005bac                xTaskGetTickCount
 
 .text.SYS_CLK_SystemFrequencyGet
-                0x9d006144        0xc
+                0x9d005bb8        0xc
  .text.SYS_CLK_SystemFrequencyGet
-                0x9d006144        0xc build/default/production/_ext/639803181/sys_clk_static.o
-                0x9d006144                SYS_CLK_SystemFrequencyGet
+                0x9d005bb8        0xc build/default/production/_ext/639803181/sys_clk_static.o
+                0x9d005bb8                SYS_CLK_SystemFrequencyGet
 
 .text.SYS_CLK_PeripheralFrequencyGet
-                0x9d006150        0xc
+                0x9d005bc4        0xc
  .text.SYS_CLK_PeripheralFrequencyGet
-                0x9d006150        0xc build/default/production/_ext/639803181/sys_clk_static.o
-                0x9d006150                SYS_CLK_PeripheralFrequencyGet
+                0x9d005bc4        0xc build/default/production/_ext/639803181/sys_clk_static.o
+                0x9d005bc4                SYS_CLK_PeripheralFrequencyGet
 
-.rodata         0x9d00615c        0x8
- .rodata        0x9d00615c        0x8 build/default/production/_ext/1360937237/motor.o
+.rodata         0x9d005bd0        0x8
+ .rodata        0x9d005bd0        0x8 build/default/production/_ext/1360937237/motor.o
 
 .text.SYS_DEVCON_Tasks
-                0x9d006164        0x8
+                0x9d005bd8        0x8
  .text.SYS_DEVCON_Tasks
-                0x9d006164        0x8 build/default/production/_ext/394875440/sys_devcon.o
-                0x9d006164                SYS_DEVCON_Tasks
+                0x9d005bd8        0x8 build/default/production/_ext/394875440/sys_devcon.o
+                0x9d005bd8                SYS_DEVCON_Tasks
 
 .text.vListInitialiseItem
-                0x9d00616c        0x8
+                0x9d005be0        0x8
  .text.vListInitialiseItem
-                0x9d00616c        0x8 build/default/production/_ext/8958737/list.o
-                0x9d00616c                vListInitialiseItem
+                0x9d005be0        0x8 build/default/production/_ext/8958737/list.o
+                0x9d005be0                vListInitialiseItem
 
-.rodata         0x9d006174        0x8
- .rodata        0x9d006174        0x8 build/default/production/_ext/8958737/timers.o
+.rodata         0x9d005be8        0x8
+ .rodata        0x9d005be8        0x8 build/default/production/_ext/8958737/timers.o
 
 .text.vPortFree
-                0x9d00617c        0x8
+                0x9d005bf0        0x8
  .text.vPortFree
-                0x9d00617c        0x8 build/default/production/_ext/1920397356/heap_1.o
-                0x9d00617c                vPortFree
+                0x9d005bf0        0x8 build/default/production/_ext/1920397356/heap_1.o
+                0x9d005bf0                vPortFree
 
 .text._on_reset
-                0x9d006184        0x8
+                0x9d005bf8        0x8
  .text._on_reset
-                0x9d006184        0x8 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
-                0x9d006184                _on_reset
+                0x9d005bf8        0x8 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+                0x9d005bf8                _on_reset
 
 .text._on_bootstrap
-                0x9d00618c        0x8
+                0x9d005c00        0x8
  .text._on_bootstrap
-                0x9d00618c        0x8 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
-                0x9d00618c                _on_bootstrap
+                0x9d005c00        0x8 c:/program files (x86)/microchip/xc32/v1.31/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+                0x9d005c00                _on_bootstrap
 
-.rodata         0x9d006194        0x8
- .rodata        0x9d006194        0x4 build/default/production/_ext/630015897/port.o
-                0x9d006194                xISRStackTop
- .rodata        0x9d006198        0x4 build/default/production/_ext/1688732426/system_init.o
-                0x9d006198                sysDevconInit
+.rodata         0x9d005c08        0x8
+ .rodata        0x9d005c08        0x4 build/default/production/_ext/630015897/port.o
+                0x9d005c08                xISRStackTop
+ .rodata        0x9d005c0c        0x4 build/default/production/_ext/1688732426/system_init.o
+                0x9d005c0c                sysDevconInit

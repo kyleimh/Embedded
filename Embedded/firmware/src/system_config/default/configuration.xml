@@ -185,7 +185,7 @@
       <Template>
         <Name>FreeRTOSConfig.h</Name>
         <Path>Header Files/app/system_config/default</Path>
-        <Checksum>7A9D2FA3DFF3F10794FE7D22E7EDCD7C</Checksum>
+        <Checksum>0E5DB31DF5E100D6B449F7F90B9B9320</Checksum>
       </Template>
       <Template>
         <Name>motor.h</Name>
@@ -214,7 +214,7 @@
       <Template>
         <Name>system_init.c</Name>
         <Path>Source Files/app/system_config/default</Path>
-        <Checksum>60DA3863E921328A7AC3D259E8FF1D87</Checksum>
+        <Checksum>AEDBDAE53CF6EBB9E70526D2699DA167</Checksum>
       </Template>
       <Template>
         <Name>drv_oc_static.h</Name>
@@ -264,7 +264,7 @@
       <Template>
         <Name>system_config.h</Name>
         <Path>Header Files/app/system_config/default</Path>
-        <Checksum>2E9A9543BBA16B04A7A066681E1C6489</Checksum>
+        <Checksum>8E394886F50A8725F908845FBA2C2E26</Checksum>
       </Template>
       <Template>
         <Name>drv_tmr_static.c</Name>

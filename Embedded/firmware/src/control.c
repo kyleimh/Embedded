@@ -75,18 +75,14 @@ void CONTROL_Tasks ( void )
                         ctrlMsgSend.data2 = ctrlMsgRecv.data2;
                         USART_send(ctrlMsgSend);
                         
-                }else if ( ctrlMsgRecv.id == 0x48 ) 
-                {
-                    if(ctrlMsgRecv.msg == 0x40){ //Set debug scheme to ALL
-                        debugScheme = 0;
-                    }else if(ctrlMsgRecv.msg == 0x41){ //Set debug scheme to only ADC
-                        debugScheme = 1;
-                    }else if(ctrlMsgRecv.msg == 0x42){ //Set debug scheme to only LINE
-                        debugScheme = 2;
-                    }
                 }
                 else
                 {
+                    ctrlMsgSend.id    = 0x41;
+                    ctrlMsgSend.msg   = ctrlMsgRecv.msg;
+                    ctrlMsgSend.data1 = ctrlMsgRecv.data1;
+                    ctrlMsgSend.data2 = ctrlMsgRecv.data2;
+                    USART_send(ctrlMsgSend);
                     SYS_PORTS_Toggle(PORTS_ID_0, PORT_CHANNEL_A, mask);
                 }
             }

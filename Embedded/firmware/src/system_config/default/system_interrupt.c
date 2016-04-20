@@ -166,7 +166,7 @@ void IntHandlerDrvUsartInstance0(void)
         }
         else if( bytesRecvd == 5 && (DRV_USART0_ReceiverBufferIsEmpty()) )
         {
-            if(received.id == 0x53){
+            if(received.id == 0x34){
                 if (xQueueSendToFrontFromISR(sensorQueue, &received, &xHigherPriorityTaskWoken) == pdFALSE) 
                 {
                     outputEvent(SENSOR_QUEUE_FULL);
@@ -175,7 +175,17 @@ void IntHandlerDrvUsartInstance0(void)
                 {
                     outputEvent(SENT_TO_SENSOR_QUEUE);
                 }
-            }else{
+            }else if ( received.id == 0x74 ) 
+            {
+                if(received.msg == 0x40){ //Set debug scheme to ALL
+                    debugScheme = 0;
+                }else if(received.msg == 0x41){ //Set debug scheme to only ADC
+                    debugScheme = 1;
+                }else if(received.msg == 0x42){ //Set debug scheme to only LINE
+                    debugScheme = 2;
+                }
+            }            
+            else{
                 if (xQueueSendFromISR(controlQueue, &received, &xHigherPriorityTaskWoken) == pdFALSE) 
                 {
                     outputEvent(CONTROL_QUEUE_FULL);

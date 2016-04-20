@@ -12,7 +12,7 @@
 
 /*** DEVCFG0 ***/
 
-#pragma config DEBUG =      ON
+#pragma config DEBUG =      OFF
 #pragma config ICESEL =     ICS_PGx2
 #pragma config PWP =        OFF
 #pragma config BWP =        OFF
@@ -20,19 +20,19 @@
 
 /*** DEVCFG1 ***/
 
-#pragma config FNOSC =      FRCPLL
-#pragma config FSOSCEN =    ON
+#pragma config FNOSC =      PRIPLL
+#pragma config FSOSCEN =    OFF
 #pragma config IESO =       ON
-#pragma config POSCMOD =    OFF
+#pragma config POSCMOD =    XT
 #pragma config OSCIOFNC =   OFF
 #pragma config FPBDIV =     DIV_1
-#pragma config FCKSM =      CSECMD
+#pragma config FCKSM =      CSDCMD
 #pragma config WDTPS =      PS1048576
-#pragma config FWDTEN =     OFF
+#pragma config FWDTEN =     ON
 
 /*** DEVCFG2 ***/
 
-#pragma config FPLLIDIV =   DIV_2
+#pragma config FPLLIDIV =   DIV_12
 #pragma config FPLLMUL =    MUL_20
 #pragma config FPLLODIV =   DIV_1
 #pragma config UPLLIDIV =   DIV_2
@@ -64,6 +64,9 @@
 // *****************************************************************************
 // *****************************************************************************
 
+//<editor-fold defaultstate="collapsed" desc="DRV_Timer Initialization Data">
+
+// </editor-fold>
 //<editor-fold defaultstate="collapsed" desc="DRV_USART Initialization Data">
 
 // </editor-fold>
@@ -144,6 +147,7 @@ void SYS_Initialize ( void* data )
  
     DRV_USART0_Initialize();
     
+
      /*Initialize OC0 */
     DRV_OC0_Initialize();
 

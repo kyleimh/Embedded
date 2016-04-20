@@ -259,7 +259,6 @@ void MOTOR_Tasks ( void )
                         break;
                 }
                 
-                outputEvent(MOTOR_QUEUE_RECEIVED);
             }
             break;
         }

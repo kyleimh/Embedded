@@ -20,12 +20,7 @@ void outputEvent( uint8_t value  )
             writeDebug(value);
             break;
         }
-        
-        
-        
-        
     }
-   
 }
 
 
@@ -33,7 +28,7 @@ void writeDebug( uint8_t value  ){
     //Get current value from Port E
     uint32_t portE = SYS_PORTS_Read(PORTS_ID_0, PORT_CHANNEL_E);
     //Save Port E bits 8-31
-    value = value | (portE & 0xFFFFFF00);
+    portE = value | (portE & 0xFFFFFF00);
     //Write Value to PortE
-    SYS_PORTS_Write( PORTS_ID_0, PORT_CHANNEL_E, value);    
+    SYS_PORTS_Write( PORTS_ID_0, PORT_CHANNEL_E, portE);    
 }

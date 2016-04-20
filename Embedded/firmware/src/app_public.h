@@ -16,7 +16,7 @@
 #define MSG_START 0x02
 #define MSG_END   0x03
 
-#define enableLineSensor 1
+#define enableLineSensor 0
 #define enableADC        0
 
 #define true  1
@@ -28,11 +28,11 @@ volatile unsigned int L_encoder;
 
 typedef enum {
     STOP = 0,
-            FORWARD = 11, //B
-            BACKWARD = 12, //C
-            TURN_RIGHT = 13, //D
-            TURN_LEFT  = 14, //E
-            DONE       = 100
+    FORWARD = 11, //B
+    BACKWARD = 12, //C
+    TURN_RIGHT = 13, //D
+    TURN_LEFT  = 14, //E
+    DONE       = 100
 } MOTOR_MESSAGE;
 
 bool validData;
