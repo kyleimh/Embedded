@@ -26,14 +26,29 @@
 volatile unsigned int R_encoder;
 volatile unsigned int L_encoder;
 
+
+static bool Motor_Test = false; 
 typedef enum {
     STOP = 0,
     FORWARD = 11, //B
     BACKWARD = 12, //C
     TURN_RIGHT = 13, //D
     TURN_LEFT  = 14, //E
+            TEST_ON = 21, 
+            TEST_OFF = 20,
     DONE       = 100
 } MOTOR_MESSAGE;
+
+typedef enum {
+    SLOW = 1400, 
+    AVERAGE = 1700,
+    FAST = 2000    
+} MOTOR_SPEED;
+
+
+typedef enum {
+    SENSOR_TO_MOTOR = 23,
+} COMMUNICATION;
 
 bool validData;
 uint8_t debugScheme;

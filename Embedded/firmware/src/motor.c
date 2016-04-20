@@ -32,50 +32,29 @@ void INIT_Rover_Motors()
     PLIB_PORTS_PinClear (PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3);
 }
 
-void move_Forward(int speed_R, int speed_L)
+void move_Forward()
 {
     //Make right motor go forward 
     PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_C, PORTS_BIT_POS_14);
-    PLIB_OC_PulseWidth16BitSet(OC_ID_1, speed_R);
+    PLIB_OC_PulseWidth16BitSet(OC_ID_1, motor_data.R_speed);
     
     //Make left motor go forward
     PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_1);
-    PLIB_OC_PulseWidth16BitSet(OC_ID_2, speed_L);
+    PLIB_OC_PulseWidth16BitSet(OC_ID_2, motor_data.L_speed);
     
-    R_encoder = 0; 
-    L_encoder = 0;
-    if (Mv_distance == 0)
-    {
-        return; // no designated distance
-    }
-    
-    while(R_encoder < Mv_distance && L_encoder < Mv_distance) {;} //wait
-    
-    move_Stop();
-    setDistance(0);
+    checkInstDone(DISTANCE);
 }
-void move_Backward(int speed_R, int speed_L)
+void move_Backward()
 {
     //Make right motor go backward 
     PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_C, PORTS_BIT_POS_14);
-    PLIB_OC_PulseWidth16BitSet(OC_ID_1, speed_R);
+    PLIB_OC_PulseWidth16BitSet(OC_ID_1, motor_data.R_speed);
     
     //Make left motor go backward
     PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_1);
-    PLIB_OC_PulseWidth16BitSet(OC_ID_2, speed_L);
+    PLIB_OC_PulseWidth16BitSet(OC_ID_2, motor_data.L_speed);
     
-    R_encoder = 0; 
-    L_encoder = 0;
-    
-    if (Mv_distance == 0)
-    {
-        return; // no designated distance
-    }
-    
-    while(R_encoder < Mv_distance && L_encoder < Mv_distance) {;} //wait
-    
-    move_Stop();    
-    setDistance(0);
+    checkInstDone(DISTANCE);
 }
 void move_Stop()
 {
@@ -83,53 +62,89 @@ void move_Stop()
     PLIB_OC_PulseWidth16BitSet(OC_ID_1, 0);
     //Make right motor stop
     PLIB_OC_PulseWidth16BitSet(OC_ID_2, 0);
+    
+//    sendDone(0);
 }
 //Handles turning the rovers, keep turning until a stop is called
-void move_Turn_Right(int speed)
+void move_Turn_Right()
 {
     //Make right motor go forward 
     PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_C, PORTS_BIT_POS_14);
-    PLIB_OC_PulseWidth16BitSet(OC_ID_1, speed);
+    PLIB_OC_PulseWidth16BitSet(OC_ID_1, motor_data.R_speed);
     
     //Make left motor go forward
     PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_1);
-    PLIB_OC_PulseWidth16BitSet(OC_ID_2, speed);
+    PLIB_OC_PulseWidth16BitSet(OC_ID_2, motor_data.L_speed);
     
-    R_encoder = 0; 
-    L_encoder = 0;
-    
-    if (Mv_degree == 0)
-    {
-        return; // no designated distance
-    }
-    
-    while(R_encoder < Mv_degree ) {;} //wait
-    
-    move_Stop();
-    setDegree(0);
+    checkInstDone(DEGREE);
 }
-void move_Turn_Left(int speed)
+void move_Turn_Left()
 {
     //Make right motor go forward 
     PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_C, PORTS_BIT_POS_14);
-    PLIB_OC_PulseWidth16BitSet(OC_ID_1, speed);
+    PLIB_OC_PulseWidth16BitSet(OC_ID_1, motor_data.R_speed);
     
     //Make left motor go forward
     PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_1);
-    PLIB_OC_PulseWidth16BitSet(OC_ID_2, speed);
+    PLIB_OC_PulseWidth16BitSet(OC_ID_2, motor_data.L_speed);
     
-    R_encoder = 0; 
-    L_encoder = 0;
-    
-    if (Mv_degree == 0)
+    checkInstDone(DEGREE);
+}
+
+void checkInstDone(DISPLACE disOrdeg)
+{
+    if (inst_setup == false)
     {
-        return; // no designated distance
+        R_encoder = 0; 
+        L_encoder = 0;
+        
+        //set up is now true 
+        inst_setup = true;
+        
     }
     
-    while(L_encoder < Mv_degree) {;} //wait
+    if (Displace[disOrdeg] == 0)
+        return;
+    
+    while ((R_encoder < Displace[disOrdeg] || L_encoder < Displace[disOrdeg]))
+    {;}
+    
     
     move_Stop();
-    setDegree(0);
+    sendDone(2);
+    //reset needed variables
+    setDisplacement(disOrdeg, 0); //reset the distance
+    inst_setup = false;
+    motor_data.curState = STOP;
+}
+
+void setSpeed(int left_speed, int right_speed)
+{
+    switch (left_speed)
+    {
+        case 10:
+            motor_data.L_speed = SLOW;
+            break;
+        case 11:
+            motor_data.L_speed = AVERAGE;
+            break;
+        case 12:
+            motor_data.L_speed = FAST;
+            break;
+    }
+    
+    switch (left_speed)
+    {
+        case 10:
+            motor_data.R_speed = SLOW;
+            break;
+        case 11:
+            motor_data.R_speed = AVERAGE;
+            break;
+        case 12:
+            motor_data.R_speed = FAST;
+            break;
+    }
 }
 
 void test(int speed)
@@ -145,38 +160,46 @@ void test(int speed)
    move_Stop();     
 }
 
-void setDistance(int dis)
+void setDisplacement(DISPLACE disOrdeg, int value)
 {
-    dis = dis - 5;
-    Mv_distance = (dis * 17) - (dis/5) + (dis/10);
+    value = value - OFFSET; //correct the offset we add before sending
+    
+    if (disOrdeg == DISTANCE)
+    {
+//        Displace[DISTANCE] = (value * 17) - (value/5) + (value/10); //inches
+        Displace[DISTANCE] = ((value * 180240)+ 34215) / 10000;
+    }
+    //given a degree
+    else 
+    {
+        Displace[DEGREE] = (value*3457)/5000 - 9.1429;
+        
+        if(Displace[DEGREE] < 0)
+        {
+            Displace[DEGREE] = Displace[DEGREE]*-1;
+        }
+    }   
 }
 
-void setDegree(int degree)
-{
-    //what degrees am I going to be able to move
-    degree = degree - 5;
-    Mv_degree = (0.6914)*degree - 9.1429;
-}
 
-void setSpeed(int speed)
-{
-    Mv_speed = 2000;
-}
 void MOTOR_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
     motor_data.state = MOTOR_STATE_INIT; 
     
     INIT_Rover_Motors();
-    
-    //Used for debugging
-    SYS_PORTS_PinDirectionSelect(PORTS_ID_0, SYS_PORTS_DIRECTION_OUTPUT, PORT_CHANNEL_F, PORTS_BIT_POS_3 );
-    SYS_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3);
-    
+        
     R_encoder = 0; //initialized and incremented by ISR
     L_encoder = 0;
-    Mv_distance = 0; 
-    Mv_degree = 0;
+    
+    Displace[DISTANCE] = 0; 
+    Displace[DEGREE] = 0;
+    motor_data.curState = STOP;
+    
+    inst_setup = false;
+    
+    motor_data.R_speed = FAST; 
+    motor_data.L_speed = FAST;
     
     DRV_TMR0_Start();
     DRV_TMR1_Start();   //timer for encoders
@@ -215,50 +238,55 @@ void MOTOR_Tasks ( void )
             else 
             {
                 outputEvent(MOTOR_QUEUE_RECEIVED);
-                int dis;
-                //read message in properly
-                switch (message.msg)
-                {
-                    case STOP:
-                        move_Stop();
-                        break;
-                        
-                    case FORWARD:
-                        dis = message.data1;
-                        setDistance(dis);
-                        setSpeed(message.data2);
-                        move_Forward(Mv_speed, Mv_speed);
-                        sendDone(dis);
-                        break;
-                        
-                    case BACKWARD:
-                        dis = message.data1;                        
-                        setDistance(dis);
-                        setSpeed(message.data2);
-                        move_Backward(Mv_speed, Mv_speed);
-                        sendDone(dis);
-                        break;
-                        
-                    case TURN_LEFT:
-                        dis = message.data1;                        
-                        setDegree(dis);
-                        setSpeed(message.data2);
-                        move_Turn_Left(Mv_speed);
-                        sendDone(dis);
-                        break;
-                        
-                    case TURN_RIGHT:
-                        dis = message.data1;
-                        setDegree(dis);
-                        setSpeed(message.data2);
-                        move_Turn_Right(Mv_speed);
-                        sendDone(dis);
-                        break;
-                        
-                    default:
-                        break;
-                }
-                
+                    switch (message.msg)
+                    {
+                        case STOP:
+                            motor_data.curState = STOP;
+                            move_Stop();
+                            break;
+
+                        case FORWARD:
+                            if(message.id == SENSOR_TO_MOTOR)
+                            {
+                                //set speeds correctly
+                                setSpeed(message.data1, message.data2);
+                            }
+                            else 
+                            {
+                                setDisplacement(DISTANCE, message.data1);
+                            }  
+                            motor_data.curState = FORWARD;
+                            move_Forward();
+                            break;
+
+                        case BACKWARD:            
+                            if(message.id == SENSOR_TO_MOTOR)
+                            {
+                                setSpeed(message.data1, message.data2);
+                            }
+                            else 
+                            {
+                                setDisplacement(DISTANCE, message.data1);
+                            }  
+                            motor_data.curState = BACKWARD;
+                            move_Backward();                           
+                            break;
+
+                        case TURN_LEFT:
+                            setDisplacement(DEGREE, message.data1);
+                            motor_data.curState = TURN_LEFT;
+                            move_Turn_Left();
+                            break;
+
+                        case TURN_RIGHT:
+                            setDisplacement(DEGREE, message.data1);
+                            motor_data.curState = TURN_RIGHT;
+                            move_Turn_Right();
+                            break;
+
+                        default:
+                            break;
+                    }
             }
             break;
         }
@@ -271,6 +299,86 @@ void MOTOR_Tasks ( void )
         }
     }
 }
+
+
+//void setMotorState(MESSAGE message)
+//{
+//    //read message in properly
+//    switch (message.msg)
+//    {
+//        case STOP:
+//        move_Stop();
+//        break;
+//                        
+//        case FORWARD:
+//            if(message.id == SENSOR_TO_MOTOR)
+//            {
+//                //set speeds correctly
+//            }
+//            else 
+//            {
+//                setDisplacement(DISTANCE, message.data1);
+//            }  
+//            curState = FORWARD;
+//            break;
+//                        
+//        case BACKWARD:            
+//            if(message.id == SENSOR_TO_MOTOR)
+//            {
+//                //set speeds correctly
+//            }
+//            else 
+//            {
+//                setDisplacement(DISTANCE, message.data1);
+//            }  
+//            curState = BACKWARD;
+//
+//            break;
+//                        
+//        case TURN_LEFT:
+//            setDisplacement(DEGREE, message.data1);
+//            curState = TURN_LEFT;
+//            break;
+//                        
+//        case TURN_RIGHT:
+//            setDisplacement(DEGREE, message.data1);
+//            curState = TURN_RIGHT;
+//            break;
+//                        
+//        default:
+//            break;
+//    }
+//}
+//
+//void executeState()
+//{
+//    if (motor_data.curState == FORWARD ||
+//            motor_data.curState == FORWARD )
+//    {checkInstDone(DISTANCE);}
+//    else if (motor_data.curState == TURN_RIGHT ||
+//            motor_data.curState == TURN_LEFT )
+//    {checkInstDone(DEGREE);}
+////    switch(motor_data.curState) 
+////    {
+////        case FORWARD:
+////            move_Forward();
+////            break;
+////        case BACKWARD:
+////            move_Backward();
+////            break;
+////        case TURN_LEFT:
+////            move_Turn_Left();
+////            break;
+////        case TURN_RIGHT: 
+////            move_Turn_Right();
+////            break;
+////        case STOP:
+////            move_Stop();
+////            break;
+////        default:
+////            break;
+////    }
+//}
 
 void sendDone(int disOrdeg){
     MESSAGE mssge;

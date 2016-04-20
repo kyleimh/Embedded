@@ -20,17 +20,22 @@ typedef enum
 } MOTOR_STATES;
 
 
-void sendDone(int disOrdeg);
-void setDegree(int degree);
-void setDistance(int dis);
-void setSpeed(int speed);
-int Mv_degree;
-int Mv_distance;
-int Mv_speed;
+static const int DEFUALT_SPEED = 2000;
+static const int OFFSET = 5;
+static bool inst_setup;     //keeps track if instruction is set up
+static int Displace[2]; 
 
+typedef enum 
+{
+    DISTANCE = 0, 
+            DEGREE = 1
+} DISPLACE;
 typedef struct
 {
     MOTOR_STATES state;
+    int curState;
+    int R_speed;
+    int L_speed;
 } MOTOR_DATA;
 
 MOTOR_DATA motor_data;
@@ -39,17 +44,20 @@ MOTOR_DATA motor_data;
 void INIT_Rover_Motors();
 
 //Basic forward and backward movement
-void move_Forward(int speed_R, int speed_L);
-void move_Backward(int speed_R, int speed_L);
+void move_Forward();
+void move_Backward();
+void setSpeed(int left_speed, int right_speed);
 void move_Stop();       //stops all rovers
-
+void checkInstDone(DISPLACE disOrdeg);
 //Handles turning the rovers, keep turning until a stop is called
-void move_Turn_Right(int speed);
-void move_Turn_Left(int speed);
+void move_Turn_Right();
+void move_Turn_Left();
+//void setMotorState(MESSAGE message);
+void executeState();
+void sendDone(int disOrdeg);
+void setDisplacement(DISPLACE disOrDeg, int value);
 
 void test(int speed);
-
-int get_Distance(int ticks);
 
 //Harmony functions for the Motor app
 void MOTOR_Initialize ( void );
