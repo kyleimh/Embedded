@@ -5,13 +5,18 @@
         <group>
             <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/system_config/default/system_interrupt.c</file>
             <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/system_config/default/system_init.c</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/control.h</file>
             <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/debug.h</file>
-            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/usart.c</file>
             <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/control.c</file>
             <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/sensor.c</file>
             <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/debug.c</file>
             <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/motor.c</file>
             <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/timerCallbacks.c</file>
+<<<<<<< HEAD
+=======
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/app_public.h</file>
+            <file>file:/C:/ECE4534/Embedded/Embedded/firmware/src/system_config/default/system_tasks.c</file>
+>>>>>>> 600aec29ff2307b07ff4a52e90f3f8507f566869
         </group>
     </open-files>
 </project-private>

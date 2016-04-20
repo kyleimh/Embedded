@@ -20,6 +20,7 @@ bool push;
 bool wait;
 bool safe;
 bool intersect;
+bool adjusting;
 
 typedef struct
 {

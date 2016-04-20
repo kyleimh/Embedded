@@ -1,0 +1,92 @@
+from PyQt4 import QtGui # Import the PyQt4 module we'll need
+from PyQt4.QtCore import QThread
+import sys # We need sys so that we can pass argv to QApplication
+import socket
+import binascii
+import struct
+import sys
+import sensor_debug # This file holds our MainWindow and all design related things
+              # it also keeps events etc that we defined in Qt Designer
+
+class Sensor_App(QtGui.QMainWindow, sensor_debug.Ui_MainWindow):
+    def __init__(self):
+        super(self.__class__, self).__init__()
+        self.setupUi(self)  # This is defined in design.py file automatically
+                            # It sets up layout and widgets that are defined
+        self.push_button.clicked.connect(self.push)
+        self.raw_button.clicked.connect(self.raw)
+        self.cm_button.clicked.connect(self.cm)
+        self.myThread = Communication()
+        self.myThread.start()
+
+        
+    def push(self):
+        conn.sendall(values2)
+        
+    def raw(self):
+        conn.sendall(values2)
+        
+    def cm(self):
+        conn.sendall(values2)
+        
+class Communication(QThread):
+    def __init__(self):      
+        QThread.__init__(self)
+       
+    def __del__(self):
+        self.wait()
+       
+    def run(self):
+        while 1:
+            try:
+                response = conn.recv(4)
+                #print binascii.hexlify(response)
+                #print binascii.hexlify(response[0])+" "+binascii.hexlify(response[1])+binascii.hexlify(response[2])+binascii.hexlify(response[3])
+                test = str(binascii.hexlify(response[2]))
+                print str(int(test, 16)) + "cm"
+
+                #print int.from_bytes(response[2]) + "cm - 0x" + binascii.hexlify(response[2]) + " cm"
+                #print binascii.hexlify(response)
+                
+            except ValueError:
+                print "Not a number"
+            except socket.error, e:
+                print e
+            except KeyboardInterrupt:
+                print "\n\nYou pressed Ctrl+C. Killing socket...\n"
+                s.shutdown(socket.SHUT_RDWR)
+                s.close() 
+                sys.exit(0)
+        
+        s.shutdown(socket.SHUT_RDWR)
+        s.close()
+
+def main():
+    app = QtGui.QApplication(sys.argv)  # A new instance of QApplication
+    form = Sensor_App()                 # We set the form to be our ExampleApp (design)
+    form.show()                         # Show the form
+    app.exec_()                         # and execute the app
+
+
+if __name__ == '__main__':              # if we're running file directly and not importing it
+    HOST = '192.168.42.1'   
+    PORT = 2000
+    s = socket.socket()
+    s.settimeout(3)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    s.bind((HOST, PORT))
+    s.listen(1)
+    conn, addr = s.accept()
+    greeting = conn.recv(8)
+    print 'Connected by', addr
+    print greeting
+    
+    
+    elements1 = ['\x02', '2', '\x00', '\x00', '\x00', '\x03']
+    elements2 = ['\x02', '2', '\x00',    '1', '\x00', '\x03']
+    elements3 = ['\x02', '2', '\x00', '\x00', '\x00', '\x03']
+    values1 = bytearray(elements1)
+    values2 = bytearray(elements2)
+    values3 = bytearray(elements3)
+    
+    main()                              # run the main function
