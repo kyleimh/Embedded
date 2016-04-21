@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<configuration version="1.0.7.9">
+<configuration version="1.0.7.16">
   <General>
     <HarmonyPath path="../../../microchip/harmony/v1_06_02"/>
     <ForceOptimization flag="true"/>
@@ -200,6 +200,7 @@
         <Name>system_interrupt.c</Name>
         <Path>Source Files/app/system_config/default</Path>
         <Checksum>D0B8551C34397C643835E09623095F63</Checksum>
+        <ProjectFileChecksum>72EE4C24DE50B3C62C1880A7850C9C76</ProjectFileChecksum>
       </Template>
       <Template>
         <Name>sys_clk_static.c</Name>
@@ -209,12 +210,13 @@
       <Template>
         <Name>drv_oc_static.c</Name>
         <Path>Source Files/app/system_config/default/framework/driver/oc/src</Path>
-        <Checksum>F1DB82461CF1735C2C990DBB062E4888</Checksum>
+        <Checksum>2B38349176F220C70A1DC94469F47202</Checksum>
       </Template>
       <Template>
         <Name>system_init.c</Name>
         <Path>Source Files/app/system_config/default</Path>
         <Checksum>AEDBDAE53CF6EBB9E70526D2699DA167</Checksum>
+        <ProjectFileChecksum>21CBD6E373C414CDE1E981C05DF27784</ProjectFileChecksum>
       </Template>
       <Template>
         <Name>drv_oc_static.h</Name>
@@ -252,6 +254,7 @@
         <Name>system_tasks.c</Name>
         <Path>Source Files/app/system_config/default</Path>
         <Checksum>8DD1B4FFD38F9FA979FC47370F8F3335</Checksum>
+        <ProjectFileChecksum>9EBF2D04FDEBB17433BC91502279A002</ProjectFileChecksum>
       </Template>
       <Template>
         <Name>control.h</Name>

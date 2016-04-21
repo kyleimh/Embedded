@@ -60,7 +60,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVOCES, OR ANY CLAIMS BY THIRD PARTIES
 void DRV_OC0_Initialize(void)
 {	
     /* Setup OC0 Instance */
-    PLIB_OC_ModeSelect(OC_ID_1, OC_TOGGLE_CONTINUOUS_PULSE_MODE);
+    PLIB_OC_ModeSelect(OC_ID_1, OC_COMPARE_PWM_MODE_WITH_FAULT_PROTECTION);
     PLIB_OC_BufferSizeSelect(OC_ID_1, OC_BUFFER_SIZE_16BIT);
     PLIB_OC_TimerSelect(OC_ID_1, OC_TIMER_16BIT_TMR2);
     PLIB_OC_FaultInputSelect(OC_ID_1, OC_FAULT_DISABLE);
@@ -101,7 +101,7 @@ bool DRV_OC0_FaultHasOccurred(void)
 void DRV_OC1_Initialize(void)
 {	
     /* Setup OC0 Instance */
-    PLIB_OC_ModeSelect(OC_ID_2, OC_TOGGLE_CONTINUOUS_PULSE_MODE);
+    PLIB_OC_ModeSelect(OC_ID_2, OC_COMPARE_PWM_MODE_WITH_FAULT_PROTECTION);
     PLIB_OC_BufferSizeSelect(OC_ID_2, OC_BUFFER_SIZE_16BIT);
     PLIB_OC_TimerSelect(OC_ID_2, OC_TIMER_16BIT_TMR2);
     PLIB_OC_FaultInputSelect(OC_ID_2, OC_FAULT_DISABLE);

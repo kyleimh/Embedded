@@ -198,8 +198,8 @@ void MOTOR_Initialize ( void )
     
     inst_setup = false;
     
-    motor_data.R_speed = FAST; 
-    motor_data.L_speed = FAST;
+    motor_data.R_speed = SLOW - 200; 
+    motor_data.L_speed = SLOW - 200;
     
     DRV_TMR0_Start();
     DRV_TMR1_Start();   //timer for encoders
