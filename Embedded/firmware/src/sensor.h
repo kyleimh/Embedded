@@ -21,6 +21,7 @@ bool wait;
 bool safe;
 bool intersect;
 bool adjusting;
+bool stopped;
 
 typedef struct
 {

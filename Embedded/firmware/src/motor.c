@@ -172,7 +172,8 @@ void setDisplacement(DISPLACE disOrdeg, int value)
     //given a degree
     else 
     {
-        Displace[DEGREE] = (value*3457)/5000 - 9.1429;
+//        Displace[DEGREE] = (value*3457)/5000 - 9.1429;
+        Displace[DEGREE] = value;
         
         if(Displace[DEGREE] < 0)
         {

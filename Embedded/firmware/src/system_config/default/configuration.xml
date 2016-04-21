@@ -269,7 +269,7 @@
       <Template>
         <Name>drv_tmr_static.c</Name>
         <Path>Source Files/app/system_config/default/framework/driver/tmr/src</Path>
-        <Checksum>2618C29AD567E4283E2898AF96341FE3</Checksum>
+        <Checksum>95ABD35D18A8D3C67D8FB8A034547FBF</Checksum>
       </Template>
       <Template>
         <Name>rtos_hooks.c</Name>

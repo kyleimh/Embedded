@@ -124,7 +124,7 @@ void DRV_TMR1_Initialize(void)
     /* Clear counter */	
     PLIB_TMR_Counter16BitClear(TMR_ID_3);
     /*Set period */	
-    PLIB_TMR_Period16BitSet(TMR_ID_3, 10);
+    PLIB_TMR_Period16BitSet(TMR_ID_3, 5);
 
     /* Setup Interrupt */   
     PLIB_INT_SourceEnable(INT_ID_0, INT_SOURCE_TIMER_3);
@@ -181,7 +181,7 @@ void DRV_TMR2_Initialize(void)
     /* Clear counter */	
     PLIB_TMR_Counter16BitClear(TMR_ID_4);
     /*Set period */	
-    PLIB_TMR_Period16BitSet(TMR_ID_4, 10);
+    PLIB_TMR_Period16BitSet(TMR_ID_4, 5);
 
     /* Setup Interrupt */   
     PLIB_INT_SourceEnable(INT_ID_0, INT_SOURCE_TIMER_4);
