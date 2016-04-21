@@ -131,6 +131,9 @@ void setSpeed(int left_speed, int right_speed)
         case 12:
             motor_data.L_speed = FAST;
             break;
+        default:
+            motor_data.L_speed = left_speed *100;
+            break;
     }
     
     switch (right_speed)
@@ -144,6 +147,8 @@ void setSpeed(int left_speed, int right_speed)
         case 12:
             motor_data.R_speed = FAST;
             break;
+        default: 
+            motor_data.R_speed = right_speed * 100;
     }
 }
 
