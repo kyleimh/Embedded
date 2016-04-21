@@ -23,6 +23,8 @@ void SENSOR_Initialize ( void )
     wait = false;
     intersect = false;
     adjusting = false;
+    stopped = false;
+    
     if(enableADC){
         DRV_ADC_Open();
     }else{
@@ -92,38 +94,54 @@ void SENSOR_Tasks ( void )
                     sensorMsg.data1 = sensorMsgRecv.data1;
                     sensorMsg.data2 = 0x0;
                     xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
-                    if(sensorMsgRecv.data1 == 0x00){
-                        sensorMsg.id    = 0x23; //To motor thread(2), From sensor thread(3)
-                        sensorMsg.msg   = 0; // Stop
-                        sensorMsg.data1 = 0x0;
-                        sensorMsg.data2 = 0x0;
-                        //xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
-                    }else if(sensorMsgRecv.data1 == 0xFF && !intersect){
-                        intersect = true;
-                        sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
-                        sensorMsg.msg   = 0x24; // Line Intersection
-                        sensorMsg.data1 = 0x0;
-                        sensorMsg.data2 = 0x0;
-                        xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
-                    }else if(sensorMsgRecv.data1 == 0xC0 && !adjusting){
-                        intersect = false;
-                        adjusting = true;
-                        sensorMsg.id    = 0x23; //To motor thread(2), From sensor thread(3)
-                        sensorMsg.msg   = 11; // Forward
-                        sensorMsg.data1 = 10;
-                        sensorMsg.data2 = 12;
-                        //xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
-                    }else if(sensorMsgRecv.data1 == 0x03&& !adjusting){
-                        intersect = false;
-                        adjusting = true;
-                        sensorMsg.id    = 0x23; //To motor thread(2), From sensor thread(3)
-                        sensorMsg.msg   = 11; // Forward
-                        sensorMsg.data1 = 12;
-                        sensorMsg.data2 = 10;
-                        //xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
-                    }else if (sensorMsgRecv.data1 != 0xFF && intersect){
+                    if(sensorMsgRecv.data1 == 0){
+                        if(!stopped){
+                            intersect = false;
+                            adjusting = false;
+                            stopped = true;
+                            sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
+                            sensorMsg.msg   = STOP; // Stop
+                            sensorMsg.data1 = 0x0;
+                            sensorMsg.data2 = 0x0;
+                            xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
+                        }
+                    }else if(sensorMsgRecv.data1 == 0xFF){
+                        if(!intersect){
+                            intersect = true;
+                            adjusting = false;
+                            stopped = false;
+                            sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
+                            sensorMsg.msg   = 0x24; // Line Intersection
+                            sensorMsg.data1 = 0x0;
+                            sensorMsg.data2 = 0x0;
+                            xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
+                        }
+                    }else if(sensorMsgRecv.data1 == 0xC0){
+                        if(!adjusting){  
+                            intersect = false;
+                            stopped = false;
+                            adjusting = true;
+                            sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
+                            sensorMsg.msg   = FORWARD; // Forward
+                            sensorMsg.data1 = 10;
+                            sensorMsg.data2 = 12;
+                            xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
+                        }
+                    }else if(sensorMsgRecv.data1 == 0x03){
+                        if(!adjusting){  
+                            intersect = false;
+                            stopped = false;
+                            adjusting = true;
+                            sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
+                            sensorMsg.msg   = FORWARD; // Forward
+                            sensorMsg.data1 = 12;
+                            sensorMsg.data2 = 10;
+                            xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
+                        }
+                    }else{
                         intersect = false;
                         adjusting = false;
+                        stopped = false;
                     }
                     
                 }                

@@ -164,6 +164,24 @@ ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o: ../src/timerCallbacks.c  nbprojec
 	@${RM} ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1360937237/timerCallbacks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1360937237/timerCallbacks.o.d" -o ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o ../src/timerCallbacks.c     
 	
+${OBJECTDIR}/_ext/1360937237/usart.o: ../src/usart.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/usart.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/usart.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1360937237/usart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1360937237/usart.o.d" -o ${OBJECTDIR}/_ext/1360937237/usart.o ../src/usart.c     
+	
+${OBJECTDIR}/_ext/1360937237/debug.o: ../src/debug.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/debug.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/debug.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1360937237/debug.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1360937237/debug.o.d" -o ${OBJECTDIR}/_ext/1360937237/debug.o ../src/debug.c     
+	
+${OBJECTDIR}/_ext/1360937237/timerCallbacks.o: ../src/timerCallbacks.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1360937237/timerCallbacks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1360937237/timerCallbacks.o.d" -o ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o ../src/timerCallbacks.c     
+	
 ${OBJECTDIR}/_ext/1737654518/osal_freertos.o: ../../../../../microchip/harmony/v1_06_02/framework/osal/src/osal_freertos.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1737654518" 
 	@${RM} ${OBJECTDIR}/_ext/1737654518/osal_freertos.o.d 
@@ -192,7 +210,11 @@ ${OBJECTDIR}/_ext/2111169689/sys_ports.o: ../../../../../microchip/harmony/v1_06
 	@${MKDIR} "${OBJECTDIR}/_ext/2111169689" 
 	@${RM} ${OBJECTDIR}/_ext/2111169689/sys_ports.o.d 
 	@${RM} ${OBJECTDIR}/_ext/2111169689/sys_ports.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/2111169689/sys_ports.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/2111169689/sys_ports.o.d" -o ${OBJECTDIR}/_ext/2111169689/sys_ports.o ../../../../../microchip/harmony/v1_06_02/framework/system/ports/src/sys_ports.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/2111169689/sys_ports.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/2111169689/sys_ports.o.d" -o ${OBJECTDIR}/_ext/2111169689/sys_ports.o ../../../../../microchip/harmony/v1_06_02/framework/system/ports/src/sys_ports.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/8958737/croutine.o: ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/croutine.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/8958737" 
@@ -234,79 +256,131 @@ ${OBJECTDIR}/_ext/1920397356/heap_1.o: ../../../../../microchip/harmony/v1_06_02
 	@${MKDIR} "${OBJECTDIR}/_ext/1920397356" 
 	@${RM} ${OBJECTDIR}/_ext/1920397356/heap_1.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1920397356/heap_1.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1920397356/heap_1.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1920397356/heap_1.o.d" -o ${OBJECTDIR}/_ext/1920397356/heap_1.o ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_1.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1920397356/heap_1.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1920397356/heap_1.o.d" -o ${OBJECTDIR}/_ext/1920397356/heap_1.o ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_1.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/630015897/port.o: ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX/port.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/630015897" 
 	@${RM} ${OBJECTDIR}/_ext/630015897/port.o.d 
 	@${RM} ${OBJECTDIR}/_ext/630015897/port.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/630015897/port.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/630015897/port.o.d" -o ${OBJECTDIR}/_ext/630015897/port.o ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX/port.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/630015897/port.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/630015897/port.o.d" -o ${OBJECTDIR}/_ext/630015897/port.o ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX/port.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1361460060/drv_adc_static.o: ../src/system_config/default/framework/driver/adc/src/drv_adc_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1361460060" 
 	@${RM} ${OBJECTDIR}/_ext/1361460060/drv_adc_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1361460060/drv_adc_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1361460060/drv_adc_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1361460060/drv_adc_static.o.d" -o ${OBJECTDIR}/_ext/1361460060/drv_adc_static.o ../src/system_config/default/framework/driver/adc/src/drv_adc_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1361460060/drv_adc_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1361460060/drv_adc_static.o.d" -o ${OBJECTDIR}/_ext/1361460060/drv_adc_static.o ../src/system_config/default/framework/driver/adc/src/drv_adc_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1047219354/drv_oc_static.o: ../src/system_config/default/framework/driver/oc/src/drv_oc_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1047219354" 
 	@${RM} ${OBJECTDIR}/_ext/1047219354/drv_oc_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1047219354/drv_oc_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1047219354/drv_oc_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1047219354/drv_oc_static.o.d" -o ${OBJECTDIR}/_ext/1047219354/drv_oc_static.o ../src/system_config/default/framework/driver/oc/src/drv_oc_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1047219354/drv_oc_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1047219354/drv_oc_static.o.d" -o ${OBJECTDIR}/_ext/1047219354/drv_oc_static.o ../src/system_config/default/framework/driver/oc/src/drv_oc_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o: ../src/system_config/default/framework/driver/tmr/src/drv_tmr_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1407244131" 
 	@${RM} ${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o.d" -o ${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o ../src/system_config/default/framework/driver/tmr/src/drv_tmr_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o.d" -o ${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o ../src/system_config/default/framework/driver/tmr/src/drv_tmr_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1345626252/drv_usart_static.o: ../src/system_config/default/framework/driver/usart/drv_usart_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1345626252" 
 	@${RM} ${OBJECTDIR}/_ext/1345626252/drv_usart_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1345626252/drv_usart_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1345626252/drv_usart_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1345626252/drv_usart_static.o.d" -o ${OBJECTDIR}/_ext/1345626252/drv_usart_static.o ../src/system_config/default/framework/driver/usart/drv_usart_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1345626252/drv_usart_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1345626252/drv_usart_static.o.d" -o ${OBJECTDIR}/_ext/1345626252/drv_usart_static.o ../src/system_config/default/framework/driver/usart/drv_usart_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/639803181/sys_clk_static.o: ../src/system_config/default/framework/system/clk/src/sys_clk_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/639803181" 
 	@${RM} ${OBJECTDIR}/_ext/639803181/sys_clk_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/639803181/sys_clk_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/639803181/sys_clk_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/639803181/sys_clk_static.o.d" -o ${OBJECTDIR}/_ext/639803181/sys_clk_static.o ../src/system_config/default/framework/system/clk/src/sys_clk_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/639803181/sys_clk_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/639803181/sys_clk_static.o.d" -o ${OBJECTDIR}/_ext/639803181/sys_clk_static.o ../src/system_config/default/framework/system/clk/src/sys_clk_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/822048611/sys_ports_static.o: ../src/system_config/default/framework/system/ports/src/sys_ports_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/822048611" 
 	@${RM} ${OBJECTDIR}/_ext/822048611/sys_ports_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/822048611/sys_ports_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/822048611/sys_ports_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/822048611/sys_ports_static.o.d" -o ${OBJECTDIR}/_ext/822048611/sys_ports_static.o ../src/system_config/default/framework/system/ports/src/sys_ports_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/822048611/sys_ports_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/822048611/sys_ports_static.o.d" -o ${OBJECTDIR}/_ext/822048611/sys_ports_static.o ../src/system_config/default/framework/system/ports/src/sys_ports_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1688732426/system_init.o: ../src/system_config/default/system_init.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1688732426" 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_init.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_init.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_init.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_init.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_init.o ../src/system_config/default/system_init.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_init.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_init.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_init.o ../src/system_config/default/system_init.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1688732426/system_interrupt.o: ../src/system_config/default/system_interrupt.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1688732426" 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_interrupt.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_interrupt.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_interrupt.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_interrupt.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_interrupt.o ../src/system_config/default/system_interrupt.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_interrupt.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_interrupt.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_interrupt.o ../src/system_config/default/system_interrupt.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1688732426/system_exceptions.o: ../src/system_config/default/system_exceptions.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1688732426" 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_exceptions.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_exceptions.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_exceptions.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_exceptions.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_exceptions.o ../src/system_config/default/system_exceptions.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_exceptions.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_exceptions.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_exceptions.o ../src/system_config/default/system_exceptions.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1688732426/system_tasks.o: ../src/system_config/default/system_tasks.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1688732426" 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_tasks.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_tasks.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_tasks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_tasks.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_tasks.o ../src/system_config/default/system_tasks.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_tasks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_tasks.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_tasks.o ../src/system_config/default/system_tasks.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1688732426/rtos_hooks.o: ../src/system_config/default/rtos_hooks.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1688732426" 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/rtos_hooks.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/rtos_hooks.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/rtos_hooks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/rtos_hooks.o.d" -o ${OBJECTDIR}/_ext/1688732426/rtos_hooks.o ../src/system_config/default/rtos_hooks.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/rtos_hooks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/rtos_hooks.o.d" -o ${OBJECTDIR}/_ext/1688732426/rtos_hooks.o ../src/system_config/default/rtos_hooks.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 else
 ${OBJECTDIR}/_ext/1360937237/control.o: ../src/control.c  nbproject/Makefile-${CND_CONF}.mk
@@ -351,6 +425,24 @@ ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o: ../src/timerCallbacks.c  nbprojec
 	@${RM} ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1360937237/timerCallbacks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1360937237/timerCallbacks.o.d" -o ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o ../src/timerCallbacks.c     
 	
+${OBJECTDIR}/_ext/1360937237/usart.o: ../src/usart.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/usart.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/usart.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1360937237/usart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1360937237/usart.o.d" -o ${OBJECTDIR}/_ext/1360937237/usart.o ../src/usart.c     
+	
+${OBJECTDIR}/_ext/1360937237/debug.o: ../src/debug.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/debug.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/debug.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1360937237/debug.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1360937237/debug.o.d" -o ${OBJECTDIR}/_ext/1360937237/debug.o ../src/debug.c     
+	
+${OBJECTDIR}/_ext/1360937237/timerCallbacks.o: ../src/timerCallbacks.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1360937237/timerCallbacks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1360937237/timerCallbacks.o.d" -o ${OBJECTDIR}/_ext/1360937237/timerCallbacks.o ../src/timerCallbacks.c     
+	
 ${OBJECTDIR}/_ext/1737654518/osal_freertos.o: ../../../../../microchip/harmony/v1_06_02/framework/osal/src/osal_freertos.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1737654518" 
 	@${RM} ${OBJECTDIR}/_ext/1737654518/osal_freertos.o.d 
@@ -379,7 +471,11 @@ ${OBJECTDIR}/_ext/2111169689/sys_ports.o: ../../../../../microchip/harmony/v1_06
 	@${MKDIR} "${OBJECTDIR}/_ext/2111169689" 
 	@${RM} ${OBJECTDIR}/_ext/2111169689/sys_ports.o.d 
 	@${RM} ${OBJECTDIR}/_ext/2111169689/sys_ports.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/2111169689/sys_ports.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/2111169689/sys_ports.o.d" -o ${OBJECTDIR}/_ext/2111169689/sys_ports.o ../../../../../microchip/harmony/v1_06_02/framework/system/ports/src/sys_ports.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/2111169689/sys_ports.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/2111169689/sys_ports.o.d" -o ${OBJECTDIR}/_ext/2111169689/sys_ports.o ../../../../../microchip/harmony/v1_06_02/framework/system/ports/src/sys_ports.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/8958737/croutine.o: ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/croutine.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/8958737" 
@@ -421,79 +517,131 @@ ${OBJECTDIR}/_ext/1920397356/heap_1.o: ../../../../../microchip/harmony/v1_06_02
 	@${MKDIR} "${OBJECTDIR}/_ext/1920397356" 
 	@${RM} ${OBJECTDIR}/_ext/1920397356/heap_1.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1920397356/heap_1.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1920397356/heap_1.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1920397356/heap_1.o.d" -o ${OBJECTDIR}/_ext/1920397356/heap_1.o ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_1.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1920397356/heap_1.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1920397356/heap_1.o.d" -o ${OBJECTDIR}/_ext/1920397356/heap_1.o ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_1.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/630015897/port.o: ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX/port.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/630015897" 
 	@${RM} ${OBJECTDIR}/_ext/630015897/port.o.d 
 	@${RM} ${OBJECTDIR}/_ext/630015897/port.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/630015897/port.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/630015897/port.o.d" -o ${OBJECTDIR}/_ext/630015897/port.o ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX/port.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/630015897/port.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/630015897/port.o.d" -o ${OBJECTDIR}/_ext/630015897/port.o ../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX/port.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1361460060/drv_adc_static.o: ../src/system_config/default/framework/driver/adc/src/drv_adc_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1361460060" 
 	@${RM} ${OBJECTDIR}/_ext/1361460060/drv_adc_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1361460060/drv_adc_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1361460060/drv_adc_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1361460060/drv_adc_static.o.d" -o ${OBJECTDIR}/_ext/1361460060/drv_adc_static.o ../src/system_config/default/framework/driver/adc/src/drv_adc_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1361460060/drv_adc_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1361460060/drv_adc_static.o.d" -o ${OBJECTDIR}/_ext/1361460060/drv_adc_static.o ../src/system_config/default/framework/driver/adc/src/drv_adc_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1047219354/drv_oc_static.o: ../src/system_config/default/framework/driver/oc/src/drv_oc_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1047219354" 
 	@${RM} ${OBJECTDIR}/_ext/1047219354/drv_oc_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1047219354/drv_oc_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1047219354/drv_oc_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1047219354/drv_oc_static.o.d" -o ${OBJECTDIR}/_ext/1047219354/drv_oc_static.o ../src/system_config/default/framework/driver/oc/src/drv_oc_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1047219354/drv_oc_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1047219354/drv_oc_static.o.d" -o ${OBJECTDIR}/_ext/1047219354/drv_oc_static.o ../src/system_config/default/framework/driver/oc/src/drv_oc_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o: ../src/system_config/default/framework/driver/tmr/src/drv_tmr_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1407244131" 
 	@${RM} ${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o.d" -o ${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o ../src/system_config/default/framework/driver/tmr/src/drv_tmr_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o.d" -o ${OBJECTDIR}/_ext/1407244131/drv_tmr_static.o ../src/system_config/default/framework/driver/tmr/src/drv_tmr_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1345626252/drv_usart_static.o: ../src/system_config/default/framework/driver/usart/drv_usart_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1345626252" 
 	@${RM} ${OBJECTDIR}/_ext/1345626252/drv_usart_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1345626252/drv_usart_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1345626252/drv_usart_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1345626252/drv_usart_static.o.d" -o ${OBJECTDIR}/_ext/1345626252/drv_usart_static.o ../src/system_config/default/framework/driver/usart/drv_usart_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1345626252/drv_usart_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1345626252/drv_usart_static.o.d" -o ${OBJECTDIR}/_ext/1345626252/drv_usart_static.o ../src/system_config/default/framework/driver/usart/drv_usart_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/639803181/sys_clk_static.o: ../src/system_config/default/framework/system/clk/src/sys_clk_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/639803181" 
 	@${RM} ${OBJECTDIR}/_ext/639803181/sys_clk_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/639803181/sys_clk_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/639803181/sys_clk_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/639803181/sys_clk_static.o.d" -o ${OBJECTDIR}/_ext/639803181/sys_clk_static.o ../src/system_config/default/framework/system/clk/src/sys_clk_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/639803181/sys_clk_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/639803181/sys_clk_static.o.d" -o ${OBJECTDIR}/_ext/639803181/sys_clk_static.o ../src/system_config/default/framework/system/clk/src/sys_clk_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/822048611/sys_ports_static.o: ../src/system_config/default/framework/system/ports/src/sys_ports_static.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/822048611" 
 	@${RM} ${OBJECTDIR}/_ext/822048611/sys_ports_static.o.d 
 	@${RM} ${OBJECTDIR}/_ext/822048611/sys_ports_static.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/822048611/sys_ports_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/822048611/sys_ports_static.o.d" -o ${OBJECTDIR}/_ext/822048611/sys_ports_static.o ../src/system_config/default/framework/system/ports/src/sys_ports_static.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/822048611/sys_ports_static.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/822048611/sys_ports_static.o.d" -o ${OBJECTDIR}/_ext/822048611/sys_ports_static.o ../src/system_config/default/framework/system/ports/src/sys_ports_static.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1688732426/system_init.o: ../src/system_config/default/system_init.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1688732426" 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_init.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_init.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_init.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_init.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_init.o ../src/system_config/default/system_init.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_init.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_init.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_init.o ../src/system_config/default/system_init.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1688732426/system_interrupt.o: ../src/system_config/default/system_interrupt.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1688732426" 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_interrupt.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_interrupt.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_interrupt.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_interrupt.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_interrupt.o ../src/system_config/default/system_interrupt.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_interrupt.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_interrupt.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_interrupt.o ../src/system_config/default/system_interrupt.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1688732426/system_exceptions.o: ../src/system_config/default/system_exceptions.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1688732426" 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_exceptions.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_exceptions.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_exceptions.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_exceptions.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_exceptions.o ../src/system_config/default/system_exceptions.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_exceptions.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_exceptions.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_exceptions.o ../src/system_config/default/system_exceptions.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1688732426/system_tasks.o: ../src/system_config/default/system_tasks.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1688732426" 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_tasks.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/system_tasks.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_tasks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_tasks.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_tasks.o ../src/system_config/default/system_tasks.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/system_tasks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/system_tasks.o.d" -o ${OBJECTDIR}/_ext/1688732426/system_tasks.o ../src/system_config/default/system_tasks.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 ${OBJECTDIR}/_ext/1688732426/rtos_hooks.o: ../src/system_config/default/rtos_hooks.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1688732426" 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/rtos_hooks.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1688732426/rtos_hooks.o 
+<<<<<<< HEAD
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/rtos_hooks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../src/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/rtos_hooks.o.d" -o ${OBJECTDIR}/_ext/1688732426/rtos_hooks.o ../src/system_config/default/rtos_hooks.c     
+=======
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1688732426/rtos_hooks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -D__XC -I"../src" -I"../../../../../microchip/harmony/v1_06_02/framework" -I"../src/system_config/default/framework" -I"../src/system_config/default" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"../../../../../microchip/harmony/v1_06_02/third_party/rtos/FreeRTOS/Source/include" -MMD -MF "${OBJECTDIR}/_ext/1688732426/rtos_hooks.o.d" -o ${OBJECTDIR}/_ext/1688732426/rtos_hooks.o ../src/system_config/default/rtos_hooks.c     
+>>>>>>> ffa55aa8f097ce855eb72bc8e2a0fe7dcb5c76c9
 	
 endif
 
@@ -508,12 +656,12 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/Embedded.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk  ../../../../../microchip/harmony/v1_06_02/bin/framework/peripheral/PIC32MX795F512L_peripherals.a  
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mdebugger -D__MPLAB_DEBUGGER_PK3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Embedded.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}    ..\..\..\..\..\microchip\harmony\v1_06_02\bin\framework\peripheral\PIC32MX795F512L_peripherals.a          -mreserve=boot@0x1FC02000:0x1FC02FEF -mreserve=boot@0x1FC02000:0x1FC024FF  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_PK3=1,--defsym=_min_heap_size=0,--gc-sections,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mdebugger -D__MPLAB_DEBUGGER_PK3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Embedded.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}    ..\..\..\..\..\microchip\harmony\v1_06_02\bin\framework\peripheral\PIC32MX795F512L_peripherals.a          -mreserve=boot@0x1FC02000:0x1FC02FEF -mreserve=boot@0x1FC02000:0x1FC024FF  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_PK3=1,--defsym=_min_heap_size=0,--gc-sections,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"
 	
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/Embedded.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk  ../../../../../microchip/harmony/v1_06_02/bin/framework/peripheral/PIC32MX795F512L_peripherals.a 
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Embedded.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}    ..\..\..\..\..\microchip\harmony\v1_06_02\bin\framework\peripheral\PIC32MX795F512L_peripherals.a        -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=_min_heap_size=0,--gc-sections,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Embedded.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}    ..\..\..\..\..\microchip\harmony\v1_06_02\bin\framework\peripheral\PIC32MX795F512L_peripherals.a        -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=_min_heap_size=0,--gc-sections,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"
 	${MP_CC_DIR}\\xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/Embedded.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
 endif
 
