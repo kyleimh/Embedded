@@ -20,7 +20,7 @@ bool push;
 bool wait;
 bool safe;
 bool intersect;
-bool adjusting;
+bool L2, L1, C, R1, R2;
 bool stopped;
 
 typedef struct

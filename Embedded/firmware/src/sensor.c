@@ -22,7 +22,11 @@ void SENSOR_Initialize ( void )
     safe = true;
     wait = false;
     intersect = false;
-    adjusting = false;
+    L2 = false;
+    L1 = false;
+    C = false;
+    R1 = false;
+    R2 = false;
     stopped = false;
     
     if(enableADC){
@@ -97,8 +101,12 @@ void SENSOR_Tasks ( void )
                     if(sensorMsgRecv.data1 == 0){
                         if(!stopped){
                             intersect = false;
-                            adjusting = false;
-                            stopped = true;
+                            stopped = true;                            
+                            L2 = false;
+                            L1 = false;
+                            C = false;
+                            R1 = false;
+                            R2 = false;
                             sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
                             sensorMsg.msg   = STOP; // Stop
                             sensorMsg.data1 = 0x0;
@@ -108,8 +116,12 @@ void SENSOR_Tasks ( void )
                     }else if(sensorMsgRecv.data1 == 0xFF){
                         if(!intersect){
                             intersect = true;
-                            adjusting = false;
                             stopped = false;
+                            L2 = false;
+                            L1 = false;
+                            C = false;
+                            R1 = false;
+                            R2 = false;
                             sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
                             sensorMsg.msg   = 0x24; // Line Intersection
                             sensorMsg.data1 = 0x0;
@@ -117,21 +129,74 @@ void SENSOR_Tasks ( void )
                             xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
                         }
                     }else if(sensorMsgRecv.data1 == 0xC0){
-                        if(!adjusting){  
+                        if(!L2){  
                             intersect = false;
                             stopped = false;
-                            adjusting = true;
+                            L2 = true;
+                            L1 = false;
+                            C = false;
+                            R1 = false;
+                            R2 = false;
                             sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
                             sensorMsg.msg   = FORWARD; // Forward
                             sensorMsg.data1 = 10;
                             sensorMsg.data2 = 12;
                             xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
                         }
-                    }else if(sensorMsgRecv.data1 == 0x03){
-                        if(!adjusting){  
+                    }else if(sensorMsgRecv.data1 == 0x30){
+                        if(!L1){  
                             intersect = false;
                             stopped = false;
-                            adjusting = true;
+                            L2 = false;
+                            L1 = true;
+                            C = false;
+                            R1 = false;
+                            R2 = false;
+                            sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
+                            sensorMsg.msg   = FORWARD; // Forward
+                            sensorMsg.data1 = 11;
+                            sensorMsg.data2 = 12;
+                            xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
+                        }
+                    }else if(sensorMsgRecv.data1 == 0x18){
+                        if(!C){  
+                            intersect = false;
+                            stopped = false;
+                            L2 = false;
+                            L1 = false;
+                            C = true;
+                            R1 = false;
+                            R2 = false;
+                            sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
+                            sensorMsg.msg   = FORWARD; // Forward
+                            sensorMsg.data1 = 12;
+                            sensorMsg.data2 = 12;
+                            xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
+                        }
+                    }else if(sensorMsgRecv.data1 == 0x0C){
+                        if(!R1){  
+                            intersect = false;
+                            stopped = false;
+                            L2 = false;
+                            L1 = false;
+                            C = false;
+                            R1 = true;
+                            R2 = false;
+                            sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
+                            sensorMsg.msg   = FORWARD; // Forward
+                            sensorMsg.data1 = 12;
+                            sensorMsg.data2 = 11;
+                            xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
+                        }
+                    }else if(sensorMsgRecv.data1 == 0x03){
+                        if(!R2){  
+                            intersect = false;
+                            stopped = false;
+                            L2 = false;
+                            L1 = false;
+                            C = false;
+                            R1 = false;
+                            R2 = true;                           
                             sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
                             sensorMsg.msg   = FORWARD; // Forward
                             sensorMsg.data1 = 12;
@@ -140,8 +205,12 @@ void SENSOR_Tasks ( void )
                         }
                     }else{
                         intersect = false;
-                        adjusting = false;
                         stopped = false;
+                        L2 = false;
+                        L1 = false;
+                        C = false;
+                        R1 = false;
+                        R2 = false;
                     }
                     
                 }                
