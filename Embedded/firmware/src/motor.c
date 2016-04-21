@@ -116,6 +116,10 @@ void checkInstDone(DISPLACE disOrdeg)
     setDisplacement(disOrdeg, 0); //reset the distance
     inst_setup = false;
     motor_data.curState = STOP;
+    
+    //reset speeds for when turns are called 
+    motor_data.R_speed = AVERAGE; 
+    motor_data.L_speed = AVERAGE;
 }
 
 void setSpeed(int left_speed, int right_speed)
@@ -171,14 +175,13 @@ void setDisplacement(DISPLACE disOrdeg, int value)
     
     if (disOrdeg == DISTANCE)
     {
-//        Displace[DISTANCE] = (value * 17) - (value/5) + (value/10); //inches
-        Displace[DISTANCE] = ((value * 180240)+ 34215) / 10000;
+//      Displace[DISTANCE] = (value * 17) - (value/5) + (value/10); //inches to encoders
+        Displace[DISTANCE] = (value*128900 - 31104)/10000;  //cm to encoders
     }
     //given a degree
     else 
     {
-//        Displace[DEGREE] = (value*3457)/5000 - 9.1429;
-        Displace[DEGREE] = value;
+        Displace[DEGREE] = (11073*value + 1911) / 10000; //degrees to encoders
         
         if(Displace[DEGREE] < 0)
         {
@@ -204,8 +207,8 @@ void MOTOR_Initialize ( void )
     
     inst_setup = false;
     
-    motor_data.R_speed = SLOW - 200; 
-    motor_data.L_speed = SLOW - 200;
+    motor_data.R_speed = AVERAGE; 
+    motor_data.L_speed = AVERAGE;
     
     DRV_TMR0_Start();
     DRV_TMR1_Start();   //timer for encoders
@@ -281,12 +284,16 @@ void MOTOR_Tasks ( void )
                         case TURN_LEFT:
                             setDisplacement(DEGREE, message.data1);
                             motor_data.curState = TURN_LEFT;
+                            motor_data.L_speed = SLOW; 
+                            motor_data.R_speed = SLOW;
                             move_Turn_Left();
                             break;
 
                         case TURN_RIGHT:
                             setDisplacement(DEGREE, message.data1);
                             motor_data.curState = TURN_RIGHT;
+                            motor_data.L_speed = SLOW; 
+                            motor_data.R_speed = SLOW;
                             move_Turn_Right();
                             break;
 
