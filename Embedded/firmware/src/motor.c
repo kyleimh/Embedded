@@ -133,7 +133,7 @@ void setSpeed(int left_speed, int right_speed)
             break;
     }
     
-    switch (left_speed)
+    switch (right_speed)
     {
         case 10:
             motor_data.R_speed = SLOW;

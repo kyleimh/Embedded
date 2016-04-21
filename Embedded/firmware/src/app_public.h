@@ -16,7 +16,7 @@
 #define MSG_START 0x02
 #define MSG_END   0x03
 
-#define enableLineSensor 0
+#define enableLineSensor 1
 #define enableADC        0
 
 #define true  1
@@ -40,9 +40,9 @@ typedef enum {
 } MOTOR_MESSAGE;
 
 typedef enum {
-    SLOW = 1400, 
-    AVERAGE = 1700,
-    FAST = 2000    
+    SLOW = 100, 
+    AVERAGE = 300,
+    FAST = 500    
 } MOTOR_SPEED;
 
 
