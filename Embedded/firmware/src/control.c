@@ -304,7 +304,7 @@ void CONTROL_Tasks ( void )
                     if (ctrlMsgRecv.id & 0xf0 == 0x40) {
                         //send to usart
                         USART_send(ctrlMsgRecv);
-                    } else if (ctrlMsgRecv.id & 0xf0 == 0x30) {
+                    } else if (ctrlMsgRecv.id & 0xf0 == 0x20) {
                         //send to motor
                         xQueueSend( motorQueue, &ctrlMsgRecv, (TickType_t)0 );
                     }    
@@ -354,7 +354,7 @@ void CONTROL_Tasks ( void )
                     if (ctrlMsgRecv.id & 0xf0 == 0x40) {
                         //send to usart
                         USART_send(ctrlMsgRecv);
-                    } else if (ctrlMsgRecv.id & 0xf0 == 0x30) {
+                    } else if (ctrlMsgRecv.id & 0xf0 == 0x20) {
                         //send to motor
                         xQueueSend( motorQueue, &ctrlMsgRecv, (TickType_t)0 );
                     }
@@ -374,10 +374,10 @@ void CONTROL_Tasks ( void )
                 if (ctrlMsgRecv.id & 0xf0 == 0x40) {
                     //send to usart
                     USART_send(ctrlMsgRecv);
-                } else if (ctrlMsgRecv.id & 0xf0 == 0x30) {
+                } else if (ctrlMsgRecv.id & 0xf0 == 0x20) {
                     //send to motor
                     xQueueSend( motorQueue, &ctrlMsgRecv, (TickType_t)0 );
-                } else if (ctrlMsgRecv.id & 0xf0 == 0x20) {
+                } else if (ctrlMsgRecv.id & 0xf0 == 0x30) {
                     //send to sensors
                     xQueueSend( sensorQueue, &ctrlMsgRecv, (TickType_t)0 );
                 }
