@@ -42,7 +42,7 @@ typedef enum {
 typedef enum {
     SLOW = 200, 
     AVERAGE = 400,
-    FAST = 600    
+    FAST = 600
 } MOTOR_SPEED;
 
 
