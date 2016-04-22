@@ -51,6 +51,7 @@ typedef enum {
 } COMMUNICATION;
 
 bool validData;
+bool line_correction;
 uint8_t debugScheme;
 
 QueueHandle_t transmitQueue;
