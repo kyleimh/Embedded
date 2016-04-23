@@ -126,14 +126,20 @@ void setSpeed(int left_speed, int right_speed)
 {
     switch (left_speed)
     {
-        case 10:
+        case 200:
+            motor_data.L_speed = S_SLOW;
+            break;
+        case 201:
             motor_data.L_speed = SLOW;
             break;
-        case 11:
+        case 202:
             motor_data.L_speed = AVERAGE;
             break;
-        case 12:
+        case 203:
             motor_data.L_speed = FAST;
+            break;
+        case 204:
+            motor_data.L_speed = S_FAST;
             break;
         default:
             motor_data.L_speed = left_speed *100;
@@ -142,14 +148,20 @@ void setSpeed(int left_speed, int right_speed)
     
     switch (right_speed)
     {
-        case 10:
+        case 200:
+            motor_data.R_speed = S_SLOW;
+            break;
+        case 201:
             motor_data.R_speed = SLOW;
             break;
-        case 11:
+        case 202:
             motor_data.R_speed = AVERAGE;
             break;
-        case 12:
+        case 203:
             motor_data.R_speed = FAST;
+            break;
+        case 204:
+            motor_data.R_speed = S_FAST;
             break;
         default: 
             motor_data.R_speed = right_speed * 100;

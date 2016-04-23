@@ -19,9 +19,21 @@ bool raw_cm;
 bool push;
 bool wait;
 bool safe;
-bool intersect;
-bool L2, L1, C, R1, R2;
-bool stopped;
+
+typedef enum
+{
+    NONE = 0,
+	INTERSECT,
+    STOPPED,
+    L2,
+    L1,
+    C,
+    R1,
+    R2            
+} LINE_STATE;
+
+LINE_STATE lineState;
+uint8_t prevLine;
 
 typedef struct
 {

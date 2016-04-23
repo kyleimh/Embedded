@@ -39,10 +39,12 @@ typedef enum {
     DONE       = 100
 } MOTOR_MESSAGE;
 
-typedef enum {
+typedef enum {  
+    S_SLOW = 0,
     SLOW = 200, 
     AVERAGE = 400,
-    FAST = 600
+    FAST = 600,
+    S_FAST = 800            
 } MOTOR_SPEED;
 
 
