@@ -19,6 +19,7 @@ bool raw_cm;
 bool push;
 bool wait;
 bool safe;
+bool line_correction;
 
 typedef enum
 {

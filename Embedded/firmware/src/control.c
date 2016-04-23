@@ -30,6 +30,25 @@ void CONTROL_Initialize ( void )
     USART_init();
 }
 
+void cForward()
+{
+    ctrlMsgSend.id = 0x21;
+    ctrlMsgSend.msg = 0x0b;
+    ctrlMsgSend.data1 = 0x00;
+    ctrlMsgSend.data2 = 0x00;
+    xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
+}
+
+void stop()
+{
+    bool done = false;
+    ctrlMsgSend.id = 0x21;
+    ctrlMsgSend.msg = 0x00;
+    ctrlMsgSend.data1 = 0x00;
+    ctrlMsgSend.data2 = 0x00;
+    xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
+}
+
 /**
  * 
  * ctrlMessageSend data not preserved through call
@@ -144,28 +163,8 @@ void turn_left(uint8_t d)
             }
         }
     }
-    forward();
+    cForward();
 }
-
-void forward()
-{
-    ctrlMsgSend.id = 0x21;
-    ctrlMsgSend.msg = 0x0b;
-    ctrlMsgSend.data1 = 0x00;
-    ctrlMsgSend.data2 = 0x00;
-    xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
-}
-
-void stop()
-{
-    bool done = false;
-    ctrlMsgSend.id = 0x21;
-    ctrlMsgSend.msg = 0x00;
-    ctrlMsgSend.data1 = 0x00;
-    ctrlMsgSend.data2 = 0x00;
-    xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
-}
-
 
 void CONTROL_Tasks ( void )
 {
@@ -220,40 +219,35 @@ void CONTROL_Tasks ( void )
                         USART_send(ctrlMsgSend);
                         
                 }else if ( ctrlMsgRecv.id  == 0x13 ) {
-                    if(ctrlMsgRecv.msg == 0x24){
-                        line_correction = false;
-                        ctrlMsgSend.id = 0x21;
-                        ctrlMsgSend.msg = 0x0b;
-                        ctrlMsgSend.data1 = 20;
-                        ctrlMsgSend.data2 = 0x00;
-                        xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
-                        ctrlMsgSend.id = 0x21;
-                        ctrlMsgSend.msg = 0x0e;
-                        ctrlMsgSend.data1 = 90;
-                        ctrlMsgSend.data2 = 0x00;
-                        xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
-                        while (true) {
-                            if (xQueueReceive(controlQueue, &ctrlMsgRecv, portMAX_DELAY) == pdFALSE) 
-                            {
-                                outputEvent(CONTROL_QUEUE_EMPTY);
-                            }
-                            else
-                            {
-                                if (ctrlMsgRecv.id  == 0x12){
-                                        if (ctrlMsgRecv.msg == 100) { //if done message
-                                            debugToUART(101);
-                                            line_correction = true;
-//                                            ctrlMsgSend.id = 0x21;
-//                                            ctrlMsgSend.msg = 0x0b;
-//                                            ctrlMsgSend.data1 = 0;
-//                                            ctrlMsgSend.data2 = 0x00;
-//                                            xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
-                                            break;
-                                        }
-                                    }            
-                                }
-                            }
-                        }
+//                    if(ctrlMsgRecv.msg == 0x24){
+//                        line_correction = false;
+//                        ctrlMsgSend.id = 0x21;
+//                        ctrlMsgSend.msg = 0x0b;
+//                        ctrlMsgSend.data1 = 20;
+//                        ctrlMsgSend.data2 = 0x00;
+//                        xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
+//                        ctrlMsgSend.id = 0x21;
+//                        ctrlMsgSend.msg = 0x0e;
+//                        ctrlMsgSend.data1 = 90;
+//                        ctrlMsgSend.data2 = 0x00;
+//                        xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
+//                        while (true) {
+//                            if (xQueueReceive(controlQueue, &ctrlMsgRecv, portMAX_DELAY) == pdFALSE) 
+//                            {
+//                                outputEvent(CONTROL_QUEUE_EMPTY);
+//                            }
+//                            else
+//                            {
+//                                if (ctrlMsgRecv.id  == 0x12){
+//                                        if (ctrlMsgRecv.msg == 100) { //if done message
+//                                            debugToUART(101);
+//                                            line_correction = true;
+//                                            break;
+//                                        }
+//                                    }            
+//                                }
+//                            }
+//                        }
                 }
                 else
                 {
@@ -326,7 +320,7 @@ void CONTROL_Tasks ( void )
                                     controlData.state = CONTROL_STATE_RETURN;
                                     controlData.return_turns_passed = 0;
                                     turn_right(180);
-                                    forward();
+                                    cForward();
                                 } else {
                                     //still in transit
                                     controlData.delivery_intctn_ct--;
@@ -337,7 +331,7 @@ void CONTROL_Tasks ( void )
                                         } else {
                                             turn_left(90);
                                         }
-                                        forward();
+                                        cForward();
                                     }
                                 }
                             }
@@ -351,7 +345,7 @@ void CONTROL_Tasks ( void )
                                 controlData.delivery_intctn_ct = ctrlMsgRecv.data1;
                                 controlData.return_turns = ctrlMsgRecv.data1;
                                 controlData.delivery_turn = ctrlMsgRecv.data2;
-                                forward();
+                                cForward();
                             } else if (ctrlMsgRecv.msg == CONTROL_MSG_RESET) {
                                 controlData.state = CONTROL_STATE_STANDBY;
                             }
@@ -392,7 +386,7 @@ void CONTROL_Tasks ( void )
                                 } else {
                                     turn_right(90);
                                 }
-                                //forward();
+                                //cForward();
                             } else if (controlData.return_turns_passed == controlData.return_turns) {
                                 //back home
                                 stop();

@@ -22,6 +22,7 @@ void SENSOR_Initialize ( void )
     safe = true;
     wait = false;
     lineState = NONE;
+    line_correction = true;
     
     if(enableADC){
         DRV_ADC_Open();
@@ -69,7 +70,11 @@ void SENSOR_Tasks ( void )
             else
             {
                 outputEvent(SENSOR_QUEUE_ITEM_READY);
-                if(sensorMsgRecv.id == 0x34){
+                if(sensorMsgRecv.id == 0x31){
+                    if(sensorMsgRecv.msg == 50){
+                        line_correction = sensorMsgRecv.data1;
+                    }                
+                }else if(sensorMsgRecv.id == 0x34){
                     if(sensorMsgRecv.msg == 0x15){
                         raw_cm = false;
                     }
@@ -87,12 +92,13 @@ void SENSOR_Tasks ( void )
                         wait = !wait;
                     }
                 }else if(sensorMsgRecv.id == 0x36){
-//                    sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
-//                    sensorMsg.msg   = 0x22; // LineSensorData
-//                    sensorMsg.data1 = sensorMsgRecv.data1;
-//                    sensorMsg.data2 = 0x0;
-//                    xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
                     if(line_correction){
+                        sensorMsg.id    = 0x13; //To control thread(1), From sensor thread(3)
+                        sensorMsg.msg   = 0x22; // LineSensorData
+                        sensorMsg.data1 = sensorMsgRecv.data1;
+                        sensorMsg.data2 = 0x0;
+                        USART_send(sensorMsg);
+//                      xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
                         if(sensorMsgRecv.data1 == 0 || lineState == OFF_LINE){
                             if(lineState != STOPPED && lineState != OFF_LINE){
                                 if(prevLine == 0x80){
@@ -183,9 +189,6 @@ void SENSOR_Tasks ( void )
                             lineState = NONE;
                         }
                         prevLine = sensorMsgRecv.data1;
-                    }else{
-                        lineState = NONE;
-                        prevLine = 0;
                     }
                     
                 }                
