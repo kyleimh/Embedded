@@ -32,3 +32,17 @@ void writeDebug( uint8_t value  ){
     //Write Value to PortE
     SYS_PORTS_Write( PORTS_ID_0, PORT_CHANNEL_E, portE);    
 }
+
+
+
+void debugToUART(uint8_t value){
+    MESSAGE debugMsg;
+    
+    debugMsg.id    = 0x48;
+    debugMsg.msg   = value;
+    debugMsg.data1 = 0;
+    debugMsg.data2 = 0;
+    
+    USART_send(debugMsg);
+    
+}

@@ -71,6 +71,7 @@
 
 void outputEvent( uint8_t value  );
 void writeDebug( uint8_t value  );
+void debugToUART(uint8_t value);
 
 #endif	/* DEBUG_H */
 

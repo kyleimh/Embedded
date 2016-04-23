@@ -10,13 +10,13 @@ void CONTROL_Initialize ( void )
     /* Place the App state machine in its initial state. */
     controlData.state = CONTROL_STATE_INIT;
     /*Set the rover mode to cleanup*/
-    controlData.mode = CONTROL_MODE_CLEAN;
+    //controlData.mode = CONTROL_MODE_CLEAN;
     /*Set the rover mode to deliver*/
-    //controlData.mode = CONTROL_MODE_DELIVER;
+    controlData.mode = CONTROL_MODE_DELIVER;
     controlData.delivery_turn = 0;
     controlData.delivery_intctn_ct = 0;
     controlData.out = false;
-    line_correction = false;
+    line_correction = true;
     if (!(controlQueue = xQueueCreate(20, sizeof(MESSAGE)))) 
     {
         outputEvent(CONTROL_QUEUE_NOT_CREATED);
@@ -80,8 +80,8 @@ void turn_left(uint8_t d)
 {
     bool done = false;
     ctrlMsgSend.id = 0x21;
-    ctrlMsgSend.msg = 0x0e;
-    ctrlMsgSend.data1 = d;
+    ctrlMsgSend.msg = 0x0b;
+    ctrlMsgSend.data1 = 0x06;
     ctrlMsgSend.data2 = 0x00;
     xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
     //wait for a done message
@@ -92,10 +92,11 @@ void turn_left(uint8_t d)
         }
         else
         {
-            if (ctrlMsgRecv.id & 0xf0 == 0x10) {
-                if (ctrlMsgRecv.id & 0x0f == 0x02) {
-                    if (ctrlMsgRecv.msg == 0x64) {
+            if (ctrlMsgRecv.id & 0xf0 == 0x10) { //if message is to control thread
+                if (ctrlMsgRecv.id & 0x0f == 0x02) { //if message is from motor thread
+                    if (ctrlMsgRecv.msg == 0x64) { //if done message
                         done = true;
+                        line_correction = true;
                     }
                 }
             } else {
@@ -110,6 +111,40 @@ void turn_left(uint8_t d)
             }
         }
     }
+    done = false;
+    ctrlMsgSend.id = 0x21;
+    ctrlMsgSend.msg = 0x0e;
+    ctrlMsgSend.data1 = d;
+    ctrlMsgSend.data2 = 0x00;
+    xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
+    //wait for a done message
+    while (!done) {
+        if (xQueueReceive(controlQueue, &ctrlMsgRecv, portMAX_DELAY) == pdFALSE) 
+        {
+            outputEvent(CONTROL_QUEUE_EMPTY);
+        }
+        else
+        {
+            if (ctrlMsgRecv.id & 0xf0 == 0x10) { //if message is to control thread
+                if (ctrlMsgRecv.id & 0x0f == 0x02) { //if message is from motor thread
+                    if (ctrlMsgRecv.msg == 0x64) { //if done message
+                        done = true;
+                        line_correction = true;
+                    }
+                }
+            } else {
+                //route the message
+                if (ctrlMsgRecv.id & 0xf0 == 0x40) {
+                    //send to usart
+                    USART_send(ctrlMsgRecv);
+                } else if (ctrlMsgRecv.id & 0xf0 == 0x30) {
+                    //send to motor
+                    xQueueSend( motorQueue, &ctrlMsgRecv, (TickType_t)0 );
+                }
+            }
+        }
+    }
+    forward();
 }
 
 void forward()
@@ -184,6 +219,41 @@ void CONTROL_Tasks ( void )
                         ctrlMsgSend.data2 = ctrlMsgRecv.data2;
                         USART_send(ctrlMsgSend);
                         
+                }else if ( ctrlMsgRecv.id  == 0x13 ) {
+                    if(ctrlMsgRecv.msg == 0x24){
+                        line_correction = false;
+                        ctrlMsgSend.id = 0x21;
+                        ctrlMsgSend.msg = 0x0b;
+                        ctrlMsgSend.data1 = 20;
+                        ctrlMsgSend.data2 = 0x00;
+                        xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
+                        ctrlMsgSend.id = 0x21;
+                        ctrlMsgSend.msg = 0x0e;
+                        ctrlMsgSend.data1 = 90;
+                        ctrlMsgSend.data2 = 0x00;
+                        xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
+                        while (true) {
+                            if (xQueueReceive(controlQueue, &ctrlMsgRecv, portMAX_DELAY) == pdFALSE) 
+                            {
+                                outputEvent(CONTROL_QUEUE_EMPTY);
+                            }
+                            else
+                            {
+                                if (ctrlMsgRecv.id  == 0x12){
+                                        if (ctrlMsgRecv.msg == 100) { //if done message
+                                            debugToUART(101);
+                                            line_correction = true;
+//                                            ctrlMsgSend.id = 0x21;
+//                                            ctrlMsgSend.msg = 0x0b;
+//                                            ctrlMsgSend.data1 = 0;
+//                                            ctrlMsgSend.data2 = 0x00;
+//                                            xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
+                                            break;
+                                        }
+                                    }            
+                                }
+                            }
+                        }
                 }
                 else
                 {
@@ -220,28 +290,16 @@ void CONTROL_Tasks ( void )
             }
             else
             {
-                if (ctrlMsgRecv.msg == CONTROL_MSG_PRIMARY_STATE) 
+                
+                if (controlData.mode == CONTROL_MODE_CLEAN)
                 {
-                    if (controlData.mode == CONTROL_MODE_CLEAN)
-                    {
-                        controlData.state = CONTROL_STATE_CLEANUP;
-                    }
-                    else
-                    {
-                        controlData.state = CONTROL_STATE_DELIVER;
-                    }
+                    controlData.state = CONTROL_STATE_CLEANUP;
                 }
-                else if (ctrlMsgRecv.msg == CONTROL_MSG_TEST)
+                else
                 {
-                    controlData.state = CONTROL_STATE_TEST;
+                    controlData.state = CONTROL_STATE_DELIVER;
                 }
-                //read msg and act
             }
-            ctrlMsgSend.id = controlData.state;
-            ctrlMsgSend.msg = controlData.state;
-            ctrlMsgSend.data1 = controlData.state;
-            ctrlMsgSend.data2 = controlData.state;
-            USART_send(ctrlMsgSend);
             break;
         }
         

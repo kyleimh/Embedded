@@ -25,6 +25,7 @@ typedef enum
     NONE = 0,
 	INTERSECT,
     STOPPED,
+    OFF_LINE,
     L2,
     L1,
     C,
