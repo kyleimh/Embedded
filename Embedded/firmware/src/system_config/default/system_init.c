@@ -168,7 +168,6 @@ void SYS_Initialize ( void* data )
     SYS_PORTS_Clear(PORTS_ID_0, PORT_CHANNEL_E, 0xFF);
     
     debugScheme = 0;
-    line_correction = true;
     outputEvent(INITIALIZE);
     /* Initialize Middleware */
 

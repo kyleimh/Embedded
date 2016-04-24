@@ -231,4 +231,5 @@ build/default/production/_ext/1360937237/motor.o:  \
  ../../../../../microchip/harmony/v1_06_02/framework/peripheral/oc/processor/../templates/oc_BufferValue_32Bit_Variant.h  \
  ../../../../../microchip/harmony/v1_06_02/framework/peripheral/oc/processor/../templates/oc_PulseWidth_32Bit_Variant.h  \
  ../../../../../microchip/harmony/v1_06_02/framework/peripheral/oc/processor/../templates/oc_BufferSize_Default.h  \
- ../../../../../microchip/harmony/v1_06_02/framework/peripheral/oc/processor/../templates/oc_CompareModeSelect_Default.h 
+ ../../../../../microchip/harmony/v1_06_02/framework/peripheral/oc/processor/../templates/oc_CompareModeSelect_Default.h  \
+ ../src/usart.h 

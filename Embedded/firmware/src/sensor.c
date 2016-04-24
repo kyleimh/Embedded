@@ -22,7 +22,7 @@ void SENSOR_Initialize ( void )
     safe = true;
     wait = false;
     lineState = NONE;
-    line_correction = true;
+    line_correction = false;
     
     if(enableADC){
         DRV_ADC_Open();
@@ -72,7 +72,12 @@ void SENSOR_Tasks ( void )
                 outputEvent(SENSOR_QUEUE_ITEM_READY);
                 if(sensorMsgRecv.id == 0x31){
                     if(sensorMsgRecv.msg == 50){
-                        line_correction = sensorMsgRecv.data1;
+                        if(sensorMsgRecv.data1 == 1){
+                            line_correction = true;
+                        }else if (sensorMsgRecv.data1 == 0){
+                            line_correction = false;
+                        }
+                        prevLine = 0;
                     }                
                 }else if(sensorMsgRecv.id == 0x34){
                     if(sensorMsgRecv.msg == 0x15){
@@ -120,6 +125,7 @@ void SENSOR_Tasks ( void )
                                     sensorMsg.data1 = 0x0;
                                     sensorMsg.data2 = 0x0;
                                 }
+//                                debugToUART(lineState);
                                 xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
                             }else{
                                 if(sensorMsgRecv.data1 == 0x18){
@@ -138,10 +144,12 @@ void SENSOR_Tasks ( void )
                                 sensorMsg.msg   = 0x24; // Line Intersection
                                 sensorMsg.data1 = 0x0;
                                 sensorMsg.data2 = 0x0;
+                                USART_send(sensorMsg);
                                 xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
                             }
                         }else if(sensorMsgRecv.data1 == 0xC0){
-                            if(lineState != L2){  
+                            if(lineState != L2){
+//                                debugToUART(lineState);
                                 lineState = L2;
                                 sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
                                 sensorMsg.msg   = FORWARD; // Forward
@@ -150,7 +158,8 @@ void SENSOR_Tasks ( void )
                                 xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
                             }
                         }else if(sensorMsgRecv.data1 == 0x30){
-                            if(lineState != L1){  
+                            if(lineState != L1){
+//                                debugToUART(lineState);
                                 lineState = L1;
                                 sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
                                 sensorMsg.msg   = FORWARD; // Forward
@@ -159,7 +168,8 @@ void SENSOR_Tasks ( void )
                                 xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
                             }
                         }else if(sensorMsgRecv.data1 == 0x18){
-                            if(lineState != C){  
+                            if(lineState != C){
+//                                debugToUART(lineState);
                                 lineState = C;
                                 sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
                                 sensorMsg.msg   = FORWARD; // Forward
@@ -168,7 +178,8 @@ void SENSOR_Tasks ( void )
                                 xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
                             }
                         }else if(sensorMsgRecv.data1 == 0x0C){
-                            if(lineState != R1){  
+                            if(lineState != R1){
+//                                debugToUART(lineState);
                                 lineState = R1;
                                 sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
                                 sensorMsg.msg   = FORWARD; // Forward
@@ -178,6 +189,7 @@ void SENSOR_Tasks ( void )
                             }
                         }else if(sensorMsgRecv.data1 == 0x03){
                             if(lineState != R2){  
+//                                debugToUART(lineState);
                                 lineState = R2;
                                 sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
                                 sensorMsg.msg   = FORWARD; // Forward

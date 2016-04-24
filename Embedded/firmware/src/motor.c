@@ -1,4 +1,5 @@
 #include "motor.h"
+#include "usart.h"
 
 void INIT_Rover_Motors() 
 {
@@ -92,7 +93,7 @@ void move_Turn_Left()
 }
 
 void checkInstDone(DISPLACE disOrdeg)
-{
+{   
     if (inst_setup == false)
     {
         R_encoder = 0; 
@@ -103,8 +104,10 @@ void checkInstDone(DISPLACE disOrdeg)
         
     }
     
-    if (Displace[disOrdeg] == 0)
+    if (Displace[disOrdeg] == 0){
+        inst_setup = false;
         return;
+    }
     
     while ((R_encoder < Displace[disOrdeg] || L_encoder < Displace[disOrdeg]))
     {;}
@@ -113,7 +116,7 @@ void checkInstDone(DISPLACE disOrdeg)
     move_Stop();
     sendDone(2);
     //reset needed variables
-    setDisplacement(disOrdeg, 0); //reset the distance
+    setDisplacement(disOrdeg, OFFSET); //reset the distance
     inst_setup = false;
     motor_data.curState = STOP;
     
@@ -185,13 +188,13 @@ void setDisplacement(DISPLACE disOrdeg, int value)
 {
     value = value - OFFSET; //correct the offset we add before sending
     
-    if (disOrdeg == DISTANCE)
+    if (disOrdeg == DISTANCE && value != 0)
     {
 //      Displace[DISTANCE] = (value * 17) - (value/5) + (value/10); //inches to encoders
         Displace[DISTANCE] = (value*128900 - 31104)/10000;  //cm to encoders
     }
     //given a degree
-    else 
+    else if (value != 0)
     {
         Displace[DEGREE] = (11073*value + 1911) / 10000; //degrees to encoders
         
@@ -199,7 +202,10 @@ void setDisplacement(DISPLACE disOrdeg, int value)
         {
             Displace[DEGREE] = Displace[DEGREE]*-1;
         }
-    }   
+    }  
+    else {
+        Displace[disOrdeg] = value;
+    }
 }
 
 
@@ -267,6 +273,7 @@ void MOTOR_Tasks ( void )
                             break;
 
                         case FORWARD:
+//                            debugToUART(71);
                             if(message.id == SENSOR_TO_MOTOR)
                             {
                                 //set speeds correctly
@@ -281,6 +288,7 @@ void MOTOR_Tasks ( void )
                             break;
 
                         case BACKWARD:            
+//                            debugToUART(72);
                             if(message.id == SENSOR_TO_MOTOR)
                             {
                                 setSpeed(message.data1, message.data2);
@@ -294,6 +302,7 @@ void MOTOR_Tasks ( void )
                             break;
 
                         case TURN_LEFT:
+//                            debugToUART(73);
                             setDisplacement(DEGREE, message.data1);
                             motor_data.curState = TURN_LEFT;
                             motor_data.L_speed = SLOW; 
@@ -302,6 +311,7 @@ void MOTOR_Tasks ( void )
                             break;
 
                         case TURN_RIGHT:
+//                            debugToUART(74);
                             setDisplacement(DEGREE, message.data1);
                             motor_data.curState = TURN_RIGHT;
                             motor_data.L_speed = SLOW; 

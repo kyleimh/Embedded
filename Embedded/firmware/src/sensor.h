@@ -24,14 +24,14 @@ bool line_correction;
 typedef enum
 {
     NONE = 0,
-	INTERSECT,
-    STOPPED,
-    OFF_LINE,
-    L2,
-    L1,
-    C,
-    R1,
-    R2            
+	INTERSECT = 10,
+    STOPPED = 20,
+    OFF_LINE = 30,
+    L2 = 40,
+    L1 = 50,
+    C = 60,
+    R1 = 70,
+    R2 = 80            
 } LINE_STATE;
 
 LINE_STATE lineState;
