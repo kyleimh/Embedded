@@ -74,6 +74,11 @@ void SENSOR_Tasks ( void )
                     if(sensorMsgRecv.msg == 50){
                         if(sensorMsgRecv.data1 == 1){
                             line_correction = true;
+                            sensorMsg.id    = SENSOR_TO_MOTOR; //To motor thread(2), From sensor thread(3)
+                            sensorMsg.msg   = FORWARD; // Forward
+                            sensorMsg.data1 = 203;
+                            sensorMsg.data2 = 203;
+                            xQueueSend( motorQueue, &sensorMsg, (TickType_t)0 );
                         }else if (sensorMsgRecv.data1 == 0){
                             line_correction = false;
                         }

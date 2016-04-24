@@ -57,7 +57,7 @@ void forward()
         {
             if (ctrlMsgRecv.id  == 0x12){
                 if (ctrlMsgRecv.msg == 100) { //if done message
-                    debugToUART(101);
+//                    debugToUART(101);
                     break;
                }
             }            
@@ -81,7 +81,7 @@ void backward()
         {
             if (ctrlMsgRecv.id  == 0x12){
                 if (ctrlMsgRecv.msg == 100) { //if done message
-                    debugToUART(102);
+//                    debugToUART(102);
                     break;
                }
             }            
@@ -120,7 +120,7 @@ void turn_right(uint8_t d)
         {
             if (ctrlMsgRecv.id  == 0x12){
                 if (ctrlMsgRecv.msg == 100) { //if done message
-                    debugToUART(103);
+//                    debugToUART(103);
                     break;
                }
             }            
@@ -211,7 +211,7 @@ void CONTROL_Tasks ( void )
                         
                 }else if ( ctrlMsgRecv.id  == 0x13 ) {
                     if(ctrlMsgRecv.msg == 0x24){
-                        debugToUART(99);
+//                        debugToUART(99);
                         turn_left(90);
                     }
                 }
@@ -341,10 +341,11 @@ void CONTROL_Tasks ( void )
         
         case CONTROL_STATE_RETURN:
         {
+//            debugToUART(180);
             if (xQueueReceive(controlQueue, &ctrlMsgRecv, portMAX_DELAY) == pdFALSE) 
             {
                 outputEvent(CONTROL_QUEUE_EMPTY);
-                debugToUART(4);
+//                debugToUART(4);
             }
             else
             {
@@ -369,7 +370,7 @@ void CONTROL_Tasks ( void )
                                     turn_right(90);
                                     set_line_correction(true);
                                 }
-                                debugToUART(105);
+//                                debugToUART(105);
                                 controlData.return_turns_passed++;
                             } else if (controlData.return_turns_passed == controlData.return_turns) {
                                 //back home
@@ -399,6 +400,7 @@ void CONTROL_Tasks ( void )
                     }
                 }
             }
+            break;
         }
         
         case CONTROL_STATE_CLEANUP:
@@ -421,6 +423,7 @@ void CONTROL_Tasks ( void )
                     xQueueSend( sensorQueue, &ctrlMsgRecv, (TickType_t)0 );
                 }
             }
+            break;
         }
         
         case CONTROL_STATE_TEST:
