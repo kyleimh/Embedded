@@ -45,7 +45,7 @@ void forward()
 {
     ctrlMsgSend.id = 0x21;
     ctrlMsgSend.msg = FORWARD;
-    ctrlMsgSend.data1 = 15;
+    ctrlMsgSend.data1 = 12;
     ctrlMsgSend.data2 = 0x00;
     xQueueSend( motorQueue, &ctrlMsgSend, (TickType_t)0 );
     while (true) {
@@ -344,6 +344,7 @@ void CONTROL_Tasks ( void )
             if (xQueueReceive(controlQueue, &ctrlMsgRecv, portMAX_DELAY) == pdFALSE) 
             {
                 outputEvent(CONTROL_QUEUE_EMPTY);
+                debugToUART(4);
             }
             else
             {
@@ -354,7 +355,6 @@ void CONTROL_Tasks ( void )
                     if ((ctrlMsgRecv.id & 0x0f) == 0x03) {
                         if (ctrlMsgRecv.msg == 0x24) {
                             debugToUART(controlData.return_turns_passed);
-                            debugToUART(250);
                             debugToUART(controlData.return_turns);
                             if (controlData.return_turns_passed == 0) {
                                 //first intersection
@@ -369,6 +369,7 @@ void CONTROL_Tasks ( void )
                                     turn_right(90);
                                     set_line_correction(true);
                                 }
+                                debugToUART(105);
                                 controlData.return_turns_passed++;
                             } else if (controlData.return_turns_passed == controlData.return_turns) {
                                 //back home

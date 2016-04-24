@@ -145,7 +145,14 @@ void SENSOR_Tasks ( void )
                                 sensorMsg.data1 = 0x0;
                                 sensorMsg.data2 = 0x0;
                                 USART_send(sensorMsg);
-                                xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 );
+                                if(xQueueSend( controlQueue, &sensorMsg, (TickType_t)0 ) != pdPASS )
+                                {
+                                    debugToUART(165);
+                                }
+                                else
+                                {
+                                    debugToUART(170);
+                                }
                             }
                         }else if(sensorMsgRecv.data1 == 0xC0){
                             if(lineState != L2){
