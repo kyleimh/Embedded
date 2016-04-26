@@ -225,8 +225,8 @@ void MOTOR_Initialize ( void )
     
     inst_setup = false;
     
-    motor_data.R_speed = AVERAGE; 
-    motor_data.L_speed = AVERAGE;
+    motor_data.R_speed = HIGH; 
+    motor_data.L_speed = HIGH;
     
     DRV_TMR0_Start();
     DRV_TMR1_Start();   //timer for encoders

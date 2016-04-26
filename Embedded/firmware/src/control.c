@@ -244,20 +244,13 @@ void CONTROL_Tasks ( void )
         
         case CONTROL_STATE_STANDBY:
         {
-            if (xQueueReceive(controlQueue, &ctrlMsgRecv, portMAX_DELAY) == pdFALSE) 
+            if (controlData.mode == CONTROL_MODE_CLEAN)
             {
-                outputEvent(CONTROL_QUEUE_EMPTY);
+                controlData.state = CONTROL_STATE_CLEANUP;
             }
             else
             {
-                if (controlData.mode == CONTROL_MODE_CLEAN)
-                {
-                    controlData.state = CONTROL_STATE_CLEANUP;
-                }
-                else
-                {
-                    controlData.state = CONTROL_STATE_DELIVER;
-                }
+                controlData.state = CONTROL_STATE_DELIVER;
             }
             break;
         }
@@ -412,7 +405,7 @@ void CONTROL_Tasks ( void )
             else
             {
                 //route the message
-                if ((ctrlMsgRecv.id & 0xf0) == 0x40) {
+                if ((ctrlMsgRecv.id & 0xf0) == 0x40 || ctrlMsgRecv.msg == DONE) {
                     //send to usart
                     USART_send(ctrlMsgRecv);
                 } else if ((ctrlMsgRecv.id & 0xf0) == 0x20) {
